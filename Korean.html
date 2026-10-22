@@ -6,6 +6,103 @@
     <title>Korean Language Corner - Student Smart Hub</title>
     <link rel="stylesheet" href="style.css">
     <style>
+     /* Smart Hub Voice Overlay Styles */
+#welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 10, 30, 0.96);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.welcome-card {
+    background: #1e1233;
+    border: 2px solid #7c3aed;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 90%;
+    width: 460px;
+    box-shadow: 0 10px 35px rgba(124, 58, 237, 0.5);
+    color: #ffffff;
+    animation: zoomIn 0.4s ease-out;
+}
+
+.welcome-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    animation: pulse 1.5s infinite;
+}
+
+.welcome-card h2 {
+    color: #a78bfa;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-bottom: 1.8rem;
+}
+
+.feature-slider {
+    min-height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.8rem;
+}
+
+.feature-item {
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #e9d5ff;
+    background: rgba(124, 58, 237, 0.25);
+    padding: 14px 20px;
+    border-radius: 12px;
+    border-left: 4px solid #7c3aed;
+    display: none;
+    width: 100%;
+}
+
+.start-btn {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.start-btn:hover {
+    background: #6d28d9;
+    transform: scale(1.05);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+
+
         .quiz-card {
             background: #ffffff;
             border-radius: 12px;
@@ -107,6 +204,24 @@
     </style>
 </head>
 <body>
+<!-- Complete Smart Hub Voice Welcome Overlay -->
+<div id="welcome-overlay">
+    <div class="welcome-card">
+        <div class="welcome-icon">🔊</div>
+        <h2>Welcome to Student Smart Hub!</h2>
+        <p class="subtitle">Your All-in-One Academic & Tech Portfolio</p>
+        
+        <div class="feature-slider">
+            <div class="feature-item active">🇰🇷 <span>Step 1: Korean Language & Audio Practice</span></div>
+            <div class="feature-item">🎓 <span>Step 2: BSCS 1st Semester Notes & Study Guides</span></div>
+            <div class="feature-item">💻 <span>Step 3: C++ Programming & Logic Building</span></div>
+            <div class="feature-item">⚡ <span>Step 4: Data Structures & Real-World Projects</span></div>
+        </div>
+
+        <button onclick="closeWelcome()" class="start-btn">Start Exploring 🚀</button>
+    </div>
+</div>
+
 
     <!-- Header Section -->
     <header>
@@ -302,6 +417,60 @@
 
     <!-- Interactive Script -->
     <script>
+    // Step-by-Step Feature Loop & Natural Voice Greeting
+let currentFeature = 0;
+const features = document.querySelectorAll('.feature-item');
+
+function rotateFeatures() {
+    features.forEach((item, index) => {
+        item.style.display = (index === currentFeature) ? 'block' : 'none';
+    });
+    currentFeature = (currentFeature + 1) % features.length;
+}
+
+// Step-by-Step Voice Speech Function
+function speakWelcomeMessage() {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Clear any existing speech
+        
+        // Full Step-by-Step Speech
+        const welcomeText = "Welcome to Student Smart Hub! First, explore interactive Korean audio lessons and quizzes. Second, access BSCS first semester study guides and notes. Third, learn C++ coding, object oriented programming, and data structures with real projects.";
+        
+        const utterance = new SpeechSynthesisUtterance(welcomeText);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.92; // Clear and natural pace
+        utterance.pitch = 1.0;
+        
+        window.speechSynthesis.speak(utterance);
+    }
+}
+
+// Trigger animations & voice on page load
+window.addEventListener('DOMContentLoaded', () => {
+    if (features.length > 0) {
+        rotateFeatures();
+        setInterval(rotateFeatures, 2800); // Sync timing with speech
+    }
+    
+    // Play Voice
+    setTimeout(() => {
+        speakWelcomeMessage();
+    }, 500);
+});
+
+// Close Welcome Screen & Stop Voice
+function closeWelcome() {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Stop voice playback immediately
+    }
+    
+    const overlay = document.getElementById('welcome-overlay');
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+        overlay.style.display = 'none';
+    }, 500);
+}
+
         // Audio TTS Function
         function speakKorean(text) {
             if ('speechSynthesis' in window) {
