@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +8,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Header Section -->
     <header>
         <div class="logo">🎓 Student Smart Hub</div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#guides">Study Guides</a></li>
+                <li><a href="semester1.html">Study Guides</a></li>
                 <li><a href="#planner">Planner</a></li>
                 <li><a href="#guidance">Career Guidance</a></li>
             </ul>
@@ -24,25 +26,30 @@
     <section id="home" class="hero">
         <h1>Empowering Students with Smart Guidance</h1>
         <p>Your all-in-one platform for C++ concepts, study planning, and academic roadmap support.</p>
-        <button onclick="exploreHub()">Explore Hub</button>
+        <a href="#modules" class="hero-btn">Explore Hub</a>
     </section>
 
-    <!-- Core Feature Modules -->
-    <section id="guides" class="features">
+    <!-- Modules Section -->
+    <section id="modules" class="features">
         <h2>📌 Explore Modules</h2>
         <div class="card-container">
+            
             <div class="card">
                 <h3>📚 CS & C++ Notes</h3>
-                <p>Simplified breakdowns of Pointers, Data Structures, and OOP concepts.</p>
+                <p>Simplified breakdowns of Programming Fundamentals (C++), ICT, and 1st-semester concepts.</p>
+                <a href="semester1.html" class="hero-btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0.8rem; display: inline-block;">Open Guides ➔</a>
             </div>
+
             <div class="card">
                 <h3>🧠 Daily Planner</h3>
                 <p>Track your daily study routine, assignments, and goals systematically.</p>
             </div>
+
             <div class="card">
                 <h3>🎯 Roadmap & Scholarships</h3>
                 <p>Step-by-step career direction and fully-funded scholarship advice.</p>
             </div>
+
         </div>
     </section>
 
