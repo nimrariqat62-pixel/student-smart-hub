@@ -290,72 +290,105 @@
     <!-- Footer -->
     <footer>
         <p>© 2026 Student Smart Hub | Korean Language Study Module</p>
-        <!-- Free Visitor Counter -->
-        <p style="margin-top: 0.5rem; font-size: 0.85rem;">
-            👀 Total Visitors: <img src="https://counter.reliablecounter.com/track.php?user=student-smart-hub" alt="Visitor Counter" style="vertical-align: middle;" border="0">
+        <!-- Reliable Visitor Counter Badge -->
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            👀 <strong>Total Visitors:</strong> 
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fnimrariqat62-pixel.github.io%2Fstudent-smart-hub&count_bg=%237C3AED&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false" alt="Visitor Counter" style="vertical-align: middle;">
         </p>
     </footer>
 
     <!-- Interactive Script -->
     <script>
-        
-       <!-- Footer -->
-<footer>
-    <p>© 2026 Student Smart Hub | Korean Language Study Module</p>
-    <!-- Reliable Visitor Counter Badge -->
-    <p style="margin-top: 0.8rem; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
-        👀 <strong>Total Visitors:</strong> 
-        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fnimrariqat62-pixel.github.io%2Fstudent-smart-hub&count_bg=%237C3AED&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false" alt="Visitor Counter" style="vertical-align: middle;">
-    </p>
-</footer>
-
-<!-- Interactive Script -->
-<script>
-    // Audio TTS Function
-    function speakKorean(text) {
-        if ('speechSynthesis' in window) {
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'ko-KR';
-            window.speechSynthesis.speak(utterance);
-        } else {
-            alert("Audio playback is not supported in this browser.");
-        }
-    }
-
-    // Score Tracking State (10 Questions)
-    let scoreState = {};
-    for (let i = 1; i <= 10; i++) {
-        scoreState[i] = 0;
-    }
-
-    function checkAnswer(element, isCorrect, questionNum) {
-        const parentCard = element.closest('.quiz-card');
-        const options = parentCard.querySelectorAll('.quiz-option');
-
-        // Clear previous icons/styles in this question
-        options.forEach(opt => {
-            opt.classList.remove('correct', 'wrong');
-            opt.querySelector('.status-icon').innerText = '';
-        });
-
-        // Set styling and score based on selection
-        if (isCorrect) {
-            element.classList.add('correct');
-            element.querySelector('.status-icon').innerText = '✅ Correct';
-            scoreState[questionNum] = 1;
-        } else {
-            element.classList.add('wrong');
-            element.querySelector('.status-icon').innerText = '❌ Wrong';
-            scoreState[questionNum] = 0;
+        // Audio TTS Function
+        function speakKorean(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ko-KR';
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("Audio playback is not supported in this browser.");
+            }
         }
 
-        // Calculate & update Total Score
-        let totalScore = Object.values(scoreState).reduce((a, b) => a + b, 0);
-        document.getElementById('currentScore').innerText = totalScore;
-    }
-</script>
+        // Score Tracking State (10 Questions)
+        let scoreState = {};
+        for (let i = 1; i <= 10; i++) {
+            scoreState[i] = 0;
+        }
+
+        function checkAnswer(element, isCorrect, questionNum) {
+            const parentCard = element.closest('.quiz-card');
+            const options = parentCard.querySelectorAll('.quiz-option');
+
+            // Clear previous icons/styles in this question
+            options.forEach(opt => {
+                opt.classList.remove('correct', 'wrong');
+                opt.querySelector('.status-icon').innerText = '';
+            });
+
+            // Set styling and score based on selection
+            if (isCorrect) {
+                element.classList.add('correct');
+                element.querySelector('.status-icon').innerText = '✅ Correct';
+                scoreState[questionNum] = 1;
+            } else {
+                element.classList.add('wrong');
+                element.querySelector('.status-icon').innerText = '❌ Wrong';
+                scoreState[questionNum] = 0;
+            }
+
+            // Calculate & update Total Score
+            let totalScore = Object.values(scoreState).reduce((a, b) => a + b, 0);
+            document.getElementById('currentScore').innerText = totalScore;
+        }
+    </script>
 </body>
 </html>
+
+ 
+              
+                
+       
+   
+        
+                   
+          
+
+
+       
+            
+               
+ 
+        
+        
+            
+     
+
+           
+        
+
+      
+
+  
+        
+          
+
+     
+            
+          
+             
+  
+               
+ 
+          
+              
+ 
+
+         
+                
+
+         
+                
 
         
        
