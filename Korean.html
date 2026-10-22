@@ -54,10 +54,13 @@
             padding: 1rem;
             border-radius: 12px;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
             margin-top: 1rem;
-            box-shadow: 0 4px 10px rgba(107, 33, 168, 0.3);
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(107, 33, 168, 0.4);
         }
         .badge {
             background: #6b21a8;
@@ -95,6 +98,12 @@
             font-weight: bold;
             text-decoration: underline;
         }
+        .quiz-section-title {
+            color: #581c87;
+            margin-top: 2rem;
+            border-bottom: 2px solid #d8b4fe;
+            padding-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -107,7 +116,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#hangul">Hangul</a></li>
                 <li><a href="#listening">Listening</a></li>
-                <li><a href="#resources">Official Resources</a></li>
+                <li><a href="#resources">Resources</a></li>
                 <li><a href="#quiz">Quiz & Score</a></li>
             </ul>
         </nav>
@@ -145,124 +154,133 @@
 
         <!-- Module 2: Audio & Listening Practice -->
         <div id="listening" style="margin-top: 3rem;">
-            <h2>🎧 Module 2: Audio Pronunciation & Listening Practice (듣기)</h2>
+            <h2>🎧 Module 2: Audio Pronunciation Practice (듣기)</h2>
             <p>Click the 🔊 <strong>Listen</strong> button to hear native Korean pronunciation!</p>
             
             <div class="card-container">
                 <div class="card">
                     <h3>Greetings</h3>
-                    <p>
-                        • <strong>안녕하세요</strong> (Hello) 
-                        <button class="audio-btn" onclick="speakKorean('안녕하세요')">🔊 Listen</button>
-                    </p>
-                    <p>
-                        • <strong>감사합니다</strong> (Thank You) 
-                        <button class="audio-btn" onclick="speakKorean('감사합니다')">🔊 Listen</button>
-                    </p>
-                    <p>
-                        • <strong>죄송합니다</strong> (Sorry) 
-                        <button class="audio-btn" onclick="speakKorean('죄송합니다')">🔊 Listen</button>
-                    </p>
+                    <p>• <strong>안녕하세요</strong> (Hello) <button class="audio-btn" onclick="speakKorean('안녕하세요')">🔊 Listen</button></p>
+                    <p>• <strong>감사합니다</strong> (Thank You) <button class="audio-btn" onclick="speakKorean('감사합니다')">🔊 Listen</button></p>
+                    <p>• <strong>죄송합니다</strong> (Sorry) <button class="audio-btn" onclick="speakKorean('죄송합니다')">🔊 Listen</button></p>
                 </div>
 
                 <div class="card">
                     <h3>Essential Words</h3>
-                    <p>
-                        • <strong>학생</strong> (Student) 
-                        <button class="audio-btn" onclick="speakKorean('학생')">🔊 Listen</button>
-                    </p>
-                    <p>
-                        • <strong>선생님</strong> (Teacher) 
-                        <button class="audio-btn" onclick="speakKorean('선생님')">🔊 Listen</button>
-                    </p>
-                    <p>
-                        • <strong>한국어</strong> (Korean Language) 
-                        <button class="audio-btn" onclick="speakKorean('한국어')">🔊 Listen</button>
-                    </p>
+                    <p>• <strong>학생</strong> (Student) <button class="audio-btn" onclick="speakKorean('학생')">🔊 Listen</button></p>
+                    <p>• <strong>선생님</strong> (Teacher) <button class="audio-btn" onclick="speakKorean('선생님')">🔊 Listen</button></p>
+                    <p>• <strong>한국어</strong> (Korean) <button class="audio-btn" onclick="speakKorean('한국어')">🔊 Listen</button></p>
                 </div>
             </div>
         </div>
 
         <!-- Module 3: Official Learning Resources -->
         <div id="resources" style="margin-top: 3rem;">
-            <h2>📚 Module 3: Official TOPIK & Learning Resources</h2>
+            <h2>📚 Module 3: Official Learning Resources</h2>
             
             <div class="resource-card">
                 <h3>👑 King Sejong Institute Foundation (세종학당)</h3>
-                <p>Official Korean government portal providing free online courses, digital textbooks, and mobile learning apps.</p>
+                <p>Official Korean government portal providing free online courses and digital textbooks.</p>
                 <a href="https://www.ksif.or.kr/" target="_blank">Visit Official KSI Portal ➔</a>
             </div>
 
             <div class="resource-card">
                 <h3>📝 Official TOPIK Portal (한국어능력시험)</h3>
-                <p>Access past TOPIK I & II examination papers, listening audio files, and answer keys for scholarship preparation.</p>
+                <p>Access past TOPIK I & II examination papers and listening audio files.</p>
                 <a href="https://www.topik.go.kr/" target="_blank">Access Official TOPIK Exam Materials ➔</a>
             </div>
         </div>
 
-        <!-- Module 4: Interactive Practice Quiz & Score Calculator -->
+        <!-- Module 4: Extended Interactive Practice Quiz -->
         <div id="quiz" style="margin-top: 3rem;">
-            <h2>🧠 Module 4: Interactive Quiz & Live Score Tracking</h2>
+            <h2>🧠 Module 4: Comprehensive Korean Quiz Practice</h2>
+            <p>Test your knowledge across Alphabets, Vocabulary, Phrases, and Basic Grammar!</p>
             
-            <!-- Live Score Board -->
+            <!-- Sticky Live Score Board -->
             <div class="score-box" id="scoreBoard">
-                📊 Total Score: <span id="currentScore">0</span> / 4
+                📊 Total Score: <span id="currentScore">0</span> / 10
             </div>
 
-            <!-- Quiz 1 -->
+            <!-- SECTION A: Hangul Alphabet -->
+            <h3 class="quiz-section-title">SECTION A: Hangul Alphabets (한글)</h3>
+
             <div class="quiz-card" id="q1">
-                <h3>Q1. What is the Korean word for "Thank You"?</h3>
-                <div class="quiz-option" onclick="checkAnswer(this, false, 1)">
-                    <span>A) 안녕하세요 (Annyeonghaseyo)</span> <span class="status-icon"></span>
-                </div>
-                <div class="quiz-option" onclick="checkAnswer(this, true, 1)">
-                    <span>B) 감사합니다 (Gamsahamnida)</span> <span class="status-icon"></span>
-                </div>
-                <div class="quiz-option" onclick="checkAnswer(this, false, 1)">
-                    <span>C) 죄송합니다 (Joesonghamnida)</span> <span class="status-icon"></span>
-                </div>
+                <h3>Q1. Which Hangul consonant represents the "N" sound?</h3>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 1)"><span>A) ㄱ</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, true, 1)"><span>B) ㄴ</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 1)"><span>C) ㄷ</span> <span class="status-icon"></span></div>
             </div>
 
-            <!-- Quiz 2 -->
             <div class="quiz-card" id="q2">
-                <h3>Q2. Which Hangul consonant represents the "N" sound?</h3>
-                <div class="quiz-option" onclick="checkAnswer(this, false, 2)">
-                    <span>A) ㄱ</span> <span class="status-icon"></span>
-                </div>
-                <div class="quiz-option" onclick="checkAnswer(this, true, 2)">
-                    <span>B) ㄴ</span> <span class="status-icon"></span>
-                </div>
-                <div class="quiz-option" onclick="checkAnswer(this, false, 2)">
-                    <span>C) ㄷ</span> <span class="status-icon"></span>
-                </div>
+                <h3>Q2. Which vowel produces the "A" sound as in "Father"?</h3>
+                <div class="quiz-option" onclick="checkAnswer(this, true, 2)"><span>A) ㅏ</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 2)"><span>B) ㅓ</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 2)"><span>C) ㅗ</span> <span class="status-icon"></span></div>
             </div>
 
-            <!-- Quiz 3 -->
             <div class="quiz-card" id="q3">
-                <h3>Q3. What does "학생" (Haksaeng) mean in English?</h3>
-                <div class="quiz-option" onclick="checkAnswer(this, true, 3)">
-                    <span>A) Student</span> <span class="status-icon"></span>
-                </div>
-                <div class="quiz-option" onclick="checkAnswer(this, false, 3)">
-                    <span>B) Teacher</span> <span class="status-icon"></span>
-                </div>
-                <div class="quiz-option" onclick="checkAnswer(this, false, 3)">
-                    <span>C) Friend</span> <span class="status-icon"></span>
-                </div>
+                <h3>Q3. What sound does the consonant "ㅁ" make?</h3>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 3)"><span>A) K / G</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 3)"><span>B) R / L</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, true, 3)"><span>C) M</span> <span class="status-icon"></span></div>
             </div>
 
-            <!-- Quiz 4 -->
+            <!-- SECTION B: Vocabulary -->
+            <h3 class="quiz-section-title">SECTION B: Daily Vocabulary (단어)</h3>
+
             <div class="quiz-card" id="q4">
-                <h3>Q4. How do you say "Korean Language" in Korean?</h3>
-                <div class="quiz-option" onclick="checkAnswer(this, false, 4)">
-                    <span>A) 학교 (Hakgyo)</span> <span class="status-icon"></span>
-                </div>
-                <div class="quiz-option" onclick="checkAnswer(this, true, 4)">
-                    <span>B) 한국어 (Hanguk-eo)</span> <span class="status-icon"></span>
-                </div>
-                <div class="quiz-option" onclick="checkAnswer(this, false, 4)">
-                    <span>C) 물 (Mul)</span> <span class="status-icon"></span>
-                </div>
+                <h3>Q4. What does "학생" (Haksaeng) mean in English?</h3>
+                <div class="quiz-option" onclick="checkAnswer(this, true, 4)"><span>A) Student</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 4)"><span>B) Teacher</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 4)"><span>C) Friend</span> <span class="status-icon"></span></div>
+            </div>
+
+            <div class="quiz-card" id="q5">
+                <h3>Q5. How do you say "Water" in Korean?</h3>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 5)"><span>A) 책 (Chaek)</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, true, 5)"><span>B) 물 (Mul)</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 5)"><span>C) 학교 (Hakgyo)</span> <span class="status-icon"></span></div>
+            </div>
+
+            <div class="quiz-card" id="q6">
+                <h3>Q6. What is the Korean word for "School"?</h3>
+                <div class="quiz-option" onclick="checkAnswer(this, true, 6)"><span>A) 학교 (Hakgyo)</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 6)"><span>B) 병원 (Byeongwon)</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 6)"><span>C) 집 (Jip)</span> <span class="status-icon"></span></div>
+            </div>
+
+            <!-- SECTION C: Greetings & Phrases -->
+            <h3 class="quiz-section-title">SECTION C: Greetings & Phrases (인사말)</h3>
+
+            <div class="quiz-card" id="q7">
+                <h3>Q7. What is the polite Korean word for "Thank You"?</h3>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 7)"><span>A) 안녕하세요 (Annyeonghaseyo)</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, true, 7)"><span>B) 감사합니다 (Gamsahamnida)</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 7)"><span>C) 죄송합니다 (Joesonghamnida)</span> <span class="status-icon"></span></div>
+            </div>
+
+            <div class="quiz-card" id="q8">
+                <h3>Q8. How do you say "Nice to meet you" in Korean?</h3>
+                <div class="quiz-option" onclick="checkAnswer(this, true, 8)"><span>A) 반갑습니다 (Bangapseumnida)</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 8)"><span>B) 안녕히 계세요 (Annyeonghi gyeseyo)</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 8)"><span>C) 괜찮아요 (Gwaenchanayuo)</span> <span class="status-icon"></span></div>
+            </div>
+
+            <!-- SECTION D: Basic Grammar -->
+            <h3 class="quiz-section-title">SECTION D: Basic Grammar & Expressions (문법)</h3>
+
+            <div class="quiz-card" id="q9">
+                <h3>Q9. What does the particle "~은 / ~는" indicate in a sentence?</h3>
+                <div class="quiz-option" onclick="checkAnswer(this, true, 9)"><span>A) Topic Marker</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 9)"><span>B) Object Marker</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 9)"><span>C) Location Marker</span> <span class="status-icon"></span></div>
+            </div>
+
+            <div class="quiz-card" id="q10">
+                <h3>Q10. How do you ask "How much is this?" in Korean?</h3>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 10)"><span>A) 어디예요? (Eodiyeyo?)</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, true, 10)"><span>B) 이거 얼마예요? (Igeo eolmayeyo?)</span> <span class="status-icon"></span></div>
+                <div class="quiz-option" onclick="checkAnswer(this, false, 10)"><span>C) 누구예요? (Nuguyeyo?)</span> <span class="status-icon"></span></div>
             </div>
 
         </div>
@@ -272,6 +290,10 @@
     <!-- Footer -->
     <footer>
         <p>© 2026 Student Smart Hub | Korean Language Study Module</p>
+        <!-- Free Visitor Counter -->
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+            👀 Total Visitors: <img src="https://counter.reliablecounter.com/track.php?user=student-smart-hub" alt="Visitor Counter" style="vertical-align: middle;" border="0">
+        </p>
     </footer>
 
     <!-- Interactive Script -->
@@ -287,20 +309,23 @@
             }
         }
 
-        // Quiz State Tracking
-        let scoreState = { 1: 0, 2: 0, 3: 0, 4: 0 };
+        // Score Tracking State (10 Questions)
+        let scoreState = {};
+        for (let i = 1; i <= 10; i++) {
+            scoreState[i] = 0;
+        }
 
         function checkAnswer(element, isCorrect, questionNum) {
             const parentCard = element.closest('.quiz-card');
             const options = parentCard.querySelectorAll('.quiz-option');
 
-            // Reset UI for options in this question
+            // Clear previous icons/styles in this question
             options.forEach(opt => {
                 opt.classList.remove('correct', 'wrong');
                 opt.querySelector('.status-icon').innerText = '';
             });
 
-            // Calculate Score & Update Class
+            // Set styling and score based on selection
             if (isCorrect) {
                 element.classList.add('correct');
                 element.querySelector('.status-icon').innerText = '✅ Correct';
@@ -311,10 +336,19 @@
                 scoreState[questionNum] = 0;
             }
 
-            // Calculate Total Score
+            // Calculate & update Total Score
             let totalScore = Object.values(scoreState).reduce((a, b) => a + b, 0);
             document.getElementById('currentScore').innerText = totalScore;
         }
     </script>
 </body>
 </html>
+        
+       
+        
+    
+            
+     
+
+             
+           
