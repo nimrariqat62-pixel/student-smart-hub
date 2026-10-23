@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Smart Hub 💜</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #09051b;
+            color: #fff;
+            line-height: 1.6;
+        }
+        header {
+            padding: 16px 4%;
+            background: #120824;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            border-bottom: 2px solid #a855f7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f0c7ff;
+        }
+        nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 7px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        nav a:hover, button:hover, .btn:hover {
+            background: #9333ea;
+        }
+        section {
+            padding: 48px 5%;
+            scroll-margin-top: 80px;
+        }
+        h1 {
+            font-size: clamp(34px, 6vw, 56px);
+            line-height: 1.15;
+            color: #f0c7ff;
+            text-shadow: 0 0 18px #9333ea;
+            margin-bottom: 18px;
+            text-transform: UPPERCASE;
+        }
+        h2 {
+            font-size: 28px;
+            color: #dfb4ff;
+            margin-bottom: 15px;
+            text-transform: UPPERCASE;
+            border-bottom: 1px solid #7838b8;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #e9d5ff;
+            margin: 12px 0 6px 0;
+            text-transform: UPPERCASE;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 13px;
+            color: #e2e8f0;
+        }
+        button, .btn {
+            background: #6b21a8;
+            color: white;
+            border: 1px solid #d8b4fe;
+            border-radius: 9px;
+            padding: 11px 18px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            margin: 5px 4px 5px 0;
+            text-decoration: none;
+            text-transform: UPPERCASE;
+            transition: all 0.2s;
+        }
+        .hero {
+            min-height: 580px;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(140deg, #08051c, #250841, #08051c);
+        }
+        .stars {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(white 1px, transparent 2px), radial-gradient(#c4b5fd 1.5px, transparent 2px);
+            background-size: 57px 57px, 103px 103px;
+            animation: stars 18s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes stars {
+            to { background-position: 0 500px, 200px 400px; }
+        }
+        .moon {
+            position: absolute;
+            top: 35px;
+            left: 49%;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: #f8e8ff;
+            box-shadow: 0 0 55px #c084fc;
+            animation: float 4s infinite ease-in-out;
+        }
+        @keyframes float {
+            50% { transform: translateY(-14px); }
+        }
+        .heroText, .scene {
+            position: relative;
+            z-index: 1;
+        }
+        .scene {
+            height: 380px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .head {
+            position: absolute;
+            bottom: 195px;
+            width: 105px;
+            height: 112px;
+            background: #29183d;
+            border: 2px solid #a855f7;
+            border-radius: 48%;
+        }
+        .hair {
+            position: absolute;
+            bottom: 268px;
+            width: 120px;
+            height: 65px;
+            background: #10091e;
+            border-radius: 60% 50% 25% 20%;
+            z-index: 2;
+        }
+        .headphones {
+            position: absolute;
+            bottom: 218px;
+            width: 130px;
+            height: 95px;
+            border: 8px solid #c084fc;
+            border-bottom-color: transparent;
+            border-radius: 70px 70px 0 0;
+            z-index: 3;
+        }
+        .body-girl {
+            position: absolute;
+            bottom: 35px;
+            width: 205px;
+            height: 170px;
+            background: linear-gradient(90deg, #170b2a, #4c2670);
+            border: 2px solid #7e22ce;
+            border-radius: 70px 70px 0 0;
+        }
+        .laptop {
+            position: absolute;
+            bottom: 0;
+            width: min(330px, 95%);
+            z-index: 4;
+        }
+        .screen {
+            height: 120px;
+            background: #030711;
+            border: 5px solid #a78bfa;
+            border-radius: 9px 9px 2px 2px;
+            padding: 10px;
+            color: #86efac;
+            font: 12px/1.8 monospace;
+            box-shadow: 0 0 22px #7c3aed;
+            overflow: hidden;
+        }
+        .keyboard {
+            height: 18px;
+            background: #a78bfa;
+            clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+        }
+        .hand {
+            position: absolute;
+            bottom: 47px;
+            width: 38px;
+            height: 12px;
+            background: #f0c3ff;
+            border-radius: 9px;
+            z-index: 5;
+        }
+        .hand.left { left: calc(50% - 100px); }
+        .hand.right { right: calc(50% - 100px); }
+        .hand:after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: -10px;
+            width: 5px;
+            height: 15px;
+            background: #f0c3ff;
+            box-shadow: 10px 0 #f0c3ff, 20px 0 #f0c3ff;
+            animation: typing .3s infinite alternate;
+        }
+        @keyframes typing {
+            to { transform: translateY(5px); }
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .card {
+            background: linear-gradient(145deg, #1d0d3b, #0d0a25);
+            border: 1px solid #7838b8;
+            border-radius: 14px;
+            padding: 21px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .explain {
+            padding: 15px;
+            background: #110922;
+            border: 1px solid #a855f7;
+            border-radius: 10px;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            margin-top: 10px;
+        }
+        .code {
+            font: 14px/1.7 monospace;
+            color: #a7f3d0;
+        }
+        .progress {
+            color: #d8b4fe;
+            margin-bottom: 15px;
+            font-size: 15px;
+            text-transform: UPPERCASE;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #120824;
+            color: #f0c7ff;
+            font-weight: bold;
+            border-top: 1px solid #3b1d7d;
+        }
+        @media(max-width: 750px) {
+            header { position: static; text-align: center; justify-content: center; }
+            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 40px; }
+            .moon { left: auto; right: 22px; width: 60px; height: 60px; }
+            .scene { transform: scale(.88); transform-origin: top center; margin-bottom: -25px; }
+            section { padding: 38px 5%; }
+            nav a { font-size: 13px; padding: 5px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">STUDENT SMART HUB 💜</div>
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#bscs">BSCS</a>
+            <a href="#cpp">C++</a>
+            <a href="#oop">OOP</a>
+            <a href="#korean">KOREAN</a>
+            <a href="#quizzes">QUIZZES</a>
+            <a href="#dream">MY DREAM</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="stars"></div>
+        <div class="moon"></div>
+        <div class="heroText">
+            <h1>LEARN • CODE • GROW</h1>
+            <p style="font-weight: bold; color: #d8b4fe;">WELCOME TO STUDENT SMART HUB</p>
+            <p>Your personal universe for BSCS, C++ programming, Korean learning and big dreams.</p>
+            <a href="#bscs" class="btn">EXPLORE MY LEARNING ↓</a>
+            <a href="#dream" class="btn" style="background:#4c1d95;">MY DREAM ✨</a>
+        </div>
+        <div class="scene">
+            <div class="hair"></div>
+            <div class="head"></div>
+            <div class="headphones"></div>
+            <div class="body-girl"></div>
+            <div class="laptop">
+                <div class="screen">
+<pre class="code">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  cout &lt;&lt; "Hello, Student!";
+  return 0;
+}</pre>
+                </div>
+                <div class="keyboard"></div>
+            </div>
+            <div class="hand left"></div>
+            <div class="hand right"></div>
+        </div>
+    </section>
+
+    <section id="bscs">
+        <h2>BSCS • FIRST SEMESTER</h2>
+        <p class="progress">CHOOSE A SUBJECT TO EXPLORE AND STUDY ONE CONCEPT AT A TIME.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>C++ PROGRAMMING</h3>
+                <p>Variables, data types, input/output, conditions, loops, arrays and pointers.</p>
+                <a href="#cpp" class="btn">OPEN C++ TOPICS</a>
+            </div>
+            <div class="card">
+                <h3>OBJECT-ORIENTED PROGRAMMING</h3>
+                <p>Classes, objects, constructors and the four pillars of OOP.</p>
+                <a href="#oop" class="btn">OPEN OOP</a>
+            </div>
+            <div class="card">
+                <h3>COMPUTER FUNDAMENTALS</h3>
+                <p>Hardware, software, input/output devices, storage and operating systems.</p>
+            </div>
+            <div class="card">
+                <h3>INFORMATION & COMMUNICATION TECHNOLOGY</h3>
+                <p>ICT, communication systems, networks and digital tools.</p>
+            </div>
+            <div class="card">
+                <h3>DISCRETE MATHEMATICS</h3>
+                <p>Sets, subsets, relations, Cartesian products and number systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cpp">
+        <h2>C++ TOPIC LIBRARY</h2>
+        <p class="progress">TAP ANY TOPIC TO READ AN EXPLANATION AND A SHORT EXAMPLE.</p>
+        <div id="cppContainer" class="grid"></div>
+    </section>
+
+    <section id="oop">
+        <h2>OOP • FOUR PILLARS</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>1. ENCAPSULATION</h3>
+                <p>Keeping data and related functions together inside a class and controlling access to data.</p>
+            </div>
+            <div class="card">
+                <h3>2. ABSTRACTION</h3>
+                <p>Showing important features and hiding unnecessary implementation details.</p>
+            </div>
+            <div class="card">
+                <h3>3. INHERITANCE</h3>
+                <p>A new class can reuse and extend features of an existing class.</p>
+            </div>
+            <div class="card">
+                <h3>4. POLYMORPHISM</h3>
+                <p>The same interface can have different behaviours, such as with function overloading.</p>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <h3>SIMPLE OOP PROGRAM EXAMPLE</h3>
+            <pre class="code explain">#include &lt;iostream&gt;
+using namespace std;
+
+class Student {
+public:
+    void greet() {
+        cout &lt;&lt; "Keep learning!";
+    }
+};
+
+int main() {
+    Student learner;
+    learner.greet();
+    return 0;
+}</pre>
+            <p style="margin-top: 10px; font-size: 14px; color: #c084fc;">* Student is a class; learner is an object; greet() is a member function.</p>
+        </div>
+    </section>
+
+    <section id="korean">
+        <h2>KOREAN LANGUAGE 🇰🇷</h2>
+        <p class="progress">LEARN USEFUL KOREAN WORDS AND PRACTISE PRONUNCIATION WITH YOUR BROWSER'S SPEECH FEATURE.</p>
+        <div id="koreanContainer" class="grid"></div>
+    </section>
+
+    <section id="quizzes">
+        <h2>KOREAN QUIZ ZONE</h2>
+        <p class="progress">PRACTICE KOREAN PHRASES AND AUDIO LISTENING PRACTICE.</p>
+        <div id="quizContainer" class="grid"></div>
+    </section>
+
+    <section id="dream">
+        <h2>MY DREAM • MY MINDSET</h2>
+        <div class="card" style="max-width: 850px; margin: 0 auto;">
+            <h3 style="color: #f0c7ff; font-size: 22px;">MY FUTURE, MY EFFORT 💜</h3>
+            <p>My dream is to complete my BSCS with strong grades, become confident in programming, learn Korean step by step and work towards a fully funded Master's scholarship in South Korea.</p>
+            <p>I believe progress comes from patience, consistency and practice. I can build my skills one topic, one program and one weekend at a time.</p>
+            <p><strong style="color: #a855f7;">MY MINDSET:</strong> I will ask questions, understand the logic, practise by myself and keep improving. My dream is a direction; my daily effort is how I move towards it.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>SMALL STEPS • BIG DREAMS • KEEP LEARNING 💜</p>
+    </footer>
+
+    <script>
+        // C++ Topics Object
+        const topics = {
+            "C++ BASICS": ["A C++ program uses statements and functions. main() is where execution begins.", '#include <iostream>\nusing namespace std;\nint main() {\n  cout << "Hello!";\n  return 0;\n}'],
+            "VARIABLES": ["A variable is a named place to store a value.", "int age = 18;\ndouble score = 92.5;\nchar grade = 'A';"],
+            "DATA TYPES": ["int stores whole numbers, double decimals, char one character and bool true/false.", "int count = 5;\ndouble price = 2.5;\nchar letter = 'B';\nbool passed = true;"],
+            "INPUT / OUTPUT": ["cin reads input; cout displays output.", "int age;\ncin >> age;\ncout << age;"],
+            "CONDITIONS": ["if/else lets a program make a decision.", "if (age >= 18) {\n  cout << \"Adult\";\n} else {\n  cout << \"Under 18\";\n}"],
+            "FOR LOOP": ["A for loop repeats code using a start, condition and update.", "for (int i=0; i<5; i++) {\n  cout << i << \" \";\n}"],
+            "WHILE LOOP": ["A while loop repeats while its condition is true.", "int i=0;\nwhile (i<3) {\n  cout << i;\n  i++;\n}"],
+            "ARRAYS": ["An array stores multiple values of the same type. Indexing starts at zero.", "int nums[3]={10,20,30};\ncout << nums[0];"],
+            "FUNCTIONS": ["A function is reusable code that performs a task.", "int add(int a,int b) {\n  return a+b;\n}"],
+            "POINTERS": ["A pointer stores a memory address. & gets an address; * accesses its value.", "int age=18;\nint* ptr=&age;\ncout << *ptr;"]
+        };
+
+        const cppContainer = document.getElementById('cppContainer');
+        for (let [key, val] of Object.entries(topics)) {
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.innerHTML = `<h3>${key}</h3><p>${val[0]}</p><pre class="code explain">${val[1]}</pre>`;
+            cppContainer.appendChild(div);
+        }
+
+        // Korean Words
+        const koreanWords = [
+            { ko: "안녕하세요", en: "Hello / Annyeonghaseyo" },
+            { ko: "감사합니다", en: "Thank You / Kamsahamnida" },
+            { ko: "학교", en: "School / Hakgyo" },
+            { ko: "선생님", en: "Teacher / Seonsaengnim" },
+            { ko: "학생", en: "Student / Haksaeng" },
+            { ko: "한국어", en: "Korean Language / Hangeugeo" },
+            { ko: "책", en: "Book / Chaek" },
+            { ko: "물", en: "Water / Mul" }
+        ];
+
+        const koreanContainer = document.getElementById('koreanContainer');
+        koreanWords.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.innerHTML = `<h3>${item.en}</h3><p style="font-size:20px; font-weight:bold; color:#f0c7ff;">${item.ko}</p><button class="btn" onclick="speakKorean('${item.ko}')">🔊 Listen Audio</button>`;
+            koreanContainer.appendChild(div);
+        });
+
+        // Speech Function
+        function speakKorean(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ko-KR';
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+    </script>
+</body>
+</html>
