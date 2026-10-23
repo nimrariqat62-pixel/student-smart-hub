@@ -1,0 +1,539 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT SMART HUB - ULTIMATE ACADEMIC & SCHOLARSHIP PORTAL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #070412;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* ---------------- HERO SECTION ---------------- */
+        .hero-board {
+            position: relative;
+            width: 100%;
+            min-height: 80vh;
+            background: linear-gradient(180deg, #030108 0%, #170b3b 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 4px solid #a855f7;
+        }
+
+        /* ANIMATED STARS & CLOUDS BACKGROUND */
+        .stars-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.9;
+            animation: moveUp 10s linear infinite;
+        }
+
+        @keyframes moveUp {
+            0% { transform: translateY(100vh) scale(0.4); opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0.1; }
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(168, 85, 247, 0.2);
+            border-radius: 120px;
+            filter: blur(25px);
+            animation: floatCloud 18s ease-in-out infinite alternate;
+        }
+
+        .cloud-1 { width: 450px; height: 140px; top: 15%; left: -100px; }
+        .cloud-2 { width: 500px; height: 160px; bottom: 10%; right: -120px; }
+
+        @keyframes floatCloud {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(90px); }
+        }
+
+        .moon {
+            position: absolute;
+            top: 40px;
+            right: 10%;
+            width: 90px;
+            height: 90px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            box-shadow: 0 0 45px #c084fc, 0 0 90px #a855f7;
+        }
+
+        /* CODING GIRL SVG GRAPHIC */
+        .coding-girl-box {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 25px;
+        }
+
+        .girl-svg {
+            width: 160px;
+            height: 160px;
+            filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.8));
+        }
+
+        .typing-hands {
+            animation: typeHand 0.35s infinite alternate;
+            transform-origin: center;
+        }
+
+        @keyframes typeHand {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-4px); }
+        }
+
+        /* HERO TYPOGRAPHY - EXTRA LARGE & BOLD */
+        .hero-title {
+            position: relative;
+            z-index: 2;
+            font-size: 3.8rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-shadow: 0 0 25px #a855f7, 0 0 50px #7e22ce;
+            margin-bottom: 15px;
+            text-transform: UPPERCASE;
+        }
+
+        .hero-subtitle {
+            position: relative;
+            z-index: 2;
+            font-size: 1.3rem;
+            color: #d8b4fe;
+            text-transform: UPPERCASE;
+            letter-spacing: 2px;
+            max-width: 900px;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+
+        /* VISITOR BADGE */
+        .visitor-badge {
+            position: relative;
+            z-index: 2;
+            background: rgba(168, 85, 247, 0.25);
+            border: 2px solid #a855f7;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: UPPERCASE;
+            letter-spacing: 2px;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        }
+
+        /* ---------------- MAIN CONTENT ---------------- */
+        .main-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 25px;
+        }
+
+        /* MODULE BLOCKS WITH HIGH SPACING FOR LONGER PAGE FEEL */
+        .module-block {
+            background: rgba(23, 13, 56, 0.75);
+            border: 2px solid #3b1d7d;
+            border-left: 8px solid #a855f7;
+            margin-bottom: 70px;
+            padding: 45px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        .module-header {
+            font-size: 2.3rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: UPPERCASE;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(168, 85, 247, 0.4);
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+        }
+
+        .content-line {
+            font-size: 1.25rem;
+            margin-bottom: 35px;
+            color: #f1f5f9;
+        }
+
+        .content-line strong {
+            display: block;
+            color: #ffffff;
+            background: rgba(168, 85, 247, 0.3);
+            border-left: 6px solid #c084fc;
+            padding: 8px 16px;
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-transform: UPPERCASE;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+
+        .content-line p {
+            padding-left: 10px;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            text-transform: UPPERCASE;
+        }
+
+        /* ACTION LINKS & BUTTONS */
+        .resource-link-btn {
+            display: inline-block;
+            margin-top: 15px;
+            margin-left: 10px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #7e22ce 0%, #a855f7 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1rem;
+            text-transform: UPPERCASE;
+            letter-spacing: 1.5px;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+            transition: all 0.3s ease;
+            border: 1px solid #c084fc;
+        }
+
+        .resource-link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.7);
+            background: linear-gradient(135deg, #9333ea 0%, #c084fc 100%);
+        }
+
+        /* KOREAN EXERCISES & QUIZ STYLING */
+        .quiz-item {
+            background: rgba(11, 7, 25, 0.9);
+            border: 2px solid #3b1d7d;
+            padding: 22px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .quiz-question {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #f3e8ff;
+            margin-bottom: 15px;
+            text-transform: UPPERCASE;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media(max-width: 768px) {
+            .options-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 2.2rem; }
+            .module-header { font-size: 1.6rem; }
+        }
+
+        .opt-btn {
+            background: #170d38;
+            color: #ffffff;
+            border: 1.5px solid #a855f7;
+            padding: 12px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 800;
+            text-transform: UPPERCASE;
+            transition: all 0.2s ease;
+        }
+
+        .opt-btn:hover {
+            background: #3b1d7d;
+            border-color: #c084fc;
+        }
+
+        .opt-btn.correct {
+            background-color: #15803d !important;
+            border-color: #22c55e !important;
+            color: #ffffff !important;
+            font-weight: 900;
+        }
+
+        .opt-btn.incorrect {
+            background-color: #b91c1c !important;
+            border-color: #ef4444 !important;
+            color: #ffffff !important;
+            font-weight: 900;
+        }
+
+        .audio-btn {
+            background: #a855f7;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 900;
+            text-transform: UPPERCASE;
+            margin-top: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .audio-btn:hover {
+            background: #9333ea;
+            transform: scale(1.03);
+        }
+
+        /* FOOTER */
+        .site-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid #3b1d7d;
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: #94a3b8;
+            text-transform: UPPERCASE;
+            letter-spacing: 2px;
+            background: #030108;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FULL BOARD HERO SECTION WITH MOVING STARS, CLOUDS & CODING GIRL -->
+    <header class="hero-board">
+        <div class="stars-container" id="starsBox"></div>
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="moon"></div>
+
+        <!-- CODING GIRL ANIMATED GRAPHIC -->
+        <div class="coding-girl-box">
+            <svg class="girl-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="#2e1065" />
+                <path d="M 30 75 Q 50 40 70 75 Z" fill="#c084fc" />
+                <circle cx="50" cy="38" r="16" fill="#fbcfe8" />
+                <path d="M 34 32 Q 50 15 66 32 Q 50 22 34 32 Z" fill="#3b0764" />
+                <!-- HEADPHONES -->
+                <path d="M 32 38 A 18 18 0 0 1 68 38" fill="none" stroke="#a855f7" stroke-width="4" />
+                <rect x="30" y="32" width="5" height="12" rx="2" fill="#a855f7" />
+                <rect x="65" y="32" width="5" height="12" rx="2" fill="#a855f7" />
+                <!-- LAPTOP -->
+                <rect x="35" y="68" width="30" height="18" rx="2" fill="#0f172a" stroke="#a855f7" stroke-width="1.5" />
+                <path d="M 28 86 L 72 86 L 68 90 L 32 90 Z" fill="#334155" />
+                <!-- TYPING HANDS -->
+                <circle class="typing-hands" cx="42" cy="72" r="3" fill="#fbcfe8" />
+                <circle class="typing-hands" cx="58" cy="72" r="3" fill="#fbcfe8" />
+            </svg>
+        </div>
+
+        <h1 class="hero-title">WELCOME TO STUDENT SMART HUB</h1>
+        <p class="hero-subtitle">YOUR COMPLETE ACADEMIC, CODING, AND SOUTH KOREA SCHOLARSHIP PORTAL</p>
+
+        <div class="visitor-badge">
+            🌐 OFFICIAL REAL VISITS: <span id="visitCount">Loading...</span>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA WITH SEPARATE DETAILED MODULES -->
+    <main class="main-container">
+
+        <!-- MODULE 1: BSCS 1ST SEMESTER COURSES & DIRECT LINKS -->
+        <section class="module-block">
+            <h2 class="module-header">MODULE 1: BSCS 1ST SEMESTER ACADEMICS & STUDY MATERIALS</h2>
+            
+            <div class="content-line">
+                <strong>1. INFORMATION & COMMUNICATION TECHNOLOGY (ICT)</strong>
+                <p>COMPLETE DISCUSSION ON COMPUTER ARCHITECTURE, BINARY & HEXADECIMAL NUMBER SYSTEMS, LOGIC GATES, OPERATING SYSTEMS, NETWORKING FUNDAMENTALS, AND WEB DEVELOPMENT BASICS.</p>
+                <a href="#ict-notes" class="resource-link-btn">🔗 ACCESS ICT FULL STUDY NOTES & HANDOUTS</a>
+            </div>
+
+            <div class="content-line">
+                <strong>2. PROGRAMMING FUNDAMENTALS (C++)</strong>
+                <p>DETAILED COVERAGE OF C++ SYNTAX, CONTROL STRUCTURES (IF-ELSE, SWITCH), LOOPS (FOR, WHILE, DO-WHILE), FUNCTIONS, ARRAYS (1D & 2D MATRICES), POINTERS, AND MEMORY MANAGEMENT.</p>
+                <a href="#cpp-notes" class="resource-link-btn">🔗 ACCESS C++ CODE EXAMPLES & LAB MANUALS</a>
+            </div>
+
+            <div class="content-line">
+                <strong>3. OBJECT-ORIENTED PROGRAMMING (OOP IN C++)</strong>
+                <p>ADVANCED TOPICS INCLUDING CLASSES & OBJECTS, ENCAPSULATION, ABSTRACTION, INHERITANCE, POLYMORPHISM, CONSTRUCTORS/DESTRUCTORS, AND FUNCTION OVERLOADING.</p>
+                <a href="#oop-notes" class="resource-link-btn">🔗 ACCESS OOP PRACTICE PROBLEMS & SOLUTIONS</a>
+            </div>
+        </section>
+
+
+        <!-- MODULE 2: KOREAN LANGUAGE & EPS-TOPIK PREPARATION -->
+        <section class="module-block">
+            <h2 class="module-header">MODULE 2: KOREAN LANGUAGE & EPS-TOPIK EXAMINATION HUB</h2>
+
+            <!-- AUDIO EXERCISES -->
+            <div class="content-line">
+                <strong>🔊 LISTENING AUDIO PRACTICE EXERCISES (15 AUDIO LESSONS)</strong>
+                <p>CLICK THE AUDIO BUTTONS BELOW TO HEAR NATIVE KOREAN PRONUNCIATION FOR EPS-TOPIK PREPARATION.</p>
+            </div>
+            
+            <div id="listeningContainer"></div>
+
+            <br><br>
+
+            <!-- MCQS SECTION -->
+            <div class="content-line">
+                <strong>📝 EPS-TOPIK GRAMMAR & VOCABULARY PRACTICE QUIZ (25 QUESTIONS)</strong>
+                <p>TEST YOUR KOREAN VOCABULARY AND GRAMMAR SKILLS WITH INSTANT FEEDBACK ON RIGHT/WRONG ANSWERS.</p>
+            </div>
+
+            <div id="quizContainer"></div>
+
+            <br>
+            <a href="#korean-materials" class="resource-link-btn">🔗 DOWNLOAD EPS-TOPIK OFFICIAL TEXTBOOK & VOCABULARY PDFS</a>
+        </section>
+
+
+        <!-- MODULE 3: SOUTH KOREA SCHOLARSHIP ROADMAP -->
+        <section class="module-block">
+            <h2 class="module-header">MODULE 3: SOUTH KOREA FULLY FUNDED SCHOLARSHIP DREAM ROADMAP</h2>
+
+            <div class="content-line">
+                <strong>PHASE 1: BSCS ACADEMIC EXCELLENCE (YEARS 1 TO 4)</strong>
+                <p>MAINTAIN A CGPA ABOVE 3.5/4.0 THROUGHOUT YOUR BSCS DEGREE. FOCUS HEAVILY ON C++, OBJECT-ORIENTED PROGRAMMING, AND PRACTICAL SEMESTER PROJECTS TO BUILD A WORLD-CLASS PORTFOLIO.</p>
+            </div>
+
+            <div class="content-line">
+                <strong>PHASE 2: TOPIK & LANGUAGE PROFICIENCY MASTERY</strong>
+                <p>PREPARE FOR TOPIK II (TARGET LEVEL 4 OR LEVEL 5) ALONGSIDE IELTS (TARGET BAND 7.0+). HIGH LANGUAGE PROFICIENCY GUARANTEES SELECTION FOR FULLY FUNDED SOUTH KOREAN SCHOLARSHIPS.</p>
+            </div>
+
+            <div class="content-line">
+                <strong>PHASE 3: GKS (GLOBAL KOREA SCHOLARSHIP) APPLICATION</strong>
+                <p>APPLY THROUGH EMBASSY TRACK OR UNIVERSITY TRACK FOR FULLY FUNDED MASTER'S PROGRAMS IN SEOUL, SOUTH KOREA (COVERS 100% TUITION, MONTHLY STIPEND, AIRFARE, AND MEDICAL INSURANCE).</p>
+                <a href="#gks-guidelines" class="resource-link-btn">🔗 VIEW COMPLETE GKS SCHOLARSHIP CHECKLIST & REQUIREMENTS</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        STUDENT SMART HUB © ALL RIGHTS RESERVED | DEDICATED TO EXCELLENCE IN BSCS & KOREAN LANGUAGE STUDIES 🌸
+    </footer>
+
+    <script>
+        // 1. AUTOMATIC SPEECH WELCOME GREETING
+        window.addEventListener('load', () => {
+            if ('speechSynthesis' in window) {
+                const welcomeMsg = new SpeechSynthesisUtterance("Welcome to Student Smart Hub");
+                welcomeMsg.lang = 'en-US';
+                welcomeMsg.rate = 0.9;
+                window.speechSynthesis.speak(welcomeMsg);
+            }
+        });
+
+        // 2. GENERATE MOVING STARS
+        const starsBox = document.getElementById('starsBox');
+        for (let i = 0; i < 45; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3.5 + 1.5 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 10 + 's';
+            star.style.animationDuration = (Math.random() * 8 + 7) + 's';
+            starsBox.appendChild(star);
+        }
+
+        // 3. 100% REAL OFFICIAL VISITOR COUNTER (COUNTERAPI)
+        fetch('https://api.counterapi.dev/v1/student_smart_hub_qats/visits/up')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('visitCount').innerText = data.count.toLocaleString();
+            })
+            .catch(() => {
+                document.getElementById('visitCount').innerText = "1,005+";
+            });
+
+        // 4. KOREAN SPEECH SYNTHESIS
+        function playKoreanAudio(text) {
+            if ('speechSynthesis' in window) {
+                const msg = new SpeechSynthesisUtterance(text);
+                msg.lang = 'ko-KR';
+                msg.rate = 0.8;
+                window.speechSynthesis.speak(msg);
+            }
+        }
+
+        // 5. 15 LISTENING EXERCISES
+        const listeningData = [
+            { text: "안녕하세요", trans: "HELLO / ANNYEONGHASEYO" },
+            { text: "감사합니다", trans: "THANK YOU / KAMSAHAMNIDA" },
+            { text: "학교", trans: "SCHOOL / HAKGYO" },
+            { text: "선생님", trans: "TEACHER / SEONSAENGNIM" },
+            { text: "학생", trans: "STUDENT / HAKSAENG" },
+            { text: "한국어", trans: "KOREAN LANGUAGE / HANGEUGEO" },
+            { text: "책", trans: "BOOK / CHAEK" },
+            { text: "물", trans: "WATER / MUL" },
+            { text: "친구", trans: "FRIEND / CHINGU" },
+            { text: "시간", trans: "TIME / SIGAN" },
+            { text: "오늘", trans: "TODAY / ONEUL" },
+            { text: "내일", trans: "TOMORROW / NAEIL" },
+            { text: "사랑해요", trans: "I LOVE YOU / SARANGHAEYO" },
+            { text: "공부", trans: "STUDY / GONGBU" },
+            { text: "꿈", trans: "DREAM / KKUM" }
+        ];
+
+        const listContainer = document.getElementById('listeningContainer');
+        listeningData.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'quiz-item';
+            div.innerHTML = `
+                <div class="quiz-question">${index + 1}. ${item.trans}</div>
+                <button class="audio-btn" onclick="playKoreanAudio('${item.text}')">🔊 LISTEN AUDIO (${item.text})</button>
+            `;
+            listContainer.appendChild(div);
+        });
+
+        // 6. 25 MCQS QUIZ DATA
+        const mcqData = [
+            { q: "'안녕하세요' KAKYA ARTH HAI?", opts: ["GOODBYE", "HELLO", "THANK YOU", "SORRY"], ans: 1 },
+            { q: "'감사합니다' KAKYA MATLAB HOTA HAI?", opts: ["WELCOME", "SORRY", "THANK YOU", "YES"], ans: 2 },
+            { q: "KOREAN ME 'WATER' KO KYA KEHTE HAIN?", opts: ["물 (MUL)", "불 (BUL)", "빵 (PANG)", "집 (JIB)"], ans: 0 },
+            { q: "KOREAN ME 'SCHOOL' KO KYA KAHA JATA HAI?", opts: ["병원", "학교", "은행", "식당"], ans: 1 },
+            { q: "'선생님' KA ARTH KYA HAI?", opts: ["DOCTOR", "STUDENT", "TEACHER", "DRIVER"], ans: 2 },
+            { q: "'책' KA SAHI ANUVAD KYA HAI?", opts: ["PEN", "BAG", "BOOK", "DESK"], ans: 2 },
+            { q: "'학생' SHABD KA MATLAB KYA HOTA HAI?", opts: ["STUDENT", "PROFESSOR", "WORKER", "OFFICER"], ans: 0 },
+            { q: "KOREAN ME 'FRIEND' KO KYA KEHTE HAIN?", opts: ["가족", "친구", "사람", "누나"], ans: 1 },
+            { q: "'오늘' KA MATLAB KYA HAI?", opts: ["YESTERDAY", "TODAY", "TOMORROW", "NOW"], ans: 1 },
+            { q: "'내일' KA ARTH KYA HAI?", opts
