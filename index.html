@@ -2,222 +2,443 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Smart Hub</title>
-    <link rel="stylesheet" href="style.css">
-   <style>
-/* Full-Screen Clean Welcome Overlay (No Cards/Boxes) */
-#welcome-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #0d0a1a;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Smart Hub 💜</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #05051b;
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background: #10052b;
+    border-bottom: 1px solid #a855f7;
+    color: #e9b8ff;
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    z-index: 5;
+}
+
+.hero {
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 45px 6%;
+    background: linear-gradient(#080725, #18083c 75%, #08051c);
+}
+
+/* MOVING STARS */
+.stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(white 1px, transparent 1.5px),
+      radial-gradient(#c084fc 1px, transparent 1.5px),
+      radial-gradient(#818cf8 2px, transparent 2.5px);
+    background-size: 70px 70px, 110px 110px, 170px 170px;
+    animation: starMove 18s linear infinite;
+}
+
+@keyframes starMove {
+    from { background-position: 0 0, 20px 30px, 0 0; }
+    to { background-position: 0 700px, 300px 500px, 150px 600px; }
+}
+
+/* MOVING MOON */
+.moon {
+    position: absolute;
+    top: 55px;
+    left: 52%;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background: #f5ddff;
+    box-shadow: 0 0 25px #e9a8ff,
+                0 0 70px #a855f7;
+    animation: moonFloat 4s ease-in-out infinite;
+}
+
+@keyframes moonFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+}
+
+.intro, .scene {
+    position: relative;
+    z-index: 2;
+}
+
+.intro {
+    max-width: 440px;
+}
+
+.intro h1 {
+    font-size: clamp(32px, 5vw, 55px);
+    color: #d8a5ff;
+    text-shadow: 0 0 18px #9333ea;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #e9ddff;
+}
+
+.tagline {
+    margin-top: 22px;
+    color: #e879f9;
+    letter-spacing: 2px;
+}
+
+/* CODING GIRL SCENE */
+.scene {
+    width: 350px;
+    height: 370px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    z-index: 9999;
+    justify-content: flex-end;
+}
+
+/* HAIR AND HEAD */
+.head {
+    width: 115px;
+    height: 120px;
+    position: absolute;
+    top: 22px;
+    z-index: 3;
+    border-radius: 48% 48% 45% 45%;
+    background: linear-gradient(120deg, #21102e, #090718);
+    border: 2px solid #6936a8;
+    box-shadow: 0 0 20px #8b5cf6;
+}
+
+.head::before {
+    content: "";
+    position: absolute;
+    width: 115px;
+    height: 62px;
+    top: -8px;
+    left: -4px;
+    border-radius: 60% 50% 30% 20%;
+    background: #10091e;
+    transform: rotate(-8deg);
+}
+
+.head::after {
+    content: "";
+    position: absolute;
+    width: 27px;
+    height: 62px;
+    top: 25px;
+    left: -8px;
+    border-radius: 50%;
+    background: #170b26;
+    transform: rotate(20deg);
+}
+
+.headphones {
+    position: absolute;
+    z-index: 4;
+    top: 38px;
+    width: 128px;
+    height: 100px;
+    border: 8px solid #a855f7;
+    border-bottom-color: transparent;
+    border-radius: 65px 65px 0 0;
+}
+
+.headphones::before,
+.headphones::after {
+    content: "";
+    position: absolute;
+    top: 43px;
+    width: 19px;
+    height: 35px;
+    border-radius: 8px;
+    background: #c084fc;
+    box-shadow: 0 0 12px #c084fc;
+}
+
+.headphones::before { left: -12px; }
+.headphones::after { right: -12px; }
+
+.body-girl {
+    position: absolute;
+    bottom: 48px;
+    width: 205px;
+    height: 175px;
+    border-radius: 70px 70px 10px 10px;
+    background: linear-gradient(100deg, #160b2a, #31204d);
+    border: 2px solid #6336a1;
+    z-index: 2;
+}
+
+.body-girl::after {
+    content: "💜";
+    position: absolute;
+    top: 75px;
+    left: 80px;
+    font-size: 24px;
+}
+
+/* LAPTOP */
+.laptop {
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+    height: 155px;
+    z-index: 4;
+}
+
+.screen {
+    height: 125px;
+    padding: 12px;
+    border: 5px solid #8870b8;
+    border-radius: 10px 10px 3px 3px;
+    background: #050713;
+    box-shadow: 0 0 20px #7c3aed;
+    overflow: hidden;
+    font: 11px/1.8 monospace;
+    color: #86efac;
+}
+
+.screen .pink { color: #f0abfc; }
+.screen .blue { color: #93c5fd; }
+
+.keyboard {
+    height: 18px;
+    margin: auto;
+    width: 320px;
+    background: linear-gradient(#c4b5fd, #514070);
+    clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+}
+
+/* ARMS AND TYPING FINGERS */
+.arm {
+    position: absolute;
+    bottom: 65px;
+    z-index: 5;
+    width: 105px;
+    height: 19px;
+    border-radius: 20px;
+    background: #a978d8;
+    transform-origin: right center;
+}
+
+.arm.left {
+    left: 45px;
+    transform: rotate(-18deg);
+}
+
+.arm.right {
+    right: 45px;
+    transform: rotate(18deg);
+}
+
+.hand {
+    position: absolute;
+    bottom: 65px;
+    z-index: 6;
+    width: 35px;
+    height: 13px;
+    border-radius: 10px;
+    background: #f0c3ff;
+}
+
+.hand.left { left: 113px; }
+.hand.right { right: 113px; }
+
+.finger {
+    position: absolute;
+    width: 5px;
+    height: 17px;
+    top: -9px;
+    border-radius: 5px;
+    background: #f0c3ff;
+    animation: typeTap 0.35s ease-in-out infinite alternate;
+}
+
+.finger:nth-child(1) { left: 5px; }
+.finger:nth-child(2) { left: 13px; animation-delay: .12s; }
+.finger:nth-child(3) { left: 21px; animation-delay: .2s; }
+
+@keyframes typeTap {
+    from { transform: translateY(0); }
+    to { transform: translateY(6px); }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+    padding: 35px 6%;
+    background: #08051c;
+}
+
+.card {
     text-align: center;
-    padding: 20px;
-    opacity: 1;
-    transition: opacity 0.5s ease;
+    padding: 28px 15px;
+    border: 1px solid #8138d7;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #1c0b3a, #090b28);
+    box-shadow: 0 0 14px #5b21b633;
+    transition: transform .3s, box-shadow .3s;
 }
 
-#welcome-overlay h2 {
-    font-size: 2.8rem;
-    font-weight: 900;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px #a855f7;
+}
+
+.card h2 {
+    color: #d8b4fe;
+    font-size: 19px;
     margin-bottom: 12px;
-    line-height: 1.2;
 }
 
-#welcome-overlay .subtitle {
-    font-size: 1.3rem;
-    color: #a78bfa;
-    margin-bottom: 35px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.card p {
+    color: #d9d5ef;
+    line-height: 1.7;
 }
 
-.feature-slider {
-    font-size: 1.25rem;
-    color: #f3f4f6;
-    margin-bottom: 45px;
-    min-height: 45px;
-    font-weight: 500;
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #d8b4fe;
 }
 
-.feature-item {
-    display: none;
-}
-
-.feature-item.active {
-    display: block;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.start-btn {
-    background: linear-gradient(135deg, #7c3aed, #6d28d9);
-    color: #ffffff;
-    border: none;
-    padding: 16px 45px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 50px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
-}
-
-.start-btn:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.6);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+@media (max-width: 600px) {
+    .hero { padding: 45px 15px; }
+    .moon { left: auto; right: 35px; width: 65px; height: 65px; }
+    .scene { transform: scale(.88); margin: -15px 0; }
+    .intro { text-align: center; }
 }
 </style>
-
 </head>
+
 <body>
-<!-- Full Screen Smart Hub Voice Welcome Overlay -->
-<div id="welcome-overlay">
-    <h2>WELCOME TO STUDENT SMART HUB</h2>
-    <p class="subtitle">YOUR ALL-IN-ONE ACADEMIC & TECH PORTFOLIO</p>
-    
-    <div class="feature-slider">
-        <div class="feature-item active">🇰🇷 <span>STEP 1: KOREAN LANGUAGE & AUDIO PRACTICE</span></div>
-        <div class="feature-item">🎓 <span>STEP 2: BSCS STUDY NOTES & ACADEMIC GUIDES</span></div>
-        <div class="feature-item">💻 <span>STEP 3: C++ PROGRAMMING & OOP CONCEPTS</span></div>
-        <div class="feature-item">⚡ <span>STEP 4: DATA STRUCTURES & ALGORITHMS PROJECTS</span></div>
+
+<header>🎓 Student Smart Hub 💜</header>
+
+<section class="hero">
+    <div class="stars"></div>
+    <div class="moon"></div>
+
+    <div class="intro">
+        <h1>Welcome to Student Smart Hub ✨</h1>
+        <p>Your little universe for Korean learning, coding,
+        BSCS notes, C++ programs and MCQs.</p>
+        <div class="tagline">LEARN ✦ CODE ✦ GROW ✦ ACHIEVE</div>
     </div>
 
-    <button onclick="closeWelcome()" class="start-btn">START EXPLORING 🚀</button>
-</div>
+    <div class="scene">
+        <div class="head"></div>
+        <div class="headphones"></div>
+        <div class="body-girl"></div>
 
+        <div class="arm left"></div>
+        <div class="arm right"></div>
 
-    <!-- Header Section -->
-    <header>
-        <div class="logo">🎓 Student Smart Hub</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="semester1.html">Study Guides</a></li>
-                <li><a href="Korean.html">Korean Study</a></li>
-                <li><a href="#planner">Planner</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Empowering Students with Smart Guidance</h1>
-        <p>Your all-in-one platform for C++ concepts, Korean language prep, and academic roadmap support.</p>
-        <a href="#modules" class="hero-btn">Explore Hub</a>
-    </section>
-
-    <!-- Modules Section -->
-    <section id="modules" class="features">
-        <h2>📌 Explore Modules</h2>
-        <div class="card-container">
-            
-            <!-- Card 1: CS & C++ -->
-            <div class="card">
-                <h3>📚 CS & C++ Notes</h3>
-                <p>Simplified breakdowns of Programming Fundamentals (C++), ICT, and 1st-semester concepts.</p>
-                <a href="semester1.html" class="hero-btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0.8rem; display: inline-block;">Open Guides ➔</a>
-            </div>
-
-            <!-- Card 2: Korean Corner -->
-            <div class="card">
-                <h3>🇰🇷 Korean Language Corner</h3>
-                <p>Master Hangul alphabet, listen to audio pronunciations, practice interactive quizzes, and prepare for TOPIK.</p>
-                <a href="Korean.html" class="hero-btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0.8rem; display: inline-block;">Start Learning ➔</a>
-            </div>
-
-            <!-- Card 3: Daily Planner -->
-            <div class="card" id="planner">
-                <h3>🧠 Daily Planner</h3>
-                <p>Track your daily study routine, assignments, and goals systematically.</p>
-            </div>
-
-            <!-- Card 4: Roadmap & Scholarships -->
-            <div class="card">
-                <h3>🎯 Roadmap & Scholarships</h3>
-                <p>Step-by-step career direction and fully-funded scholarship advice.</p>
-            </div>
-
+        <div class="hand left">
+            <span class="finger"></span>
+            <span class="finger"></span>
+            <span class="finger"></span>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Student Smart Hub | Built with ❤️ for Ambitious Learners</p>
-    </footer>
+        <div class="hand right">
+            <span class="finger"></span>
+            <span class="finger"></span>
+            <span class="finger"></span>
+        </div>
 
-    <script>
-// Step-by-Step Feature Loop & Natural Voice Greeting
-let currentFeature = 0;
-const features = document.querySelectorAll('.feature-item');
+        <div class="laptop">
+            <div class="screen">
+                <span class="pink">#include</span>
+                <span class="blue">&lt;iostream&gt;</span><br>
+                using namespace std;<br><br>
+                <span class="pink">int</span> main() {<br>
+                &nbsp; cout &lt;&lt; <span class="blue">"Hello, Student!"</span>;<br>
+                &nbsp; <span class="pink">return</span> 0;<br>
+                }
+            </div>
+            <div class="keyboard"></div>
+        </div>
+    </div>
+</section>
 
-function rotateFeatures() {
-    features.forEach((item, index) => {
-        item.style.display = (index === currentFeature) ? 'block' : 'none';
-    });
-    currentFeature = (currentFeature + 1) % features.length;
-}
+<section class="cards">
+    <div class="card">
+        <h2>🇰🇷 Korean Learning</h2>
+        <p>Vocabulary • Grammar • Listening • Practice</p>
+    </div>
 
-// Step-by-Step Voice Speech Function for Main Page
-function speakWelcomeMessage() {
-    if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        
-        const welcomeText = "Welcome to Student Smart Hub! Explore interactive Korean language audio practice, access BSCS semester study notes, and learn C++ coding with data structures and real-world projects.";
-        
-        const utterance = new SpeechSynthesisUtterance(welcomeText);
-        utterance.lang = 'en-US';
-        utterance.rate = 0.92;
-        utterance.pitch = 1.0;
-        
-        window.speechSynthesis.speak(utterance);
-    }
-}
+    <div class="card">
+        <h2>🎓 BSCS Subjects</h2>
+        <p>ICT • C++ • Mathematics • Islamiat</p>
+    </div>
 
-window.addEventListener('DOMContentLoaded', () => {
-    if (features.length > 0) {
-        rotateFeatures();
-        setInterval(rotateFeatures, 2800);
-    }
-    
-    setTimeout(() => {
-        speakWelcomeMessage();
-    }, 500);
-});
+    <div class="card">
+        <h2>📚 Study Notes</h2>
+        <p>Definitions • Examples • Important Topics</p>
+    </div>
 
-function closeWelcome() {
-    if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-    }
-    
-    const overlay = document.getElementById('welcome-overlay');
-    overlay.style.opacity = '0';
-    setTimeout(() => {
-        overlay.style.display = 'none';
-    }, 500);
-}
-</script>
+    <div class="card">
+        <h2>💻 C++ Programs</h2>
+        <p>Basics • Loops • Arrays • OOP</p>
+    </div>
+
+    <div class="card">
+        <h2>📝 MCQs</h2>
+        <p>Practice questions to test your knowledge</p>
+    </div>
+</section>
+
+<footer>💜 Small Steps • Big Dreams • Keep Learning</footer>
+
 </body>
 </html>
+
+
+
+
+ 
+    
+
+            
+
+        
+      
+   
+       
+       
+        
+        
+       
+        
+    
+    
+    
 
   
  
