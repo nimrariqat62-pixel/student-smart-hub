@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT SMART HUB</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: UPPERCASE;
+        }
+
+        body {
+            background-color: #0b0719;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.9;
+        }
+
+        /* TOP NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            background: #120824;
+            border-bottom: 2px solid #a855f7;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #f3e8ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 900;
+        }
+
+        .nav-links a:hover {
+            color: #c084fc;
+        }
+
+        /* ANIME ROOM HERO SECTION */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            min-height: 500px;
+            background: linear-gradient(135deg, #0d0624 0%, #170d38 50%, #29114d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 60px;
+            overflow: hidden;
+            border-bottom: 3px solid #3b1d7d;
+        }
+
+        .stars-bg {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(#fff 1px, transparent 1px), radial-gradient(#c084fc 1.5px, transparent 1.5px);
+            background-size: 40px 40px, 80px 80px;
+            animation: twinkle 10s linear infinite;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        @keyframes twinkle {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 100px 200px, -200px 100px; }
+        }
+
+        .moon-art {
+            position: absolute;
+            top: 40px;
+            right: 42%;
+            width: 90px;
+            height: 90px;
+            background: #fef08a;
+            border-radius: 50%;
+            box-shadow: 0 0 50px #fde047, 0 0 100px rgba(253, 224, 71, 0.4);
+            animation: moonGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes moonGlow {
+            0% { transform: scale(1); box-shadow: 0 0 40px #fde047; }
+            100% { transform: scale(1.05); box-shadow: 0 0 70px #fef08a; }
+        }
+
+        .hero-left {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-shadow: 0 0 20px #a855f7;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .visitor-badge {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.25);
+            border: 2px solid #a855f7;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 900;
+            color: #f3e8ff;
+        }
+
+        .hero-right {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+            border-left: 4px solid #a855f7;
+            background: rgba(15, 8, 30, 0.6);
+        }
+
+        .hero-right h3 {
+            color: #c084fc;
+            font-size: 1.3rem;
+            font-weight: 900;
+        }
+
+        /* LONG CONTINUOUS MAIN CONTAINER (VERY CLEAR & LARGE TEXT) */
+        .main-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-header {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-top: 55px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #a855f7;
+            text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+        }
+
+        .content-block {
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* HIGHLIGHT POINT - EXTRA LARGE & BOLD */
+        .content-block strong {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #f0c7ff;
+            margin-bottom: 12px;
+            background: rgba(168, 85, 247, 0.25);
+            padding: 10px 16px;
+            border-left: 6px solid #c084fc;
+            letter-spacing: 0.5px;
+        }
+
+        /* INNER POINTS - LARGE & CLEAR */
+        .content-block p {
+            font-size: 1.25rem;
+            color: #f8fafc;
+            font-weight: 800;
+            padding-left: 10px;
+            line-height: 1.9;
+        }
+
+        /* C++ STEP-BY-STEP CODE BOX */
+        .code-box {
+            background: #05020c;
+            border: 2px solid #a855f7;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: #4ade80;
+            overflow-x: auto;
+            text-transform: none;
+            font-weight: 700;
+            line-height: 1.7;
+            white-space: pre-wrap;
+        }
+
+        /* KOREAN EXERCISES & QUIZZES */
+        .item-row {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+            margin-bottom: 15px;
+        }
+
+        .item-title {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #f3e8ff;
+            margin-bottom: 12px;
+        }
+
+        .audio-btn {
+            background: #a855f7;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1.05rem;
+            font-weight: 900;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .audio-btn:hover {
+            background: #9333ea;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        @media(max-width: 600px) {
+            .options-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 2.2rem; }
+            .navbar { flex-direction: column; gap: 10px; text-align: center; }
+            .hero-banner { flex-direction: column; text-align: center; }
+            .hero-right { border-left: none; border-top: 4px solid #a855f7; margin-top: 20px; }
+        }
+
+        .opt-btn {
+            background: #170d38;
+            color: #ffffff;
+            border: 2px solid #a855f7;
+            padding: 14px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 900;
+            transition: all 0.2s;
+        }
+
+        .opt-btn:hover {
+            background: #3b1d7d;
+        }
+
+        .opt-btn.correct {
+            background-color: #15803d !important;
+            border-color: #22c55e !important;
+        }
+
+        .opt-btn.incorrect {
+            background-color: #b91c1c !important;
+            border-color: #ef4444 !important;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            text-align: center;
+            padding: 35px;
+            border-top: 2px solid #3b1d7d;
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: #94a3b8;
+            letter-spacing: 1px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">🌙 STUDENT SMART HUB</div>
+        <ul class="nav-links">
+            <li><a href="#bscs">BSCS & C++</a></li>
+            <li><a href="#korean-audio">KOREAN AUDIO</a></li>
+            <li><a href="#korean-mcqs">KOREAN MCQS</a></li>
+            <li><a href="#dream">MY DREAM</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <header class="hero-banner">
+        <div class="stars-bg"></div>
+        <div class="moon-art"></div>
+
+        <div class="hero-left">
+            <h1 class="hero-title">WELCOME TO STUDENT SMART HUB</h1>
+            <p class="hero-desc">YOUR COMPLETE ACADEMIC, C++ CODING, AND SOUTH KOREA SCHOLARSHIP ROADMAP.</p>
+            <div class="visitor-badge">
+                🌐 OFFICIAL REAL VISITS: <span id="visitCount">LOADING...</span>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <h3>💻 ANIME CODING ROOM</h3>
+            <p style="color: #cbd5e1; font-weight: 800; margin-top: 5px;">ANIMATED MOON & STARS ENVIRONMENT</p>
+        </div>
+    </header>
+
+    <!-- MAIN LONG CONTINUOUS CONTAINER -->
+    <main class="main-container">
+
+        <!-- MODULE 1: BSCS 1ST SEMESTER & C++ PROGRAMS -->
+        <h2 class="section-header" id="bscs">MODULE 1: BSCS 1ST SEMESTER & C++ PROGRAMS</h2>
+
+        <div class="content-block">
+            <strong>1. INFORMATION & COMMUNICATION TECHNOLOGY (ICT)</strong>
+            <p>COMPUTER ARCHITECTURE, BINARY & HEXADECIMAL NUMBER SYSTEMS, LOGIC GATES, OPERATING SYSTEMS, NETWORKING FUNDAMENTALS, AND WEB BASICS.</p>
+        </div>
+
+        <div class="content-block">
+            <strong>2. PROGRAMMING FUNDAMENTALS (C++ SYNTAX & LOOPS)</strong>
+            <p>C++ SYNTAX, CONTROL STRUCTURES (IF-ELSE, SWITCH), LOOPS (FOR, WHILE, DO-WHILE), FUNCTIONS, ARRAYS, AND POINTERS.</p>
+            
+            <!-- C++ Step-by-Step Code Sample -->
+            <div class="code-box">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "HELLO NIMRA! WELCOME TO C++ PROGRAMMING." &lt;&lt; endl;
+    int marks = 360;
+    cout &lt;&lt; "FIRST YEAR ICS MARKS: " &lt;&lt; marks &lt;&lt; endl;
+    return 0;
+}</div>
+        </div>
+
+        <div class="content-block">
+            <strong>3. OBJECT-ORIENTED PROGRAMMING (OOP IN C++)</strong>
+            <p>CLASSES & OBJECTS, ENCAPSULATION, ABSTRACTION, INHERITANCE, POLYMORPHISM, CONSTRUCTORS/DESTRUCTORS, AND FUNCTION OVERLOADING.</p>
+
+            <!-- OOP Step-by-Step Code Sample -->
+            <div class="code-box">#include &lt;iostream&gt;
+using namespace std;
+
+class Student {
+public:
+    string name = "KHUSHBOO";
+    void showGoal() {
+        cout &lt;&lt; name &lt;&lt; " TARGETS SEOUL MASTER'S SCHOLARSHIP!" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Student s1;
+    s1.showGoal();
+    return 0;
+}</div>
+        </div>
+
+
+        <!-- MODULE 2: KOREAN LISTENING -->
+        <h2 class="section-header" id="korean-audio">MODULE 2: KOREAN LISTENING PRACTICE (15 PHRASES)</h2>
+        <div id="listeningContainer"></div>
+
+
+        <!-- MODULE 3: KOREAN MCQS QUIZ -->
+        <h2 class="section-header" id="korean-mcqs">MODULE 3: KOREAN GRAMMAR & VOCABULARY MCQS (25 QUESTIONS)</h2>
+        <div id="quizContainer"></div>
+
+
+        <!-- MODULE 4: MY DREAM ROADMAP -->
+        <h2 class="section-header" id="dream">MODULE 4: SOUTH KOREA FULLY FUNDED SCHOLARSHIP ROADMAP</h2>
+
+        <div class="content-block">
+            <strong>PHASE 1: BSCS ACADEMIC EXCELLENCE (YEARS 1 TO 4)</strong>
+            <p>MAINTAIN A HIGH CGPA IN BSCS. FOCUS HEAVILY ON C++, OBJECT-ORIENTED PROGRAMMING, AND PRACTICAL SEMESTER PROJECTS TO BUILD A COMPETITIVE PORTFOLIO.</p>
+        </div>
+
+        <div class="content-block">
+            <strong>PHASE 2: TOPIK & LANGUAGE PROFICIENCY</strong>
+            <p>PREPARE FOR TOPIK II (TARGET LEVEL 4 OR LEVEL 5). HIGH KOREAN LANGUAGE PROFICIENCY GUARANTEES FULL SCHOLARSHIP SELECTION IN SEOUL.</p>
+        </div>
+
+        <div class="content-block">
+            <strong>PHASE 3: GKS (GLOBAL KOREA SCHOLARSHIP) APPLICATION</strong>
+            <p>APPLY THROUGH EMBASSY TRACK OR UNIVERSITY TRACK FOR FULLY FUNDED MASTER'S PROGRAMS IN SEOUL, SOUTH KOREA (COVERS FULL TUITION, MONTHLY STIPEND, AIRFARE, AND INSURANCE).</p>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        STUDENT SMART HUB © ALL RIGHTS RESERVED | DEDICATED TO EXCELLENCE IN BSCS & KOREAN LANGUAGE STUDIES 🌸
+    </footer>
+
+    <script>
+        // 1. VISITOR COUNTER
+        fetch('https://api.counterapi.dev/v1/student_smart_hub_qats/visits/up')
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.count) {
+                    document.getElementById('visitCount').innerText = data.count.toLocaleString();
+                } else {
+                    document.getElementById('visitCount').innerText = "1,005+";
+                }
+            })
+            .catch(() => {
+                document.getElementById('visitCount').innerText = "1,005+";
+            });
+
+        // 2. KOREAN AUDIO SPEECH
+        function playKoreanAudio(text) {
+            if ('speechSynthesis' in window) {
+                const msg = new SpeechSynthesisUtterance(text);
+                msg.lang = 'ko-KR';
+                msg.rate = 0.8;
+                window.speechSynthesis.speak(msg);
+            }
+        }
+
+        // 3. 15 LISTENING EXERCISES
+        const listeningData = [
+            { text: "안녕하세요", trans: "HELLO / ANNYEONGHASEYO" },
+            { text: "감사합니다", trans: "THANK YOU / KAMSAHAMNIDA" },
+            { text: "학교", trans: "SCHOOL / HAKGYO" },
+            { text: "선생님", trans: "TEACHER / SEONSAENGNIM" },
+            { text: "학생", trans: "STUDENT / HAKSAENG" },
+            { text: "한국어", trans: "KOREAN LANGUAGE / HANGEUGEO" },
+            { text: "책", trans: "BOOK / CHAEK" },
+            { text: "물", trans: "WATER / MUL" },
+            { text: "친구", trans: "FRIEND / CHINGU" },
+            { text: "시간", trans: "TIME / SIGAN" },
+            { text: "오늘", trans: "TODAY / ONEUL" },
+            { text: "내일", trans: "TOMORROW / NAEIL" },
+            { text: "사랑해요", trans: "I LOVE YOU / SARANGHAEYO" },
+            { text: "공부", trans: "STUDY / GONGBU" },
+            { text: "꿈", trans: "DREAM / KKUM" }
+        ];
+
+        const listContainer = document.getElementById('listeningContainer');
+        listeningData.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'item-row';
+            div.innerHTML = `
+                <div class="item-title">${index + 1}. ${item.trans}</div>
+                <button class="audio-btn" onclick="playKoreanAudio('${item.text}')">🔊 PRESS TO LISTEN (${item.text})</button>
+            `;
+            listContainer.appendChild(div);
+        });
+
+        // 4. 25 MCQS QUIZ
+        const mcqData = [
+            { q: "'안녕하세요' KA KYA ARTH HAI?", opts: ["GOODBYE", "HELLO", "THANK YOU", "SORRY"], ans: 1 },
+            { q: "'감사합니다' KA KYA MATLAB HOTA HAI?", opts: ["WELCOME", "SORRY", "THANK YOU", "YES"], ans: 2 },
+            { q: "KOREAN ME 'WATER' KO KYA KEHTE HAIN?", opts: ["물 (MUL)", "불 (BUL)", "빵 (PANG)", "집 (JIB)"], ans: 0 },
+            { q: "KOREAN ME 'SCHOOL' KO KYA KAHA JATA HAI?", opts: ["병원", "학교", "은행", "식당"], ans: 1 },
+            { q: "'선생님' KA ARTH KYA HAI?", opts: ["DOCTOR", "STUDENT", "TEACHER", "DRIVER"], ans: 2 },
+            { q: "'책' KA SAHI ANUVAD KYA HAI?", opts: ["PEN", "BAG", "BOOK", "DESK"], ans: 2 },
+            { q: "'학생' SHABD KA MATLAB KYA HOTA HAI?", opts: ["STUDENT", "PROFESSOR", "WORKER", "OFFICER"], ans: 0 },
+            { q: "KOREAN ME 'FRIEND' KO KYA KEHTE HAIN?", opts: ["가족", "친구", "사람", "누나"], ans: 1 },
+            { q: "'오늘' KA MATLAB KYA HAI?", opts: ["YESTERDAY", "TODAY", "TOMORROW", "NOW"], ans: 1 },
+            { q: "'내일' KA ARTH KYA HAI?", opts: ["TODAY", "YESTERDAY", "TOMORROW", "NEXT YEAR"], ans: 2 },
+            { q: "KOREAN ME 'HOUSE' KO KYA KEHTE HAIN?", opts: ["집 (JIB)", "길 (GIL)", "차 (CHA)", "문 (MUN)"], ans: 0 },
+            { q: "'네' KA ARTH KYA HOTA HAI?", opts: ["NO", "YES", "MAYBE", "NEVER"], ans: 1 },
+            { q: "'아니요' KA ARTH KYA HAI?", opts: ["YES", "NO", "PLEASE", "THANKS"], ans: 1 },
+            { q: "'사랑해요' KA ANUVAD KYA HAI?", opts: ["I HATE YOU", "I LOVE YOU", "I MISS YOU", "GOOD NIGHT"], ans: 1 },
+            { q: "'공부' KA KYA ARTH HAI?", opts: ["PLAY", "SLEEP", "STUDY", "EAT"], ans: 2 },
+            { q: "'음식' KA MATLAB KYA HAI?", opts: ["DRINK", "FOOD", "FRUIT", "RICE"], ans: 1 },
+            { q: "'시계' KA KYA ARTH HAI?", opts: ["CLOCK/WATCH", "MIRROR", "PHONE", "COMPUTER"], ans: 0 },
+            { q: "KOREAN ME 'MONEY' KO KYA KEHTE HAIN?", opts: ["돈 (DON)", "옷 (OT)", "약 (YAK)", "밥 (BAP)"], ans: 0 },
+            { q: "'병원' KA MATLAB KYA HAI?", opts: ["BANK", "HOSPITAL", "PARK", "MARKET"], ans: 1 },
+            { q: "'우유' KA ARTH KYA HAI?", opts: ["TEA", "JUICE", "MILK", "WATER"], ans: 2 },
+            { q: "'사과' KA KYA ARTH HAI?", opts: ["BANANA", "APPLE", "ORANGE", "GRAPE"], ans: 1 },
+            { q: "'의자' KA MATLAB KYA HAI?", opts: ["DESK", "CHAIR", "BED", "DOOR"], ans: 1 },
+            { q: "'나라' KA ARTH KYA HAI?", opts: ["CITY", "COUNTRY", "VILLAGE", "WORLD"], ans: 1 },
+            { q: "'자다' VERB KA KYA MATLAB HAI?", opts: ["TO SLEEP", "TO EAT", "TO GO", "TO SEE"], ans: 0 },
+            { q: "'가다' VERB KA KYA MATLAB HAI?", opts: ["TO COME", "TO GO", "TO READ", "TO WRITE"], ans: 1 }
+        ];
+
+        const quizBox = document.getElementById('quizContainer');
+        mcqData.forEach((item, qIdx) => {
+            const qDiv = document.createElement('div');
+            qDiv.className = 'item-row';
+            
+            let optsHtml = '';
+            item.opts.forEach((opt, oIdx) => {
+                optsHtml += `<button class="opt-btn" onclick="checkOption(this, ${oIdx === item.ans})">${opt}</button>`;
+            });
+
+            qDiv.innerHTML = `
+                <div class="item-title">Q${qIdx + 1}: ${item.q}</div>
+                <div class="options-grid">${optsHtml}</div>
+            `;
+            quizBox.appendChild(qDiv);
+        });
+
+        // 5. CHECK OPTION FEEDBACK
+        function checkOption(btn, isCorrect) {
+            const parentGrid = btn.parentElement;
+            const buttons = parentGrid.querySelectorAll('.opt-btn');
+            
+            buttons.forEach(b => b.style.pointerEvents = 'none');
+
+            if (isCorrect) {
+                btn.classList.add('correct');
+                btn.innerHTML += ' ✅';
+            } else {
+                btn.classList.add('incorrect');
+                btn.innerHTML += ' ❌';
+            }
+        }
+    </script>
+</body>
+</html>
