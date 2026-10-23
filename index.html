@@ -1,426 +1,406 @@
 
+ ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Smart Hub 💜</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Smart Hub 💜</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@400;600;700;900&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b071a;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    
+    .font-orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    /* Full Width Galaxy Space Board */
+    .galaxy-board {
+      background: radial-gradient(circle at 50% 20%, #2a114d 0%, #12092b 60%, #06020e 100%);
+      border-bottom: 3px solid #8b5cf6;
+      box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+    }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #05051b;
-    color: white;
-    overflow-x: hidden;
-}
+    /* Floating Girl Coding Animation */
+    @keyframes floatAnimation {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(1deg); }
+    }
+    .floating-girl {
+      animation: floatAnimation 4s ease-in-out infinite;
+    }
 
-header {
-    padding: 20px;
-    text-align: center;
-    background: #10052b;
-    border-bottom: 1px solid #a855f7;
-    color: #e9b8ff;
-    font-size: 25px;
-    font-weight: bold;
-    position: relative;
-    z-index: 5;
-}
+    /* Stars Animation */
+    @keyframes starGlow {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: starGlow 3s infinite ease-in-out;
+    }
 
-.hero {
-    min-height: 650px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 45px 6%;
-    background: linear-gradient(#080725, #18083c 75%, #08051c);
-}
+    /* Glowing Text Effects */
+    .glow-title {
+      text-shadow: 0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(139, 92, 246, 0.5);
+    }
 
-/* MOVING STARS */
-.stars {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      radial-gradient(white 1px, transparent 1.5px),
-      radial-gradient(#c084fc 1px, transparent 1.5px),
-      radial-gradient(#818cf8 2px, transparent 2.5px);
-    background-size: 70px 70px, 110px 110px, 170px 170px;
-    animation: starMove 18s linear infinite;
-}
+    /* Line Section Accordions */
+    .accordion-header {
+      transition: all 0.3s ease;
+      background: rgba(23, 15, 48, 0.8);
+      border-left: 6px solid #8b5cf6;
+    }
+    .accordion-header:hover {
+      background: rgba(43, 27, 86, 0.9);
+      border-left-color: #c084fc;
+      transform: translateX(5px);
+    }
 
-@keyframes starMove {
-    from { background-position: 0 0, 20px 30px, 0 0; }
-    to { background-position: 0 700px, 300px 500px, 150px 600px; }
-}
-
-/* MOVING MOON */
-.moon {
-    position: absolute;
-    top: 55px;
-    left: 52%;
-    width: 95px;
-    height: 95px;
-    border-radius: 50%;
-    background: #f5ddff;
-    box-shadow: 0 0 25px #e9a8ff,
-                0 0 70px #a855f7;
-    animation: moonFloat 4s ease-in-out infinite;
-}
-
-@keyframes moonFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-18px); }
-}
-
-.intro, .scene {
-    position: relative;
-    z-index: 2;
-}
-
-.intro {
-    max-width: 440px;
-}
-
-.intro h1 {
-    font-size: clamp(32px, 5vw, 55px);
-    color: #d8a5ff;
-    text-shadow: 0 0 18px #9333ea;
-    margin-bottom: 20px;
-}
-
-.intro p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #e9ddff;
-}
-
-.tagline {
-    margin-top: 22px;
-    color: #e879f9;
-    letter-spacing: 2px;
-}
-
-/* CODING GIRL SCENE */
-.scene {
-    width: 350px;
-    height: 370px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-/* HAIR AND HEAD */
-.head {
-    width: 115px;
-    height: 120px;
-    position: absolute;
-    top: 22px;
-    z-index: 3;
-    border-radius: 48% 48% 45% 45%;
-    background: linear-gradient(120deg, #21102e, #090718);
-    border: 2px solid #6936a8;
-    box-shadow: 0 0 20px #8b5cf6;
-}
-
-.head::before {
-    content: "";
-    position: absolute;
-    width: 115px;
-    height: 62px;
-    top: -8px;
-    left: -4px;
-    border-radius: 60% 50% 30% 20%;
-    background: #10091e;
-    transform: rotate(-8deg);
-}
-
-.head::after {
-    content: "";
-    position: absolute;
-    width: 27px;
-    height: 62px;
-    top: 25px;
-    left: -8px;
-    border-radius: 50%;
-    background: #170b26;
-    transform: rotate(20deg);
-}
-
-.headphones {
-    position: absolute;
-    z-index: 4;
-    top: 38px;
-    width: 128px;
-    height: 100px;
-    border: 8px solid #a855f7;
-    border-bottom-color: transparent;
-    border-radius: 65px 65px 0 0;
-}
-
-.headphones::before,
-.headphones::after {
-    content: "";
-    position: absolute;
-    top: 43px;
-    width: 19px;
-    height: 35px;
-    border-radius: 8px;
-    background: #c084fc;
-    box-shadow: 0 0 12px #c084fc;
-}
-
-.headphones::before { left: -12px; }
-.headphones::after { right: -12px; }
-
-.body-girl {
-    position: absolute;
-    bottom: 48px;
-    width: 205px;
-    height: 175px;
-    border-radius: 70px 70px 10px 10px;
-    background: linear-gradient(100deg, #160b2a, #31204d);
-    border: 2px solid #6336a1;
-    z-index: 2;
-}
-
-.body-girl::after {
-    content: "💜";
-    position: absolute;
-    top: 75px;
-    left: 80px;
-    font-size: 24px;
-}
-
-/* LAPTOP */
-.laptop {
-    position: absolute;
-    bottom: 0;
-    width: 300px;
-    height: 155px;
-    z-index: 4;
-}
-
-.screen {
-    height: 125px;
-    padding: 12px;
-    border: 5px solid #8870b8;
-    border-radius: 10px 10px 3px 3px;
-    background: #050713;
-    box-shadow: 0 0 20px #7c3aed;
-    overflow: hidden;
-    font: 11px/1.8 monospace;
-    color: #86efac;
-}
-
-.screen .pink { color: #f0abfc; }
-.screen .blue { color: #93c5fd; }
-
-.keyboard {
-    height: 18px;
-    margin: auto;
-    width: 320px;
-    background: linear-gradient(#c4b5fd, #514070);
-    clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
-}
-
-/* ARMS AND TYPING FINGERS */
-.arm {
-    position: absolute;
-    bottom: 65px;
-    z-index: 5;
-    width: 105px;
-    height: 19px;
-    border-radius: 20px;
-    background: #a978d8;
-    transform-origin: right center;
-}
-
-.arm.left {
-    left: 45px;
-    transform: rotate(-18deg);
-}
-
-.arm.right {
-    right: 45px;
-    transform: rotate(18deg);
-}
-
-.hand {
-    position: absolute;
-    bottom: 65px;
-    z-index: 6;
-    width: 35px;
-    height: 13px;
-    border-radius: 10px;
-    background: #f0c3ff;
-}
-
-.hand.left { left: 113px; }
-.hand.right { right: 113px; }
-
-.finger {
-    position: absolute;
-    width: 5px;
-    height: 17px;
-    top: -9px;
-    border-radius: 5px;
-    background: #f0c3ff;
-    animation: typeTap 0.35s ease-in-out infinite alternate;
-}
-
-.finger:nth-child(1) { left: 5px; }
-.finger:nth-child(2) { left: 13px; animation-delay: .12s; }
-.finger:nth-child(3) { left: 21px; animation-delay: .2s; }
-
-@keyframes typeTap {
-    from { transform: translateY(0); }
-    to { transform: translateY(6px); }
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 20px;
-    padding: 35px 6%;
-    background: #08051c;
-}
-
-.card {
-    text-align: center;
-    padding: 28px 15px;
-    border: 1px solid #8138d7;
-    border-radius: 18px;
-    background: linear-gradient(145deg, #1c0b3a, #090b28);
-    box-shadow: 0 0 14px #5b21b633;
-    transition: transform .3s, box-shadow .3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 25px #a855f7;
-}
-
-.card h2 {
-    color: #d8b4fe;
-    font-size: 19px;
-    margin-bottom: 12px;
-}
-
-.card p {
-    color: #d9d5ef;
-    line-height: 1.7;
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #d8b4fe;
-}
-
-@media (max-width: 600px) {
-    .hero { padding: 45px 15px; }
-    .moon { left: auto; right: 35px; width: 65px; height: 65px; }
-    .scene { transform: scale(.88); margin: -15px 0; }
-    .intro { text-align: center; }
-}
-</style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b071a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #6b21a8;
+      border-radius: 5px;
+    }
+  </style>
 </head>
+<body class="min-h-screen flex flex-col justify-between">
 
-<body>
+  <!-- BACKGROUND STARS -->
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <div class="star w-1 h-1 top-10 left-12" style="animation-delay: 0s;"></div>
+    <div class="star w-2 h-2 top-24 left-3/4" style="animation-delay: 0.5s;"></div>
+    <div class="star w-1 h-1 top-1/2 left-10" style="animation-delay: 1s;"></div>
+    <div class="star w-2 h-2 top-2/3 left-4/5" style="animation-delay: 1.5s;"></div>
+    <div class="star w-1 h-1 bottom-20 left-1/3" style="animation-delay: 2s;"></div>
+  </div>
 
-<header>🎓 Student Smart Hub 💜</header>
+  <div class="relative z-10">
 
-<section class="hero">
-    <div class="stars"></div>
-    <div class="moon"></div>
+    <!-- 1. HUGE FULL-WIDTH BOARD HERO SECTION -->
+    <header class="galaxy-board w-full py-12 px-4 sm:px-8 relative overflow-hidden text-center">
+      
+      <!-- Moon in Background -->
+      <div class="absolute top-4 right-10 w-24 h-24 sm:w-36 sm:h-36 bg-gradient-to-br from-purple-200 to-indigo-400 rounded-full opacity-30 blur-sm pointer-events-none shadow-[0_0_50px_rgba(255,255,255,0.4)]"></div>
 
-    <div class="intro">
-        <h1>Welcome to Student Smart Hub ✨</h1>
-        <p>Your little universe for Korean learning, coding,
-        BSCS notes, C++ programs and MCQs.</p>
-        <div class="tagline">LEARN ✦ CODE ✦ GROW ✦ ACHIEVE</div>
-    </div>
-
-    <div class="scene">
-        <div class="head"></div>
-        <div class="headphones"></div>
-        <div class="body-girl"></div>
-
-        <div class="arm left"></div>
-        <div class="arm right"></div>
-
-        <div class="hand left">
-            <span class="finger"></span>
-            <span class="finger"></span>
-            <span class="finger"></span>
+      <div class="max-w-6xl mx-auto flex flex-col items-center">
+        
+        <!-- Animated Coding Girl SVG -->
+        <div class="floating-girl mb-6">
+          <svg class="w-40 h-40 sm:w-52 sm:h-52 drop-shadow-[0_0_25px_rgba(168,85,247,0.6)]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="80" fill="#2d155c"/>
+            <!-- Girl Head & Hair -->
+            <path d="M70 85 C70 55, 130 55, 130 85 C130 115, 120 120, 100 120 C80 120, 70 115, 70 85 Z" fill="#1e1035"/>
+            <circle cx="100" cy="85" r="25" fill="#fbcfe8"/>
+            <!-- Headphone -->
+            <path d="M70 80 C70 60, 130 60, 130 80" stroke="#a855f7" stroke-width="8" stroke-linecap="round"/>
+            <rect x="65" y="75" width="10" height="20" rx="5" fill="#c084fc"/>
+            <rect x="125" y="75" width="10" height="20" rx="5" fill="#c084fc"/>
+            <!-- Eyes -->
+            <circle cx="92" cy="85" r="3" fill="#1e1035"/>
+            <circle cx="108" cy="85" r="3" fill="#1e1035"/>
+            <!-- Laptop Body -->
+            <path d="M60 135 L140 135 L150 155 L50 155 Z" fill="#4c1d95"/>
+            <path d="M70 105 L130 105 L135 135 L65 135 Z" fill="#0f172a" stroke="#8b5cf6" stroke-width="2"/>
+            <!-- Screen Code Lines -->
+            <line x1="75" y1="115" x2="110" y2="115" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+            <line x1="75" y1="123" x2="120" y2="123" stroke="#a855f7" stroke-width="3" stroke-linecap="round"/>
+          </svg>
         </div>
 
-        <div class="hand right">
-            <span class="finger"></span>
-            <span class="finger"></span>
-            <span class="finger"></span>
+        <!-- Main Hub Title -->
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black font-orbitron tracking-wider text-white glow-title uppercase mb-3">
+          WELCOME TO STUDENT SMART HUB
+        </h1>
+        
+        <p class="text-purple-300 text-sm sm:text-lg max-w-3xl font-medium tracking-wide uppercase border-b-2 border-purple-500/30 pb-4 mb-2">
+          Your Complete Academic, Coding, and South Korea Dream Roadmap
+        </p>
+
+        <!-- Dynamic Visitor Counter Badge -->
+        <div class="mt-2 inline-flex items-center gap-2 bg-purple-950/80 border border-purple-500/50 px-4 py-1.5 rounded-full text-xs sm:text-sm text-purple-200">
+          <i class="fa-solid fa-eye text-purple-400"></i>
+          <span>PORTAL VISITS: <strong id="visitor-count" class="text-yellow-400 font-mono text-base">1,024</strong></span>
         </div>
 
-        <div class="laptop">
-            <div class="screen">
-                <span class="pink">#include</span>
-                <span class="blue">&lt;iostream&gt;</span><br>
-                using namespace std;<br><br>
-                <span class="pink">int</span> main() {<br>
-                &nbsp; cout &lt;&lt; <span class="blue">"Hello, Student!"</span>;<br>
-                &nbsp; <span class="pink">return</span> 0;<br>
-                }
+      </div>
+    </header>
+
+    <!-- 2. MAIN LINE-BY-LINE FULL BOARD CONTENT SECTIONS -->
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+
+      <!-- ================= MODULE 1: BSCS 1ST SEMESTER ================= -->
+      <section class="w-full">
+        <button onclick="toggleSection('bscs-module')" class="w-full text-left p-5 sm:p-6 rounded-xl accordion-header flex items-center justify-between shadow-lg">
+          <div class="flex items-center gap-4">
+            <span class="text-2xl sm:text-3xl text-purple-400"><i class="fa-solid fa-graduation-cap"></i></span>
+            <h2 class="text-xl sm:text-3xl font-black font-orbitron tracking-wider text-white uppercase">
+              MODULE 1: BSCS 1ST SEMESTER COURSES
+            </h2>
+          </div>
+          <span id="bscs-module-icon" class="text-2xl text-purple-400 font-bold">►</span>
+        </button>
+
+        <!-- Expanded Content -->
+        <div id="bscs-module" class="hidden mt-3 p-6 bg-slate-900/90 border border-purple-500/30 rounded-xl space-y-6">
+          <p class="text-purple-200 text-sm sm:text-base font-semibold uppercase">
+            Complete core computer science foundational courses (ICT, C++ Programming, and Object-Oriented Programming).
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- ICT -->
+            <div class="bg-purple-950/40 p-5 rounded-lg border border-purple-800/50">
+              <h3 class="text-lg font-bold text-yellow-400 font-orbitron uppercase mb-2"><i class="fa-solid fa-desktop mr-2"></i>ICT (FUNDAMENTALS)</h3>
+              <ul class="text-xs sm:text-sm text-gray-300 space-y-2 list-disc list-inside">
+                <li>Computer Architecture & Hardware</li>
+                <li>Operating Systems & Networking</li>
+                <li>Number Systems (Binary, Hexadecimal)</li>
+                <li>Software & Internet Protocols</li>
+              </ul>
             </div>
-            <div class="keyboard"></div>
+
+            <!-- C++ PROGRAMMING -->
+            <div class="bg-purple-950/40 p-5 rounded-lg border border-purple-800/50">
+              <h3 class="text-lg font-bold text-cyan-400 font-orbitron uppercase mb-2"><i class="fa-solid fa-code mr-2"></i>C++ PROGRAMMING</h3>
+              <ul class="text-xs sm:text-sm text-gray-300 space-y-2 list-disc list-inside">
+                <li>Variables, Data Types & Operators</li>
+                <li>Conditional Logic (if-else, switch)</li>
+                <li>Loops (for, while, do-while)</li>
+                <li>Functions, Arrays & Pointers</li>
+              </ul>
+            </div>
+
+            <!-- OOP -->
+            <div class="bg-purple-950/40 p-5 rounded-lg border border-purple-800/50">
+              <h3 class="text-lg font-bold text-pink-400 font-orbitron uppercase mb-2"><i class="fa-solid fa-cubes mr-2"></i>OBJECT-ORIENTED (OOP)</h3>
+              <ul class="text-xs sm:text-sm text-gray-300 space-y-2 list-disc list-inside">
+                <li>Classes and Objects</li>
+                <li>Encapsulation & Data Hiding</li>
+                <li>Inheritance (Single & Multiple)</li>
+                <li>Polymorphism & Function Overloading</li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-<section class="cards">
-    <div class="card">
-        <h2>🇰🇷 Korean Learning</h2>
-        <p>Vocabulary • Grammar • Listening • Practice</p>
-    </div>
+      <!-- ================= MODULE 2: KOREAN LANGUAGE & LISTENING ================= -->
+      <section class="w-full">
+        <button onclick="toggleSection('korean-module')" class="w-full text-left p-5 sm:p-6 rounded-xl accordion-header flex items-center justify-between shadow-lg">
+          <div class="flex items-center gap-4">
+            <span class="text-2xl sm:text-3xl text-pink-400"><i class="fa-solid fa-language"></i></span>
+            <h2 class="text-xl sm:text-3xl font-black font-orbitron tracking-wider text-white uppercase">
+              MODULE 2: KOREAN LANGUAGE & EPS-TOPIK PREPARATION
+            </h2>
+          </div>
+          <span id="korean-module-icon" class="text-2xl text-pink-400 font-bold">►</span>
+        </button>
 
-    <div class="card">
-        <h2>🎓 BSCS Subjects</h2>
-        <p>ICT • C++ • Mathematics • Islamiat</p>
-    </div>
+        <!-- Expanded Content -->
+        <div id="korean-module" class="hidden mt-3 p-6 bg-slate-900/90 border border-pink-500/30 rounded-xl space-y-8">
+          
+          <!-- SUB-SECTION A: AUDIO LISTENING PRACTICE -->
+          <div>
+            <h3 class="text-xl font-bold font-orbitron text-pink-400 uppercase mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-volume-high"></i> KOREAN AUDIO LISTENING PRACTICE (15 VOCABULARY AUDIOS)
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-300 mb-4">Click any item to listen to native Korean pronunciation using browser speech engines.</p>
+            
+            <div id="listening-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              <!-- JS dynamically fills listening buttons -->
+            </div>
+          </div>
 
-    <div class="card">
-        <h2>📚 Study Notes</h2>
-        <p>Definitions • Examples • Important Topics</p>
-    </div>
+          <!-- SUB-SECTION B: 25 KOREAN MCQS QUIZ -->
+          <div class="border-t border-purple-800/60 pt-6">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-xl font-bold font-orbitron text-yellow-400 uppercase flex items-center gap-2">
+                <i class="fa-solid fa-clipboard-question"></i> KOREAN LANGUAGE QUIZ (25 MCQS)
+              </h3>
+              <span id="quiz-score" class="text-sm sm:text-base font-bold bg-purple-900 text-purple-200 px-3 py-1 rounded-md border border-purple-500">
+                SCORE: 0 / 25
+              </span>
+            </div>
 
-    <div class="card">
-        <h2>💻 C++ Programs</h2>
-        <p>Basics • Loops • Arrays • OOP</p>
-    </div>
+            <div id="quiz-container" class="space-y-4">
+              <!-- JS dynamically renders 25 MCQs with instant Green/Red feedback -->
+            </div>
+          </div>
 
-    <div class="card">
-        <h2>📝 MCQs</h2>
-        <p>Practice questions to test your knowledge</p>
-    </div>
-</section>
+        </div>
+      </section>
 
-<footer>💜 Small Steps • Big Dreams • Keep Learning</footer>
+      <!-- ================= MODULE 3: ROADMAP & SOUTH KOREA DREAM ================= -->
+      <section class="w-full">
+        <button onclick="toggleSection('roadmap-module')" class="w-full text-left p-5 sm:p-6 rounded-xl accordion-header flex items-center justify-between shadow-lg">
+          <div class="flex items-center gap-4">
+            <span class="text-2xl sm:text-3xl text-yellow-400"><i class="fa-solid fa-plane-departure"></i></span>
+            <h2 class="text-xl sm:text-3xl font-black font-orbitron tracking-wider text-white uppercase">
+              MODULE 3: SOUTH KOREA FULLY FUNDED SCHOLARSHIP ROADMAP
+            </h2>
+          </div>
+          <span id="roadmap-module-icon" class="text-2xl text-yellow-400 font-bold">►</span>
+        </button>
 
-</body>
-</html>
+        <!-- Expanded Content -->
+        <div id="roadmap-module" class="hidden mt-3 p-6 bg-slate-900/90 border border-yellow-500/30 rounded-xl space-y-6">
+          <div class="border-l-4 border-yellow-400 pl-4 py-1">
+            <h3 class="text-2xl font-black font-orbitron text-yellow-300 uppercase tracking-wide">
+              MY DREAM: FULLY FUNDED SCHOLARSHIP IN SOUTH KOREA 🇰🇷
+            </h3>
+            <p class="text-sm text-gray-300 mt-1 uppercase font-semibold">
+              GKS (Global Korea Scholarship) & BSCS High-Tech Career Goal
+            </p>
+          </div>
 
+          <!-- Long Roadmap Cards Line by Line -->
+          <div class="space-y-4">
+            <div class="p-4 bg-purple-950/50 border-l-4 border-cyan-400 rounded-r-lg">
+              <h4 class="font-bold text-lg text-cyan-300 font-orbitron uppercase">STEP 1: MAINTAIN HIGH CGPA IN BSCS (3.5+)</h4>
+              <p class="text-xs sm:text-sm text-gray-300 mt-1">Focus intensely on core programming concepts, software engineering principles, and mathematics during semester studies.</p>
+            </div>
 
+            <div class="p-4 bg-purple-950/50 border-l-4 border-pink-400 rounded-r-lg">
+              <h4 class="font-bold text-lg text-pink-300 font-orbitron uppercase">STEP 2: MASTER KOREAN LANGUAGE (TOPIK LEVEL 3/4)</h4>
+              <p class="text-xs sm:text-sm text-gray-300 mt-1">Complete daily vocabulary drills, grammar practice, and listening tests to clear the TOPIK language exam with top grade.</p>
+            </div>
 
+            <div class="p-4 bg-purple-950/50 border-l-4 border-yellow-400 rounded-r-lg">
+              <h4 class="font-bold text-lg text-yellow-300 font-orbitron uppercase">STEP 3: BUILD A STRONG COMPUTER SCIENCE PORTFOLIO</h4>
+              <p class="text-xs sm:text-sm text-gray-300 mt-1">Develop real-world web applications, C++ logic repositories, and software tools to highlight academic technical competency.</p>
+            </div>
+
+            <div class="p-4 bg-purple-950/50 border-l-4 border-green-400 rounded-r-lg">
+              <h4 class="font-bold text-lg text-green-300 font-orbitron uppercase">STEP 4: APPLY FOR GKS FULLY FUNDED SCHOLARSHIP</h4>
+              <p class="text-xs sm:text-sm text-gray-300 mt-1">Submit complete application package including Statement of Purpose (SOP), academic transcripts, and TOPIK certificates to study in top Korean universities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-12 py-6 border-t border-purple-900/60 text-center text-xs sm:text-sm text-purple-300">
+      <p class="font-orbitron uppercase tracking-widest font-bold">STUDENT SMART HUB © ALL RIGHTS RESERVED</p>
+      <p class="text-purple-400/70 mt-1">DEDICATED TO EXCELLENCE IN BSCS & KOREAN LANGUAGE STUDIES 🌸</p>
+    </footer>
+
+  </div>
+
+  <!-- SCRIPT IMPLEMENTATION -->
+  <script>
+    // 1. AUTOMATIC VOICE GREETING ON PAGE LOAD (NO BUTTON CLICK NEEDED)
+    window.addEventListener('DOMContentLoaded', () => {
+      // Automatic Speech Greeting
+      if ('speechSynthesis' in window) {
+        setTimeout(() => {
+          const utterance = new SpeechSynthesisUtterance("Welcome to Student Smart Hub");
+          utterance.rate = 0.95;
+          utterance.pitch = 1.1;
+          window.speechSynthesis.speak(utterance);
+        }, 800);
+      }
+
+      // Dynamic Visitor Counter Increment
+      let currentVisits = parseInt(localStorage.getItem('hub_visits') || '1024');
+      currentVisits += 1;
+      localStorage.setItem('hub_visits', currentVisits);
+      document.getElementById('visitor-count').innerText = currentVisits.toLocaleString();
+
+      // Render Modules
+      renderListeningItems();
+      renderQuizMCQs();
+    });
+
+    // 2. TOGGLE ACCORDION SECTION
+    function toggleSection(id) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById(id + '-icon');
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.innerText = '▼';
+      } else {
+        content.classList.add('hidden');
+        icon.innerText = '►';
+      }
+    }
+
+    // 3. KOREAN LISTENING PRACTICE DATA
+    const listeningData = [
+      { kr: "안녕하세요", en: "Hello", pronunciation: "An-nyeong-ha-se-yo" },
+      { kr: "감사합니다", en: "Thank you", pronunciation: "Gam-sa-ham-ni-da" },
+      { kr: "네", en: "Yes", pronunciation: "Ne" },
+      { kr: "아니요", en: "No", pronunciation: "A-ni-yo" },
+      { kr: "학교", en: "School", pronunciation: "Hak-gyo" },
+      { kr: "학생", en: "Student", pronunciation: "Hak-saeng" },
+      { kr: "선생님", en: "Teacher", pronunciation: "Seon-saeng-nim" },
+      { kr: "책", en: "Book", pronunciation: "Chaek" },
+      { kr: "물", en: "Water", pronunciation: "Mul" },
+      { kr: "밥", en: "Rice/Meal", pronunciation: "Bap" },
+      { kr: "친구", en: "Friend", pronunciation: "Chin-gu" },
+      { kr: "사랑해요", en: "I love you", pronunciation: "Sa-rang-hae-yo" },
+      { kr: "집", en: "House", pronunciation: "Jip" },
+      { kr: "한국", en: "South Korea", pronunciation: "Han-guk" },
+      { kr: "공부", en: "Study", pronunciation: "Gong-bu" }
+    ];
+
+    function renderListeningItems() {
+      const container = document.getElementById('listening-grid');
+      container.innerHTML = listeningData.map(item => `
+        <button onclick="playKoreanAudio('${item.kr}')" class="bg-purple-950/60 hover:bg-purple-800 border border-purple-500/40 p-3 rounded-lg text-center transition group flex flex-col items-center justify-center">
+          <span class="text-xl font-bold text-pink-300 group-hover:scale-110 transition">${item.kr}</span>
+          <span class="text-xs text-gray-300 font-mono mt-1">${item.pronunciation}</span>
+          <span class="text-xs text-purple-400 font-semibold mt-0.5 uppercase">${item.en}</span>
+          <i class="fa-solid fa-volume-high text-pink-400 text-xs mt-2"></i>
+        </button>
+      `).join('');
+    }
+
+    function playKoreanAudio(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Stop active voices
+        const synth = new SpeechSynthesisUtterance(text);
+        synth.lang = 'ko-KR';
+        synth.rate = 0.8;
+        window.speechSynthesis.speak(synth);
+      }
+    }
+
+    // 4. 25 KOREAN MCQS DATA & QUIZ SYSTEM
+    const mcqsData = [
+      { q: "What does '안녕하세요' (An-nyeong-ha-se-yo) mean?", options: ["Goodbye", "Hello", "Thank you", "Sorry"], correct: 1 },
+      { q: "What is the Korean word for 'Student'?", options: ["선생님", "학교", "학생", "친구"], correct: 2 },
+      { q: "What does '감사합니다' mean in English?", options: ["Welcome", "Excuse me", "Thank you", "Yes"], correct: 2 },
+      { q: "Which word means 'Water' in Korean?", options: ["밥", "물", "집", "책"], correct: 1 },
+      { q: "What does '네' (Ne) mean?", options: ["No", "Yes", "Maybe", "Never"], correct: 1 },
+      { q: "What is 'School' in Korean?", options: ["학교", "병원", "식당", "은행"], correct: 0 },
+      { q: "What does '아니요' (A-ni-yo) mean?", options: ["Yes", "No", "Please", "Hello"], correct: 1 },
+      { q: "Which word means 'Book'?", options: ["펜", "책", "가방", "모자"], correct: 1 },
+      { q: "What is 'Friend' in Korean?", options: ["선생님", "의사", "친구", "동생"], correct: 2 },
+      { q: "What does '집' (Jip) mean?", options: ["Car", "House", "Park", "Store"], correct: 1 },
+      { q: "What is 'Teacher' in Korean?", options: ["선생님", "학생", "기사", "요리사"], correct: 0 },
+      { q: "What does '사랑해요' mean?", options: ["I hate you", "I love you", "See you", "Good night"], correct: 1 },
+      { q: "Which word means 'South Korea'?", options: ["미국", "중국", "한국", "일본"], correct: 2 },
+      { q: "What is 'Study' in Korean?", options: ["공부", "운동", "수영", "자전"], correct: 0 },
+      { q: "What does '밥' (Bap) mean?", options: ["Water", "Rice/Meal", "Meat", "Fruit"], correct: 1 },
+      { q: 
 
  
     
