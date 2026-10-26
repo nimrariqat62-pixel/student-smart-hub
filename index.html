@@ -300,6 +300,162 @@
     </style>
 </head>
 <body>
+<!-- ======================================================= -->
+<!-- KOREAN HUB COMPLETE CODE (HTML + CSS + JAVASCRIPT) -->
+<!-- ======================================================= -->
+
+<!-- 1. HTML SECTION -->
+<section id="korean-learning-section" class="korean-container">
+  <div class="korean-header">
+    <h2>🇰🇷 Interactive Hangul & Vocabulary Hub</h2>
+    <p>Learn Korean language phrases & CS terminology interactively!</p>
+  </div>
+
+  <div class="korean-tabs">
+    <button class="tab-btn active" onclick="filterKoreanCategory('daily')">💬 Daily Expressions</button>
+    <button class="tab-btn" onclick="filterKoreanCategory('tech')">💻 CS & Tech Terms</button>
+    <button class="tab-btn" onclick="filterKoreanCategory('academic')">🎓 Academic & Courtesy</button>
+  </div>
+
+  <div id="flashcards-grid" class="cards-grid"></div>
+</section>
+
+
+<!-- 2. CSS STYLING -->
+<style>
+.korean-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.korean-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.korean-header h2 {
+  color: #2b6cb0;
+  margin-bottom: 5px;
+}
+
+.korean-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: #edf2f7;
+  border: 1px solid #cbd5e0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: #2b6cb0;
+  color: white;
+  border-color: #2b6cb0;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+.k-card {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.k-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.k-hangul {
+  font-size: 26px;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+.k-roman {
+  font-size: 13px;
+  color: #718096;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.k-meaning {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b6cb0;
+}
+</style>
+
+
+<!-- 3. JAVASCRIPT LOGIC -->
+<script>
+const koreanData = [
+  { hangul: "안녕하세요", roman: "Annyeonghaseyo", meaning: "Hello / Assalam-o-Alaikum", category: "daily" },
+  { hangul: "감사합니다", roman: "Kamsahamnida", meaning: "Thank you", category: "daily" },
+  { hangul: "열심히 하겠습니다", roman: "Yeolsimhi hagessseumnida", meaning: "I will do my best!", category: "academic" },
+  { hangul: "컴퓨터 공학", roman: "Keompyuteo Gonghak", meaning: "Computer Science", category: "tech" },
+  { hangul: "프로그래밍", roman: "Peurogeuraeming", meaning: "Programming", category: "tech" },
+  { hangul: "교수님", roman: "Gyosunim", meaning: "Professor", category: "academic" },
+  { hangul: "알고리즘", roman: "Algorijeum", meaning: "Algorithm", category: "tech" },
+  { hangul: "좋은 하루 되세요", roman: "Jo-eun haru doeseyo", meaning: "Have a nice day!", category: "daily" }
+];
+
+function loadKoreanCards(category = 'daily') {
+  const grid = document.getElementById("flashcards-grid");
+  if(!grid) return;
+  
+  grid.innerHTML = ""; 
+
+  const filteredData = koreanData.filter(item => item.category === category);
+
+  filteredData.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "k-card";
+    card.innerHTML = `
+      <div class="k-hangul">${item.hangul}</div>
+      <div class="k-roman">${item.roman}</div>
+      <div class="k-meaning">${item.meaning}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function filterKoreanCategory(categoryName) {
+  const buttons = document.querySelectorAll(".tab-btn");
+  buttons.forEach(btn => btn.classList.remove("active"));
+  event.target.classList.add("active");
+
+  loadKoreanCards(categoryName);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadKoreanCards('daily');
+});
+</script>
+
 
     <!-- TOP NAVBAR -->
     <nav class="navbar">
