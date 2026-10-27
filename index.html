@@ -352,6 +352,79 @@
             <p>C++ SYNTAX, CONTROL STRUCTURES (IF-ELSE, SWITCH), LOOPS (FOR, WHILE, DO-WHILE), FUNCTIONS, ARRAYS, AND POINTERS.</p>
             
             <!-- C++ Step-by-Step Code Sample -->
+<!-- ======================================================= -->
+<!-- C++ BASIC STRUCTURE & POST-MORTEM SECTION -->
+<!-- ======================================================= -->
+<div style="background: rgba(30, 20, 50, 0.85); border: 2px solid #9d4edd; border-radius: 14px; padding: 22px; margin: 25px 0; box-shadow: 0 0 20px rgba(157, 78, 221, 0.4); font-family: 'Poppins', sans-serif;">
+  
+  <!-- Section Title -->
+  <h2 style="color: #c77dff; font-size: 1.4rem; margin-top: 0; margin-bottom: 18px; border-bottom: 2px solid #9d4edd; padding-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">
+    💻 C++ BASIC STRUCTURE & POST-MORTEM
+  </h2>
+
+  <!-- 1. Code Example Card -->
+  <div style="background: #100820; border-left: 4px solid #7b2cbf; padding: 15px; border-radius: 8px; margin-bottom: 22px; box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);">
+    <p style="color: #e0aaff; font-weight: bold; margin-top: 0; margin-bottom: 10px; font-size: 1rem;">
+      📌 Code Example: Hello World Program
+    </p>
+    <pre style="color: #00f5d4; font-family: 'Courier New', monospace; font-size: 0.95rem; margin: 0; overflow-x: auto; line-height: 1.5;">
+<code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello World! BSCS Semester 1" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+  </div>
+
+  <!-- 2. Post-Mortem Heading -->
+  <h3 style="color: #e0aaff; font-size: 1.15rem; margin-top: 0; margin-bottom: 15px;">
+    🔍 Line-by-Line Post-Mortem (Logic Breakdown)
+  </h3>
+
+  <!-- 3. Detailed Logic Items -->
+  <ul style="list-style-type: none; padding-left: 0; margin: 0; color: #ffffff; font-size: 0.95rem; line-height: 1.6;">
+    
+    <!-- Step 1 -->
+    <li style="margin-bottom: 12px; background: rgba(255, 255, 255, 0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(157, 78, 221, 0.2);">
+      <b style="color: #00f5d4; font-size: 1rem;">#include &lt;iostream&gt;</b><br>
+      <span style="color: #d8b4fe; font-weight: 600;">✦ Kya kaam karta hai:</span> Yeh ek <i>preprocessor directive</i> hai. Yeh compiler ko instruction deta hai ke code compile karne se pehle <code>iostream</code> (Input/Output Stream) library shamil kare, taake hum <code>cout</code> aur <code>cin</code> use kar paayein.
+    </li>
+
+    <!-- Step 2 -->
+    <li style="margin-bottom: 12px; background: rgba(255, 255, 255, 0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(157, 78, 221, 0.2);">
+      <b style="color: #00f5d4; font-size: 1rem;">using namespace std;</b><br>
+      <span style="color: #d8b4fe; font-weight: 600;">✦ Kya kaam karta hai:</span> Yeh Standard Namespace ka access deta hai. Isko likhne se baar-baar <code>std::cout</code> likhne ki zaroorat nahi padti, hum direct <code>cout</code> likh sakte hain.
+    </li>
+
+    <!-- Step 3 -->
+    <li style="margin-bottom: 12px; background: rgba(255, 255, 255, 0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(157, 78, 221, 0.2);">
+      <b style="color: #00f5d4; font-size: 1rem;">int main() { ... }</b><br>
+      <span style="color: #d8b4fe; font-weight: 600;">✦ Kya kaam karta hai:</span> Yeh program ka <b>Main Entry Point</b> hai. C++ mein execution hamesha <code>main()</code> function se hi shuru hoti hai. <code>int</code> ka matlab hai ke program end hone par ek integer status code return karega.
+    </li>
+
+    <!-- Step 4 -->
+    <li style="margin-bottom: 12px; background: rgba(255, 255, 255, 0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(157, 78, 221, 0.2);">
+      <b style="color: #00f5d4; font-size: 1rem;">cout &lt;&lt; "Hello World!..." &lt;&lt; endl;</b><br>
+      <span style="color: #d8b4fe; font-weight: 600;">✦ Kya kaam karta hai:</span> <code>cout</code> screen par output display karne ke liye visual stream hai. Quotes <code>" "</code> ke andar likha text screen par print hota hai, aur <code>endl</code> cursor ko agli new line par move kar deta hai.
+    </li>
+
+    <!-- Step 5 -->
+    <li style="margin-bottom: 12px; background: rgba(255, 255, 255, 0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(157, 78, 221, 0.2);">
+      <b style="color: #00f5d4; font-size: 1rem;">return 0;</b><br>
+      <span style="color: #d8b4fe; font-weight: 600;">✦ Kya kaam karta hai:</span> Program ka final status code. <code>0</code> return hone ka matlab hota hai ke code bina kisi error ke successfully finish ho gaya hai.
+    </li>
+
+  </ul>
+
+  <!-- 4. Simulated Terminal Output -->
+  <div style="background: #080312; border: 1px solid #7b2cbf; padding: 12px 15px; border-radius: 8px; margin-top: 18px;">
+    <span style="color: #888888; font-size: 0.8rem; font-family: monospace;">[Terminal Output Simulation]</span><br>
+    <code style="color: #00ff66; font-family: monospace; font-size: 0.95rem;">Hello World! BSCS Semester 1</code>
+  </div>
+
+</div>
+
             <div class="code-box">#include &lt;iostream&gt;
 using namespace std;
 
