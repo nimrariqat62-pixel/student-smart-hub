@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Programming Fundamentals - Student Smart Hub</title>
+    <style>
+        body {
+            background-color: #0b0712;
+            color: #e2d9f3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #c77dff;
+            border-bottom: 2px solid #7b2cbf;
+            padding-bottom: 10px;
+        }
+
+        /* Topics Index Box */
+        .topics-index-card {
+            background: #150d2a;
+            border: 1px solid #7b2cbf;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(123, 44, 191, 0.3);
+        }
+
+        .topics-index-card h3 {
+            color: #e0aaff;
+            margin-top: 0;
+        }
+
+        .topics-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .topics-list li {
+            margin: 10px 0;
+        }
+
+        .topics-list a {
+            color: #c77dff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .topics-list a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px #c77dff;
+        }
+
+        /* Post-Mortem Card Style */
+        .post-mortem-card {
+            background: #150d2a;
+            border: 1px solid #7b2cbf;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(123, 44, 191, 0.2);
+        }
+
+        .topic-title {
+            color: #c77dff;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .topic-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #d8b4fe;
+            margin-bottom: 15px;
+        }
+
+        /* Code Block Box - Strict Lowercase Display */
+        .code-box {
+            background: #090514;
+            border: 1px solid #3c096c;
+            border-radius: 8px;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            color: #50fa7b;
+            overflow-x: auto;
+            text-transform: lowercase;
+        }
+
+        .breakdown-box {
+            background: rgba(123, 44, 191, 0.15);
+            border-left: 4px solid #c77dff;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>💻 C++ Programming Fundamentals</h1>
+
+    <!-- 1. TOPICS INDEX LIST -->
+    <div class="topics-index-card">
+        <h3>📌 Topics Index</h3>
+        <ul class="topics-list">
+            <li><a href="#topic1">01. C++ Basic Structure & Input/Output</a></li>
+            <li><a href="#topic2">02. Variables & Data Types</a></li>
+            <li><a href="#topic3">03. Operators (Arithmetic, Relational, Logical)</a></li>
+            <li><a href="#topic4">04. Control Structures (If-Else & Switch)</a></li>
+            <li><a href="#topic5">05. Iteration / Loops (For, While, Do-While)</a></li>
+            <li><a href="#topic6">06. Arrays & Strings</a></li>
+            <li><a href="#topic7">07. Functions & Scope</a></li>
+        </ul>
+    </div>
+
+    <!-- 2. TOPIC DEFINITIONS & POST-MORTEMS -->
+
+    <!-- TOPIC 1 -->
+    <div class="post-mortem-card" id="topic1">
+        <h2 class="topic-title">01. C++ Basic Structure & Input/Output</h2>
+        <p class="topic-desc">
+            C++ aik case-sensitive language hai. Is mein sab keywords lowercase (chote huroof) mein hote hain. `cout` screen par data display karne ke liye aur `cin` user se input lene ke liye istemal hota hai.
+        </p>
+        <div class="code-box">
+<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int number;
+    cout &lt;&lt; "enter a number: ";
+    cin &gt;&gt; number;
+    cout &lt;&lt; "you entered: " &lt;&lt; number &lt;&lt; endl;
+    return 0;
+}
+</pre>
+        </div>
+        <div class="breakdown-box">
+            <strong>🔍 Line-by-Line Breakdown:</strong><br>
+            • <code>#include &lt;iostream&gt;</code>: Header file jo input/output capabilities provide karti hai.<br>
+            • <code>using namespace std;</code>: Standard C++ library features ko direct use karne ke liye.<br>
+            • <code>int main()</code>: Program ka main entry point.<br>
+            • <code>cin &gt;&gt;</code>: Keyboard se user input lene ke liye extraction operator.
+        </div>
+    </div>
+
+    <!-- TOPIC 2 -->
+    <div class="post-mortem-card" id="topic2">
+        <h2 class="topic-title">02. Variables & Data Types</h2>
+        <p class="topic-desc">
+            Variables memory location ke naam hote hain jahan data store hota hai. Primary data types: <code>int</code>, <code>double</code>, <code>char</code>, aur <code>bool</code>.
+        </p>
+        <div class="code-box">
+<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int age = 19;
+    double gpa = 3.9;
+    char grade = 'a';
+    bool ispassed = true;
+
+    cout &lt;&lt; "age: " &lt;&lt; age &lt;&lt; endl;
+    cout &lt;&lt; "gpa: " &lt;&lt; gpa &lt;&lt; endl;
+    return 0;
+}
+</pre>
+        </div>
+        <div class="breakdown-box">
+            <strong>🔍 Line-by-Line Breakdown:</strong><br>
+            • <code>int age = 19;</code>: Memory mein integer variable create kiya.<br>
+            • <code>double gpa = 3.9;</code>: Decimal values store karne ke liye high precision type.
+        </div>
+    </div>
+
+    <!-- TOPIC 3 -->
+    <div class="post-mortem-card" id="topic3">
+        <h2 class="topic-title">03. Operators (Arithmetic, Relational, Logical)</h2>
+        <p class="topic-desc">
+            Operators symbols hote hain jo variables aur values par operations perform karte hain (jaise addition, comparison, aur logical conditions check karna).
+        </p>
+        <div class="code-box">
+<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a = 10, b = 5;
+    int sum = a + b; // arithmetic
+    bool check = (a > b); // relational
+    bool logicaltest = (a > 5 && b < 10); // logical
+
+    cout &lt;&lt; "sum: " &lt;&lt; sum &lt;&lt; endl;
+    cout &lt;&lt; "check: " &lt;&lt; check &lt;&lt; endl;
+    return 0;
+}
+</pre>
+        </div>
+        <div class="breakdown-box">
+            <strong>🔍 Line-by-Line Breakdown:</strong><br>
+            • <code>a + b</code>: Arithmetic operator jo values ko add karta hai.<br>
+            • <code>a > b</code>: Relational operator jo true ya false return karta hai.<br>
+            • <code>&&</code>: Logical AND operator, jo dono conditions true hone par true deta hai.
+        </div>
+    </div>
+
+    <!-- TOPIC 4 -->
+    <div class="post-mortem-card" id="topic4">
+        <h2 class="topic-title">04. Control Structures (If-Else & Switch)</h2>
+        <p class="topic-desc">
+            Control structures program ke flow ko decide karte hain ke kaun sa block run hoga aur kab conditions ke mutabiq decision liya jayega.
+        </p>
+        <div class="code-box">
+<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int marks = 85;
+
+    if (marks >= 80) {
+        cout &lt;&lt; "grade: a" &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; "grade: b" &lt;&lt; endl;
+    }
+    return 0;
+}
+</pre>
+        </div>
+        <div class="breakdown-box">
+            <strong>🔍 Line-by-Line Breakdown:</strong><br>
+            • <code>if (marks >= 80)</code>: Condition check karta hai ke marks 80 se zyada hain ya barabar.<br>
+            • <code>else</code>: Agar condition false ho toh yeh block execute hota hai.
+        </div>
+    </div>
+
+    <!-- TOPIC 5 -->
+    <div class="post-mortem-card" id="topic5">
+        <h2 class="topic-title">05. Iteration / Loops (For, While, Do-While)</h2>
+        <p class="topic-desc">
+            Loops aik hi code ko bar bar execute karne ke liye istemal hote hain jab tak koi specific condition true rehti hai.
+        </p>
+        <div class="code-box">
+<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 3; i++) {
+        cout &lt;&lt; "iteration count: " &lt;&lt; i &lt;&lt; endl;
+    }
+    return 0;
+}
+</pre>
+        </div>
+        <div class="breakdown-box">
+            <strong>🔍 Line-by-Line Breakdown:</strong><br>
+            • <code>int i = 1;</code>: Loop counter initialize kiya.<br>
+            • <code>i <= 3;</code>: Condition jab tak true rahegi loop chalega.<br>
+            • <code>i++</code>: Har iteration ke baad counter mein 1 ka izafa karta hai.
+        </div>
+    </div>
+
+    <!-- TOPIC 6 -->
+    <div class="post-mortem-card" id="topic6">
+        <h2 class="topic-title">06. Arrays & Strings</h2>
+        <p class="topic-desc">
+            Array aik hi data type ki multiple values ko ek sath continuous memory location par store karne ke liye use hota hai.
+        </p>
+        <div class="code-box">
+<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int scores[3] = {90, 85, 88};
+    cout &lt;&lt; "first score: " &lt;&lt; scores[0] &lt;&lt; endl;
+    return 0;
+}
+</pre>
+        </div>
+        <div class="breakdown-box">
+            <strong>🔍 Line-by-Line Breakdown:</strong><br>
+            • <code>int scores[3]</code>: 3 integers ki capacity wala array banaya.<br>
+            • <code>scores[0]</code>: Array ka pehla element access karne ke liye index 0 ka istemal.
+        </div>
+    </div>
+
+    <!-- TOPIC 7 -->
+    <div class="post-mortem-card" id="topic7">
+        <h2 class="topic-title">07. Functions & Scope</h2>
+        <p class="topic-desc">
+            Function code ka aik reusable block hota hai jo specific task perform karta hai, jisse code clean aur manageable rehta hai.
+        </p>
+        <div class="code-box">
+<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+void greetstudent() {
+    cout &lt;&lt; "welcome to student smart hub!" &lt;&lt; endl;
+}
+
+int main() {
+    greetstudent();
+    return 0;
+}
+</pre>
+        </div>
+        <div class="breakdown-box">
+            <strong>🔍 Line-by-Line Breakdown:</strong><br>
+            • <code>void greetstudent()</code>: Aik user-defined function jo koi value return nahi karta.<br>
+            • <code>greetstudent();</code>: Main function ke andar function ko call kiya gaya hai.
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
