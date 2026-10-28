@@ -132,7 +132,7 @@
     <div class="post-mortem-card" id="topic1">
         <h2 class="topic-title">01. C++ Basic Structure & Input/Output</h2>
         <p class="topic-desc">
-            C++ aik case-sensitive language hai. Is mein sab keywords lowercase (chote huroof) mein hote hain. `cout` screen par data display karne ke liye aur `cin` user se input lene ke liye istemal hota hai.
+            <strong>Detailed Explanation:</strong> C++ is a case-sensitive programming language where all keywords must be written in lowercase. Every C++ program execution begins from the <code>main()</code> function. The <code>cout</code> object combined with the insertion operator (<code>&lt;&lt;</code>) is used to display output on the screen, while the <code>cin</code> object combined with the extraction operator (<code>&gt;&gt;</code>) is used to take user input from the keyboard.
         </p>
         <div class="code-box">
 <pre>
@@ -149,11 +149,11 @@ int main() {
 </pre>
         </div>
         <div class="breakdown-box">
-            <strong>🔍 Line-by-Line Breakdown:</strong><br>
-            • <code>#include &lt;iostream&gt;</code>: Header file jo input/output capabilities provide karti hai.<br>
-            • <code>using namespace std;</code>: Standard C++ library features ko direct use karne ke liye.<br>
-            • <code>int main()</code>: Program ka main entry point.<br>
-            • <code>cin &gt;&gt;</code>: Keyboard se user input lene ke liye extraction operator.
+            <strong>🔍 Program Breakdown / Post-Mortem:</strong><br>
+            • <code>#include &lt;iostream&gt;</code>: Preprocessor directive that includes standard input/output stream library functions into the program.<br>
+            • <code>using namespace std;</code>: Allows direct use of standard library components (such as cout, cin, and endl) without prefixing them with <code>std::</code>.<br>
+            • <code>int main()</code>: The mandatory main entry point function where program execution officially starts.<br>
+            • <code>cin &gt;&gt; number;</code>: Reads integer input from the user via keyboard and stores it inside the <code>number</code> variable.
         </div>
     </div>
 
@@ -161,7 +161,7 @@ int main() {
     <div class="post-mortem-card" id="topic2">
         <h2 class="topic-title">02. Variables & Data Types</h2>
         <p class="topic-desc">
-            Variables memory location ke naam hote hain jahan data store hota hai. Primary data types: <code>int</code>, <code>double</code>, <code>char</code>, aur <code>bool</code>.
+            <strong>Detailed Explanation:</strong> Variables are symbolic names given to memory locations used to store data during program execution. Data types instruct the compiler about the kind of value a variable will hold, such as whole numbers, floating-point numbers, characters, or boolean flags. Primary data types include <code>int</code>, <code>double</code>, <code>char</code>, and <code>bool</code>.
         </p>
         <div class="code-box">
 <pre>
@@ -181,9 +181,10 @@ int main() {
 </pre>
         </div>
         <div class="breakdown-box">
-            <strong>🔍 Line-by-Line Breakdown:</strong><br>
-            • <code>int age = 19;</code>: Memory mein integer variable create kiya.<br>
-            • <code>double gpa = 3.9;</code>: Decimal values store karne ke liye high precision type.
+            <strong>🔍 Program Breakdown / Post-Mortem:</strong><br>
+            • <code>int age = 19;</code>: Allocates memory space to store an integer value <code>19</code>.<br>
+            • <code>double gpa = 3.9;</code>: Declares a double-precision floating-point variable to store decimal numbers accurately.<br>
+            • <code>char grade = 'a';</code>: Stores a single character enclosed within single quotation marks.
         </div>
     </div>
 
@@ -191,7 +192,7 @@ int main() {
     <div class="post-mortem-card" id="topic3">
         <h2 class="topic-title">03. Operators (Arithmetic, Relational, Logical)</h2>
         <p class="topic-desc">
-            Operators symbols hote hain jo variables aur values par operations perform karte hain (jaise addition, comparison, aur logical conditions check karna).
+            <strong>Detailed Explanation:</strong> Operators are special symbols that perform mathematical, relational, or logical operations on variables and values. Arithmetic operators (+, -, *, /) handle calculations, relational operators (&gt;, &lt;, ==) compare values, and logical operators (&amp;&amp;, ||) combine multiple conditional expressions.
         </p>
         <div class="code-box">
 <pre>
@@ -200,9 +201,9 @@ using namespace std;
 
 int main() {
     int a = 10, b = 5;
-    int sum = a + b; // arithmetic
-    bool check = (a > b); // relational
-    bool logicaltest = (a > 5 && b < 10); // logical
+    int sum = a + b; 
+    bool check = (a > b); 
+    bool logicaltest = (a > 5 && b < 10); 
 
     cout &lt;&lt; "sum: " &lt;&lt; sum &lt;&lt; endl;
     cout &lt;&lt; "check: " &lt;&lt; check &lt;&lt; endl;
@@ -211,10 +212,10 @@ int main() {
 </pre>
         </div>
         <div class="breakdown-box">
-            <strong>🔍 Line-by-Line Breakdown:</strong><br>
-            • <code>a + b</code>: Arithmetic operator jo values ko add karta hai.<br>
-            • <code>a > b</code>: Relational operator jo true ya false return karta hai.<br>
-            • <code>&&</code>: Logical AND operator, jo dono conditions true hone par true deta hai.
+            <strong>🔍 Program Breakdown / Post-Mortem:</strong><br>
+            • <code>a + b</code>: Arithmetic addition operator that computes the sum of variables <code>a</code> and <code>b</code>.<br>
+            • <code>(a > b)</code>: Relational expression evaluating whether <code>a</code> is greater than <code>b</code>, returning a boolean result.<br>
+            • <code>&amp;&amp;</code>: Logical AND operator that evaluates to true only when both operand conditions are simultaneously true.
         </div>
     </div>
 
@@ -222,7 +223,7 @@ int main() {
     <div class="post-mortem-card" id="topic4">
         <h2 class="topic-title">04. Control Structures (If-Else & Switch)</h2>
         <p class="topic-desc">
-            Control structures program ke flow ko decide karte hain ke kaun sa block run hoga aur kab conditions ke mutabiq decision liya jayega.
+            <strong>Detailed Explanation:</strong> Control structures dictate the execution path of a program based on specific runtime conditions. <code>if-else</code> statements evaluate boolean expressions to direct execution into alternative branches of code.
         </p>
         <div class="code-box">
 <pre>
@@ -242,9 +243,9 @@ int main() {
 </pre>
         </div>
         <div class="breakdown-box">
-            <strong>🔍 Line-by-Line Breakdown:</strong><br>
-            • <code>if (marks >= 80)</code>: Condition check karta hai ke marks 80 se zyada hain ya barabar.<br>
-            • <code>else</code>: Agar condition false ho toh yeh block execute hota hai.
+            <strong>🔍 Program Breakdown / Post-Mortem:</strong><br>
+            • <code>if (marks &gt;= 80)</code>: Evaluates whether the variable <code>marks</code> is greater than or equal to 80.<br>
+            • <code>else</code>: Fallback execution block that runs if the preceding condition evaluates to false.
         </div>
     </div>
 
@@ -252,7 +253,7 @@ int main() {
     <div class="post-mortem-card" id="topic5">
         <h2 class="topic-title">05. Iteration / Loops (For, While, Do-While)</h2>
         <p class="topic-desc">
-            Loops aik hi code ko bar bar execute karne ke liye istemal hote hain jab tak koi specific condition true rehti hai.
+            <strong>Detailed Explanation:</strong> Loops are control structures used to execute a block of code repeatedly as long as a specified condition remains true. A <code>for</code> loop is typically utilized when the exact number of iterations is known in advance.
         </p>
         <div class="code-box">
 <pre>
@@ -260,7 +261,7 @@ int main() {
 using namespace std;
 
 int main() {
-    for (int i = 1; i <= 3; i++) {
+    for (int i = 1; i &lt;= 3; i++) {
         cout &lt;&lt; "iteration count: " &lt;&lt; i &lt;&lt; endl;
     }
     return 0;
@@ -268,10 +269,10 @@ int main() {
 </pre>
         </div>
         <div class="breakdown-box">
-            <strong>🔍 Line-by-Line Breakdown:</strong><br>
-            • <code>int i = 1;</code>: Loop counter initialize kiya.<br>
-            • <code>i <= 3;</code>: Condition jab tak true rahegi loop chalega.<br>
-            • <code>i++</code>: Har iteration ke baad counter mein 1 ka izafa karta hai.
+            <strong>🔍 Program Breakdown / Post-Mortem:</strong><br>
+            • <code>int i = 1;</code>: Initializes the loop control counter variable.<br>
+            • <code>i &lt;= 3;</code>: The conditional test checked before every iteration; loop continues while true.<br>
+            • <code>i++</code>: Increment expression executed at the end of each iteration to update the counter.
         </div>
     </div>
 
@@ -279,7 +280,7 @@ int main() {
     <div class="post-mortem-card" id="topic6">
         <h2 class="topic-title">06. Arrays & Strings</h2>
         <p class="topic-desc">
-            Array aik hi data type ki multiple values ko ek sath continuous memory location par store karne ke liye use hota hai.
+            <strong>Detailed Explanation:</strong> An array is a data structure that stores a fixed-size sequential collection of elements of the same data type in contiguous memory locations. Individual elements are accessed using zero-based index numbers.
         </p>
         <div class="code-box">
 <pre>
@@ -294,9 +295,9 @@ int main() {
 </pre>
         </div>
         <div class="breakdown-box">
-            <strong>🔍 Line-by-Line Breakdown:</strong><br>
-            • <code>int scores[3]</code>: 3 integers ki capacity wala array banaya.<br>
-            • <code>scores[0]</code>: Array ka pehla element access karne ke liye index 0 ka istemal.
+            <strong>🔍 Program Breakdown / Post-Mortem:</strong><br>
+            • <code>int scores[3]</code>: Declares an integer array capable of holding 3 elements.<br>
+            • <code>scores[0]</code>: Accesses the first element stored at index position 0 within the array.
         </div>
     </div>
 
@@ -304,7 +305,7 @@ int main() {
     <div class="post-mortem-card" id="topic7">
         <h2 class="topic-title">07. Functions & Scope</h2>
         <p class="topic-desc">
-            Function code ka aik reusable block hota hai jo specific task perform karta hai, jisse code clean aur manageable rehta hai.
+            <strong>Detailed Explanation:</strong> A function is a self-contained block of code designed to perform a specific, reusable task, improving modularity and code readability. A <code>void</code> return type indicates that the function does not return any value back to the caller.
         </p>
         <div class="code-box">
 <pre>
@@ -322,12 +323,13 @@ int main() {
 </pre>
         </div>
         <div class="breakdown-box">
-            <strong>🔍 Line-by-Line Breakdown:</strong><br>
-            • <code>void greetstudent()</code>: Aik user-defined function jo koi value return nahi karta.<br>
-            • <code>greetstudent();</code>: Main function ke andar function ko call kiya gaya hai.
+            <strong>🔍 Program Breakdown / Post-Mortem:</strong><br>
+            • <code>void greetstudent()</code>: Defines a user-defined function named <code>greetstudent</code> with no return value.<br>
+            • <code>greetstudent();</code>: Invokes (calls) the function from inside the <code>main()</code> function to execute its code block.
         </div>
     </div>
 
 </div>
+
 </body>
 </html>
