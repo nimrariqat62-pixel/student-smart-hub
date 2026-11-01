@@ -469,6 +469,97 @@ int main() {
 }</div>
         </div>
 
+<!-- 3. DISCRETE MATHEMATICS (SETS & RELATIONS) -->
+<section id="discrete-math" class="card-box" style="background-color: #1E1B3A; border: 1px solid #3B2A68; border-radius: 10px; padding: 20px; margin-top: 25px; margin-bottom: 25px;">
+  <h2>3. DISCRETE MATHEMATICS (SETS & RELATIONS)</h2>
+  <p style="color: #cbd5e1;">FUNDAMENTALS OF SET THEORY, CARTESIAN PRODUCTS, RELATIONS, AND EQUIVALENCE RELATIONS.</p>
+  
+  <!-- PURPLE BUTTON TO TOGGLE DETAILS -->
+  <button class="purple-btn" onclick="toggleDiscreteSection()" style="background-color: #6C5CE7; color: #FFFFFF; border: none; padding: 12px 20px; font-size: 14px; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 10px;">
+    💜 VIEW DISCRETE MATH NOTES & EQUIVALENCE RELATIONS →
+  </button>
+
+  <!-- HIDDEN DETAILED CONTENT SECTION -->
+  <div id="discrete-details" class="details-container" style="display: none; margin-top: 20px; border-top: 2px solid #3B2A68; padding-top: 15px;">
+    
+    <!-- SETS SECTION -->
+    <div class="sub-card" style="background-color: #15132B; border: 1px solid #3B2A68; border-radius: 8px; padding: 15px; margin-bottom: 15px; color: #E0E0E0;">
+      <h3 style="color: #A29BFE; margin-top: 0;">📌 1. SETS & TYPES</h3>
+      <p><strong>Definition:</strong> A Set is a well-defined collection of distinct objects.</p>
+      <p><em>Example:</em> A = {1, 2, 3, 4}</p>
+      
+      <h4>Types of Sets:</h4>
+      <ul style="padding-left: 20px;">
+        <li><strong>Finite Set:</strong> Elements can be counted. Example: A = {a, b, c}</li>
+        <li><strong>Infinite Set:</strong> Elements cannot be counted. Example: N = {1, 2, 3, ...}</li>
+        <li><strong>Empty Set (∅):</strong> A set with no elements. Example: A = {}</li>
+        <li><strong>Subset (A ⊆ B):</strong> Every element of A is also in B.</li>
+      </ul>
+    </div>
+
+    <!-- RELATIONS SECTION -->
+    <div class="sub-card" style="background-color: #15132B; border: 1px solid #3B2A68; border-radius: 8px; padding: 15px; margin-bottom: 15px; color: #E0E0E0;">
+      <h3 style="color: #A29BFE; margin-top: 0;">📌 2. RELATIONS & TYPES</h3>
+      <p><strong>Definition:</strong> A relation R from set A to set B is a subset of the Cartesian Product (A × B).</p>
+      <p><em>Example:</em> If A = {1, 2}, then A × A = {(1,1), (1,2), (2,1), (2,2)}. A relation can be R = {(1,1), (2,2)}.</p>
+
+      <h4>Key Properties of Relations:</h4>
+      <ul style="padding-left: 20px;">
+        <li><strong>Reflexive:</strong> For every a ∈ A, (a, a) ∈ R.</li>
+        <li><strong>Symmetric:</strong> If (a, b) ∈ R, then (b, a) ∈ R.</li>
+        <li><strong>Transitive:</strong> If (a, b) ∈ R and (b, c) ∈ R, then (a, c) ∈ R.</li>
+      </ul>
+    </div>
+
+    <!-- EQUIVALENCE RELATION QUESTION -->
+    <div class="sub-card equivalence-box" style="background-color: #15132B; border: 1px solid #3B2A68; border-radius: 8px; padding: 15px; margin-bottom: 15px; color: #E0E0E0;">
+      <h3 style="color: #A29BFE; margin-top: 0;">🧪 3. SOLVED PRACTICE QUESTION: EQUIVALENCE RELATION</h3>
+      <p><strong>Question:</strong> Given set A = {1, 2, 3} and relation R = {(1,1), (2,2), (3,3), (1,2), (2,1)}. Verify if R is an Equivalence Relation.</p>
+
+      <div class="solution" style="margin-top: 10px;">
+        <p><strong>Condition for Equivalence Relation:</strong> R must be Reflexive, Symmetric, and Transitive.</p>
+        
+        <ol style="padding-left: 20px; margin-top: 10px;">
+          <li style="margin-bottom: 10px;">
+            <strong>Reflexive Verification:</strong><br>
+            Check if (a,a) ∈ R for all elements in A = {1, 2, 3}.<br>
+            → (1,1) ∈ R, (2,2) ∈ R, (3,3) ∈ R.<br>
+            <span class="tag-pass" style="color: #55EFC4; font-weight: bold; display: inline-block; margin-top: 3px;">✅ Reflexive Condition Satisfied!</span>
+          </li>
+          <li style="margin-bottom: 10px;">
+            <strong>Symmetric Verification:</strong><br>
+            Here (1,2) ∈ R and its reverse (2,1) ∈ R is also present.<br>
+            <span class="tag-pass" style="color: #55EFC4; font-weight: bold; display: inline-block; margin-top: 3px;">✅ Symmetric Condition Satisfied!</span>
+          </li>
+          <li style="margin-bottom: 10px;">
+            <strong>Transitive Verification:</strong><br>
+            Since (1,2) ∈ R and (2,1) ∈ R, then (1,1) must be in R, which is present.<br>
+            <span class="tag-pass" style="color: #55EFC4; font-weight: bold; display: inline-block; margin-top: 3px;">✅ Transitive Condition Satisfied!</span>
+          </li>
+        </ol>
+
+        <p class="final-result" style="background-color: #2D1B4E; border-left: 4px solid #A29BFE; padding: 10px; margin-top: 15px; color: #FFFFFF;">
+          <strong>Conclusion:</strong> Since R satisfies Reflexive, Symmetric, and Transitive conditions, <strong>R is an Equivalence Relation!</strong> 🎉
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JAVASCRIPT FOR TOGGLE BUTTON -->
+<script>
+  function toggleDiscreteSection() {
+    var details = document.getElementById("discrete-details");
+    if (details.style.display === "none") {
+      details.style.display = "block";
+    } else {
+      details.style.display = "none";
+    }
+  }
+</script>
+
+
 
         <!-- MODULE 2: KOREAN LISTENING -->
         <h2 class="section-header" id="korean-audio">MODULE 2: KOREAN LISTENING PRACTICE (15 PHRASES)</h2>
