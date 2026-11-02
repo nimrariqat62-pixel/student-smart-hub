@@ -797,6 +797,214 @@ int main() {
 </div>
 
 
+<!-- ABOUT ME & CLASSROOM ACHIEVEMENT SECTION -->
+<div style="background: linear-gradient(135deg, #0d0722 0%, #1a0b36 100%); border-radius: 20px; padding: 30px; border: 1px solid #a855f7; box-shadow: 0 0 25px rgba(186, 85, 211, 0.25); margin-top: 30px; margin-bottom: 40px; text-align: center; color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    
+    <!-- Intro Header -->
+    <h1 style="color: #f0abfc; font-size: 32px; margin-bottom: 8px; text-shadow: 0 0 10px #c084fc;">Nimra Riqat</h1>
+    <div style="color: #c084fc; font-size: 18px; margin-bottom: 20px; font-weight: 500;">BSCS Student (1st Semester)</div>
+    
+    <div style="margin-bottom: 20px;">
+        <span style="display: inline-block; background: rgba(168, 85, 247, 0.2); border: 1px solid #c084fc; color: #f0abfc; padding: 6px 16px; border-radius: 20px; font-size: 14px; margin: 5px;">💻 BSCS Journey</span>
+        <span style="display: inline-block; background: rgba(168, 85, 247, 0.2); border: 1px solid #c084fc; color: #f0abfc; padding: 6px 16px; border-radius: 20px; font-size: 14px; margin: 5px;">🌟 Academic Highlight</span>
+        <span style="display: inline-block; background: rgba(168, 85, 247, 0.2); border: 1px solid #c084fc; color: #f0abfc; padding: 6px 16px; border-radius: 20px; font-size: 14px; margin: 5px;">🚀 Tech & Code</span>
+    </div>
+
+    <p style="color: #e9d5ff; font-size: 16px; line-height: 1.8; max-width: 700px; margin: 0 auto 25px auto;">
+        Hello! I am a first-semester Bachelor of Science in Computer Science (BSCS) student. I love exploring technology, writing clean code, and working hard toward my goals.
+    </p>
+
+    <!-- Interactive Canvas Component -->
+    <div style="position: relative; width: 100%; border-radius: 14px; overflow: hidden; border: 2px solid #d8b4fe; box-shadow: 0 0 20px #c084fc; margin-bottom: 20px; background: #05020a;">
+        <canvas id="classCanvas" width="800" height="400" style="display: block; width: 100%; height: auto;"></canvas>
+    </div>
+    
+    <h3 style="color: #f0abfc; margin-bottom: 10px; font-size: 22px;">🔮 Special Economics Classroom Moment</h3>
+    <p style="color: #e9d5ff; font-size: 16px; line-height: 1.7; max-width: 700px; margin: 0 auto 20px auto;">
+        When the professor asked an Economics question, the whole class was silent. I stood up and answered it confidently—earning praise from the teacher and a round of applause from everyone in the class!
+    </p>
+
+    <button onclick="triggerClap()" style="background: linear-gradient(45deg, #a855f7, #ec4899); color: #ffffff; border: none; padding: 14px 32px; font-size: 17px; font-weight: bold; border-radius: 30px; cursor: pointer; box-shadow: 0 0 15px #a855f7;">
+        👏 Celebrate Moment
+    </button>
+</div>
+
+<!-- Canvas Animation Script -->
+<script>
+    const canvas = document.getElementById('classCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let particleList = [];
+    let frame = 0;
+
+    function drawClassroom() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Neon Purple Floor and Wall
+        ctx.fillStyle = '#0a0518';
+        ctx.fillRect(0, 0, canvas.width, 260);
+        ctx.fillStyle = '#05020c';
+        ctx.fillRect(0, 260, canvas.width, 140);
+
+        // Neon Chalkboard
+        ctx.fillStyle = '#120826';
+        ctx.fillRect(150, 20, 500, 130);
+        ctx.strokeStyle = '#c084fc';
+        ctx.lineWidth = 3;
+        ctx.shadowColor = '#a855f7';
+        ctx.shadowBlur = 12;
+        ctx.strokeRect(150, 20, 500, 130);
+        ctx.shadowBlur = 0;
+
+        // Text on Blackboard
+        ctx.fillStyle = '#e9d5ff';
+        ctx.font = '16px sans-serif';
+        ctx.fillText("Economics 101: Introduction", 300, 60);
+        
+        ctx.shadowColor = '#f0abfc';
+        ctx.shadowBlur = 10;
+        ctx.fillStyle = '#f472b6';
+        ctx.font = 'bold 20px sans-serif';
+        ctx.fillText("Outstanding Answer! 👏", 310, 100);
+        ctx.shadowBlur = 0;
+
+        // Teacher
+        ctx.fillStyle = '#2e1065';
+        ctx.fillRect(100, 140, 50, 80);
+        
+        ctx.fillStyle = '#7e22ce';
+        ctx.beginPath();
+        ctx.arc(80, 130, 14, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillRect(72, 144, 16, 40);
+        
+        ctx.fillStyle = '#d8b4fe';
+        let teacherClap = Math.sin(frame * 0.25) * 5;
+        ctx.fillRect(88 + teacherClap, 150, 8, 4);
+
+        // Desks & Students with Moving Clapping Hands
+        const rows = [
+            { y: 320, students: [180, 260, 540, 620] },
+            { y: 270, students: [200, 280, 520, 600] }
+        ];
+
+        rows.forEach(row => {
+            row.students.forEach((x, idx) => {
+                ctx.fillStyle = '#1e1b4b';
+                ctx.fillRect(x - 20, row.y, 40, 15);
+
+                ctx.fillStyle = idx % 2 === 0 ? '#6b21a8' : '#3b0764';
+                ctx.beginPath();
+                ctx.arc(x, row.y - 15, 10, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.fillStyle = '#f0abfc';
+                let clapOffset = Math.sin((frame * 0.3) + x) * 5;
+                ctx.beginPath();
+                ctx.arc(x - 5 + clapOffset, row.y - 8, 3.5, 0, Math.PI * 2);
+                ctx.arc(x + 5 - clapOffset, row.y - 8, 3.5, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        });
+
+        // SPECIAL STUDENT (NIMRA) WITH DUPATTA & CROWN
+        const myX = 400;
+        const myY = 290;
+
+        let grad = ctx.createRadialGradient(myX, myY - 20, 10, myX, myY - 20, 140);
+        grad.addColorStop(0, 'rgba(216, 180, 254, 0.6)');
+        grad.addColorStop(0.5, 'rgba(168, 85, 247, 0.3)');
+        grad.addColorStop(1, 'rgba(168, 85, 247, 0)');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(myX, myY - 20, 140, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#3b0764';
+        ctx.fillRect(myX - 30, myY + 10, 60, 18);
+        ctx.strokeStyle = '#f0abfc';
+        ctx.lineWidth = 2;
+        ctx.shadowColor = '#f0abfc';
+        ctx.shadowBlur = 8;
+        ctx.strokeRect(myX - 30, myY + 10, 60, 18);
+        ctx.shadowBlur = 0;
+
+        ctx.shadowColor = '#f472b6';
+        ctx.shadowBlur = 20;
+        ctx.fillStyle = '#f472b6';
+        ctx.beginPath();
+        ctx.arc(myX, myY - 22, 14, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Dupatta
+        ctx.fillStyle = '#c084fc';
+        ctx.beginPath();
+        ctx.ellipse(myX, myY - 12, 19, 9, 0, 0, Math.PI);
+        ctx.fill();
+
+        // Raised Hand
+        ctx.strokeStyle = '#ffeaa7';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(myX - 8, myY - 15);
+        ctx.lineTo(myX - 18, myY - 35);
+        ctx.stroke();
+
+        // Golden Crown
+        ctx.fillStyle = '#ffd700';
+        ctx.beginPath();
+        ctx.moveTo(myX - 10, myY - 34);
+        ctx.lineTo(myX - 10, myY - 44);
+        ctx.lineTo(myX - 4, myY - 37);
+        ctx.lineTo(myX, myY - 47);
+        ctx.lineTo(myX + 4, myY - 37);
+        ctx.lineTo(myX + 10, myY - 44);
+        ctx.lineTo(myX + 10, myY - 34);
+        ctx.closePath();
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Confetti
+        particleList.forEach((p, index) => {
+            p.y += p.vy;
+            p.x += p.vx;
+            p.alpha -= 0.01;
+            
+            ctx.shadowColor = `rgba(${p.color}, 0.8)`;
+            ctx.shadowBlur = 8;
+            ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            if (p.alpha <= 0) particleList.splice(index, 1);
+        });
+
+        frame++;
+        requestAnimationFrame(drawClassroom);
+    }
+
+    function triggerClap() {
+        const colors = ['240,171,252', '192,132,252', '244,114,182', '255,255,255', '216,180,254'];
+        for (let i = 0; i < 70; i++) {
+            particleList.push({
+                x: 400,
+                y: 270,
+                vx: (Math.random() - 0.5) * 8,
+                vy: (Math.random() - 1) * 6 - 2,
+                size: Math.random() * 4 + 2,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                alpha: 1
+            });
+        }
+    }
+
+    drawClassroom();
+</script>
+
+
+
 
         <!-- MODULE 4: MY DREAM ROADMAP -->
 
