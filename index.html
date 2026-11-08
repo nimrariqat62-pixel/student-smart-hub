@@ -552,251 +552,107 @@ int main() {
     }
   }
 </script>
-
-
+<!-- SEQUENCE - Exact Color Matched With Upper Button -->
 <style>
-.sequence-box {
-    max-width: 850px;
-    margin: 20px auto;
+  .sequence-module {
+    background: #1a1230;
+    border: 1px solid #2d2250;
+    border-radius: 12px;
     padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #45205e;
-    background: #faf5ff;
-    border: 2px solid #a855f7;
-    border-radius: 15px;
-}
-
-.sequence-box h2,
-.sequence-box h3 {
-    color: #7e22ce;
-}
-
-.sequence-box h2 {
-    text-align: center;
-}
-
-.sequence-box h3 {
-    border-bottom: 1px solid #d8b4fe;
-    padding-bottom: 6px;
-}
-
-.sequence-box p,
-.sequence-box li {
-    line-height: 1.8;
-}
-
-.sequence-list {
-    background: #f3e8ff;
-    padding: 15px 15px 15px 35px;
-    border-radius: 10px;
-}
-
-.sequence-btn {
-    display: block;
-    margin: 20px auto;
-    padding: 13px 30px;
-    background: #7e22ce;
+    margin: 20px 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .sequence-module h3 {
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .sequence-module p.sub-text {
+    color: #9ca3af;
+    font-size: 0.75rem;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+  }
+  /* Exact same color as your screenshot button */
+  .main-toggle-btn {
+    background: #7b61ff;
     color: white;
     border: none;
-    border-radius: 9px;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.sequence-btn:hover {
-    background: #581c87;
-}
-
-.sequence-lesson {
-    display: none;
-    background: white;
-    border: 2px solid #c084fc;
-    border-radius: 12px;
-    padding: 18px;
-    margin-top: 15px;
-}
-
-.formula {
-    background: #f3e8ff;
-    color: #6b21a8;
-    padding: 12px;
+    padding: 10px 20px;
     border-radius: 8px;
-    font-weight: bold;
-}
-
-.example {
-    background: #faf5ff;
-    border-left: 4px solid #9333ea;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 12px rgba(123, 97, 255, 0.3);
+    transition: all 0.2s;
+  }
+  .main-toggle-btn:hover {
+    background: #6a4eff;
+    box-shadow: 0 6px 16px rgba(123, 97, 255, 0.4);
+  }
+  #sequence-full-content {
+    display: none;
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    color: #2e1065;
+  }
+  #sequence-full-content .section {
+    background: #f8f5ff;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #e9d5ff;
+    overflow: hidden;
+  }
+  #sequence-full-content .formula-box {
+    background: #f3e8ff;
+    border-left: 4px solid #7b61ff;
     padding: 10px;
+    text-align: center;
     margin: 10px 0;
-}
+    border-radius: 5px;
+  }
+  .small-toggle-btn {
+    background: #7b61ff;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    float: right;
+  }
+  .inner-content { display: none; margin-top: 12px; border-top: 1px dashed #d8b4fe; padding-top: 10px; font-size: 0.9rem; }
 </style>
 
-<div class="sequence-box">
+<div class="sequence-module">
+  <h3>3. DISCRETE MATHEMATICS (SEQUENCE)</h3>
+  <p class="sub-text">SEQUENCE IS AN IMPORTANT TOPIC IN MATHEMATICS. IT DEALS WITH AN ORDERED ARRANGEMENT OF NUMBERS ACCORDING TO A SPECIFIC RULE.</p>
+  
+  <button class="main-toggle-btn" id="main-seq-btn" onclick="toggleMainSequence()">
+    💜 VIEW SEQUENCE NOTES & PRACTICE →
+  </button>
 
-    <h2>SEQUENCE</h2>
-
-    <p>
-        Sequence is an important topic in mathematics.
-        It deals with an ordered arrangement of numbers
-        according to a specific rule.
-    </p>
-
-    <h3>Topics Included in Sequence</h3>
-
-    <ul class="sequence-list">
-        <li>Definition of Sequence</li>
-        <li>Arithmetic Sequence</li>
-        <li>Geometric Sequence</li>
-        <li>Arithmetic Progression (A.P.)</li>
-        <li>Arithmetic Mean (A.M.)</li>
-    </ul>
-
-    <button class="sequence-btn"
-        id="sequenceButton"
-        onclick="toggleSequence()">
-        Sequence
-    </button>
-
-    <div class="sequence-lesson" id="sequenceLesson">
-
-        <h3>1. Definition of Sequence</h3>
-
-        <p>
-            A sequence is an ordered list of numbers
-            arranged according to a specific rule.
-        </p>
-
-        <div class="example">
-            <b>Example:</b><br>
-            2, 4, 6, 8, 10, ...
-        </div>
-
-        <h3>2. Arithmetic Sequence</h3>
-
-        <p>
-            An arithmetic sequence is a sequence in
-            which the difference between consecutive
-            terms is always constant.
-        </p>
-
-        <div class="formula">
-            General Formula:<br>
-            aₙ = a + (n - 1)d
-        </div>
-
-        <p>
-            a = First term<br>
-            d = Common difference<br>
-            n = Term number
-        </p>
-
-        <b>Three Examples:</b>
-
-        <div class="example">
-            1. 2, 4, 6, 8, 10, ...<br>
-            Common difference = 2
-        </div>
-
-        <div class="example">
-            2. 3, 7, 11, 15, 19, ...<br>
-            Common difference = 4
-        </div>
-
-        <div class="example">
-            3. 10, 7, 4, 1, -2, ...<br>
-            Common difference = -3
-        </div>
-
-        <h3>3. Geometric Sequence</h3>
-
-        <p>
-            A geometric sequence is a sequence in which
-            each term is obtained by multiplying the
-            previous term by a fixed non-zero number
-            called the common ratio.
-        </p>
-
-        <div class="formula">
-            General Formula:<br>
-            aₙ = a × rⁿ⁻¹
-        </div>
-
-        <p>
-            a = First term<br>
-            r = Common ratio<br>
-            n = Term number
-        </p>
-
-        <b>Three Examples:</b>
-
-        <div class="example">
-            1. 2, 4, 8, 16, 32, ...<br>
-            Common ratio = 2
-        </div>
-
-        <div class="example">
-            2. 3, 9, 27, 81, 243, ...<br>
-            Common ratio = 3
-        </div>
-
-        <div class="example">
-            3. 5, 10, 20, 40, 80, ...<br>
-            Common ratio = 2
-        </div>
-
-        <h3>4. Arithmetic Progression (A.P.)</h3>
-
-        <p>
-            An arithmetic progression is a sequence
-            in which the difference between any two
-            consecutive terms is constant.
-        </p>
-
-        <div class="example">
-            <b>Example:</b><br>
-            5, 10, 15, 20, 25, ...<br>
-            Common difference = 5
-        </div>
-
-        <h3>5. Arithmetic Mean (A.M.)</h3>
-
-        <p>
-            Arithmetic mean is the average of two numbers.
-            It is calculated by adding the two numbers
-            and dividing their sum by 2.
-        </p>
-
-        <div class="formula">
-            A.M. = (a + b) / 2
-        </div>
-
-        <div class="example">
-            <b>Example:</b><br>
-            Find the A.M. between 4 and 10.<br><br>
-            A.M. = (4 + 10) / 2<br>
-            A.M. = 14 / 2<br>
-            <b>Answer = 7</b>
-        </div>
-
+  <div id="sequence-full-content">
+    <div class="section">
+      <strong>DEFINITION OF SEQUENCE</strong>
+      <button class="small-toggle-btn" onclick="toggleInner('s1', this)">View</button>
+      <div class="inner-content" id="s1">
+        <p>Sequence = ordered collection. {a_n} = a_1, a_2, a_3...</p>
+        <div class="formula-box">$$a_n = a_1 + (n-1)d$$</div>
+      </div>
     </div>
-</div>
-
-<script>
-function toggleSequence() {
-    const lesson = document.getElementById("sequenceLesson");
-    const button = document.getElementById("sequenceButton");
-
-    if (lesson.style.display === "block") {
-        lesson.style.display = "none";
-        button.textContent = "Sequence";
-    } else {
-        lesson.style.display = "block";
-        button.textContent = "Hide Sequence";
-    }
-}
-</script>
+    <div class="section">
+      <strong>ARITHMETIC & GEOMETRIC</strong>
+      <button class="small-toggle-btn" onclick="toggleInner('s2', this)">View</button>
+      <div class="inner-content" id="s2">
+        <p><b>AP:</b> a_n = a_1 + (n-1)d | <b>GP:</b> a_n = a_1·r^(n-1) | <b>AM:</b> (A
+       
 
 
 
