@@ -553,6 +553,246 @@ int main() {
   }
 </script>
 
+
+<!-- MATHEMATICS SECTION CSS -->
+<style>
+.math-section {
+    background: #160d27;
+    border: 1px solid #873cff;
+    border-radius: 15px;
+    padding: 18px;
+    margin: 20px 0;
+    color: #f4eaff;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 12px rgba(135,60,255,0.18);
+}
+
+.math-section h2 {
+    color: #c99aff;
+    text-align: center;
+}
+
+.math-toggle {
+    width: 100%;
+    padding: 12px;
+    background: #792be8;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.math-toggle:hover {
+    background: #9b55ff;
+}
+
+.math-content {
+    margin-top: 18px;
+}
+
+.math-content[hidden] {
+    display: none !important;
+}
+
+.math-card {
+    background: #24143b;
+    border-left: 4px solid #a45cff;
+    border-radius: 10px;
+    padding: 14px;
+    margin: 14px 0;
+}
+
+.math-card h3 {
+    color: #d4adff;
+}
+
+.math-card p,
+.math-card li {
+    line-height: 1.7;
+    color: #eee3ff;
+}
+
+.math-formula {
+    background: #10091c;
+    color: #d7aaff;
+    padding: 10px;
+    border-radius: 7px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.math-example {
+    color: #c8a4ff;
+    font-weight: bold;
+}
+</style>
+
+<!-- MATHEMATICS SECTION HTML -->
+<section class="math-section">
+
+    <h2>📘 MATHEMATICS</h2>
+
+    <button
+        class="math-toggle"
+        id="mathToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mathContent">
+        ➕ Show Mathematics
+    </button>
+
+    <div class="math-content" id="mathContent" hidden>
+
+        <div class="math-card">
+            <h3>1. Sequence</h3>
+
+            <p><b>Definition:</b>
+            A sequence is an ordered list of numbers
+            arranged according to a specific rule.
+            Each number is called a term.</p>
+
+            <p class="math-example">Examples:</p>
+            <ol>
+                <li>2, 4, 6, 8, 10, ...</li>
+                <li>1, 3, 5, 7, 9, ...</li>
+                <li>5, 10, 15, 20, 25, ...</li>
+            </ol>
+        </div>
+
+        <div class="math-card">
+            <h3>2. Arithmetic Sequence</h3>
+
+            <p><b>Definition:</b>
+            An arithmetic sequence is a sequence in which
+            the difference between consecutive terms
+            is always constant.</p>
+
+            <p><b>Common Difference (d):</b></p>
+
+            <div class="math-formula">
+                d = a₂ - a₁
+            </div>
+
+            <p><b>General Formula:</b></p>
+
+            <div class="math-formula">
+                aₙ = a₁ + (n - 1)d
+            </div>
+
+            <p class="math-example">Three Examples:</p>
+            <ol>
+                <li>2, 4, 6, 8, 10, ... (d = 2)</li>
+                <li>5, 10, 15, 20, 25, ... (d = 5)</li>
+                <li>20, 17, 14, 11, 8, ... (d = -3)</li>
+            </ol>
+        </div>
+
+        <div class="math-card">
+            <h3>3. Geometric Sequence</h3>
+
+            <p><b>Definition:</b>
+            A geometric sequence is a sequence in which
+            the ratio between consecutive terms
+            is always constant.</p>
+
+            <p><b>Common Ratio (r):</b></p>
+
+            <div class="math-formula">
+                r = a₂ / a₁
+            </div>
+
+            <p><b>General Formula:</b></p>
+
+            <div class="math-formula">
+                aₙ = a₁ × r⁽ⁿ⁻¹⁾
+            </div>
+
+            <p class="math-example">Three Examples:</p>
+            <ol>
+                <li>2, 4, 8, 16, 32, ... (r = 2)</li>
+                <li>3, 9, 27, 81, ... (r = 3)</li>
+                <li>16, 8, 4, 2, 1, ... (r = 1/2)</li>
+            </ol>
+        </div>
+
+        <div class="math-card">
+            <h3>4. Arithmetic Progression (AP)</h3>
+
+            <p><b>Definition:</b>
+            An arithmetic progression is a sequence
+            in which the difference between consecutive
+            terms remains constant.</p>
+
+            <div class="math-formula">
+                a, a + d, a + 2d, a + 3d, ...
+            </div>
+
+            <p><b>Example:</b> 4, 7, 10, 13, 16, ...</p>
+
+            <p>First term (a) = 4</p>
+            <p>Common difference (d) = 3</p>
+
+            <p><b>Note:</b> AP is another name for
+            an arithmetic sequence.</p>
+        </div>
+
+        <div class="math-card">
+            <h3>5. Arithmetic Mean (AM)</h3>
+
+            <p><b>Definition:</b>
+            Arithmetic mean is the average of two or
+            more numbers. It is calculated by dividing
+            their sum by the total number of values.</p>
+
+            <div class="math-formula">
+                AM = Sum of values / Number of values
+            </div>
+
+            <p><b>Example 1:</b> Find AM of 4 and 8.</p>
+            <div class="math-formula">
+                AM = (4 + 8) / 2 = 6
+            </div>
+
+            <p><b>Example 2:</b> Find AM of 10 and 20.</p>
+            <div class="math-formula">
+                AM = (10 + 20) / 2 = 15
+            </div>
+
+            <p><b>Example 3:</b> Find AM of 2, 4 and 6.</p>
+            <div class="math-formula">
+                AM = (2 + 4 + 6) / 3 = 4
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- MATHEMATICS TOGGLE JAVASCRIPT -->
+<script>
+const mathToggle = document.getElementById("mathToggle");
+const mathContent = document.getElementById("mathContent");
+
+mathToggle.addEventListener("click", function() {
+
+    const isHidden = mathContent.hidden;
+
+    mathContent.hidden = !isHidden;
+
+    if (isHidden) {
+        mathToggle.textContent = "➖ Hide Mathematics";
+        mathToggle.setAttribute("aria-expanded", "true");
+    } else {
+        mathToggle.textContent = "➕ Show Mathematics";
+        mathToggle.setAttribute("aria-expanded", "false");
+    }
+
+});
+</script>
+
+
 <!-- 4. FUNCTIONAL ENGLISH (COMPLETE GRAMMAR MASTERCLASS) -->
 <section id="functional-english" class="card-box" style="background-color: #1E1B3A; border: 1px solid #3B2A68; border-radius: 10px; padding: 20px; margin-top: 25px; margin-bottom: 25px;">
   <h2 style="font-size: 22px; color: #FFFFFF;">4. FUNCTIONAL ENGLISH (COMPLETE GRAMMAR MASTERCLASS)</h2>
