@@ -553,108 +553,173 @@ int main() {
   }
 </script>
 
+<style>
+.sequence-section {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    max-width: 850px;
+    color: #39204f;
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sequence and Its Types</title>
+.sequence-section h2 {
+    color: #7b2cbf;
+    text-align: center;
+}
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f3eaff;
-            padding: 20px;
-            text-align: center;
-        }
+.sequence-section button {
+    background: #7b2cbf;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
-        h1 {
-            color: #7136a5;
-        }
+.sequence-section button:hover {
+    background: #5a189a;
+}
 
-        button {
-            background: #7136a5;
-            color: white;
-            border: none;
-            padding: 12px 22px;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+.sequence-content {
+    display: none;
+    background: #f6edff;
+    border: 2px solid #c77dff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
 
-        #content {
-            display: none;
-            background: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-            text-align: left;
-            line-height: 1.7;
-        }
-    </style>
-</head>
+.sequence-content h3 {
+    color: #7b2cbf;
+}
 
-<body>
+.sequence-content h4 {
+    color: #9d4edd;
+}
+</style>
 
-    <h1>Sequence and Its Types</h1>
+<div class="sequence-section">
 
-    <button onclick="toggleContent()">
-        Show / Hide
+    <h2>Sequence</h2>
+
+    <button id="sequenceToggleBtn"
+        onclick="toggleSequenceContent()">
+        Show Sequence
     </button>
 
-    <div id="content">
-        <h2>Sequence</h2>
+    <div id="sequenceContent" class="sequence-content">
+
+        <h3>1. Definition of Sequence</h3>
 
         <p>
             A sequence is an ordered list of numbers
             arranged according to a specific rule.
         </p>
 
-        <h2>Types of Sequences</h2>
+        <p><b>Example:</b> 2, 4, 6, 8, 10, ...</p>
 
-        <h3>1. Arithmetic Sequence</h3>
-        <p>
-            A sequence in which the difference
-            between consecutive terms is constant.
-        </p>
-        <p>Example: 2, 4, 6, 8, 10</p>
+        <h3>2. Types of Sequences</h3>
 
-        <h3>2. Geometric Sequence</h3>
-        <p>
-            A sequence in which each term is obtained
-            by multiplying the previous term by a
-            constant number.
-        </p>
-        <p>Example: 2, 4, 8, 16, 32</p>
+        <h4>A. Arithmetic Sequence</h4>
 
-        <h3>3. Finite Sequence</h3>
         <p>
-            A sequence that has a limited number of terms.
+            An arithmetic sequence is a sequence in which
+            the difference between consecutive terms
+            remains constant.
         </p>
-        <p>Example: 1, 2, 3, 4, 5</p>
 
-        <h3>4. Infinite Sequence</h3>
+        <p><b>General Formula:</b></p>
+        <p>aₙ = a + (n - 1)d</p>
+
         <p>
-            A sequence that continues without ending.
+            Where a = first term, d = common difference,
+            n = term number.
         </p>
-        <p>Example: 1, 2, 3, 4, 5, ...</p>
+
+        <b>Examples:</b>
+        <ol>
+            <li>2, 4, 6, 8, 10, ...</li>
+            <li>3, 7, 11, 15, 19, ...</li>
+            <li>10, 7, 4, 1, -2, ...</li>
+        </ol>
+
+        <h4>B. Geometric Sequence</h4>
+
+        <p>
+            A geometric sequence is a sequence in which
+            each term is obtained by multiplying the
+            previous term by a constant number.
+        </p>
+
+        <p><b>General Formula:</b></p>
+        <p>aₙ = a × rⁿ⁻¹</p>
+
+        <p>
+            Where a = first term, r = common ratio,
+            n = term number.
+        </p>
+
+        <b>Examples:</b>
+        <ol>
+            <li>2, 4, 8, 16, 32, ...</li>
+            <li>3, 9, 27, 81, 243, ...</li>
+            <li>5, 10, 20, 40, 80, ...</li>
+        </ol>
+
+        <h3>3. Arithmetic Progression (A.P.)</h3>
+
+        <p>
+            An arithmetic progression is a sequence
+            in which the difference between consecutive
+            terms is constant.
+        </p>
+
+        <p><b>Example:</b> 2, 5, 8, 11, 14, ...</p>
+
+        <p><b>Common Difference:</b> 5 - 2 = 3</p>
+
+        <h3>4. Arithmetic Mean (A.M.)</h3>
+
+        <p>
+            The arithmetic mean is the average of two
+            or more numbers. It is calculated by
+            dividing their sum by the total number
+            of values.
+        </p>
+
+        <p><b>Formula:</b></p>
+        <p>A.M. = (a + b) / 2</p>
+
+        <p><b>Example:</b></p>
+        <p>
+            Find the A.M. between 4 and 10.
+        </p>
+        <p>
+            A.M. = (4 + 10) / 2
+        </p>
+        <p>
+            A.M. = 14 / 2 = 7
+        </p>
+
     </div>
+</div>
 
-    <script>
-        function toggleContent() {
-            let content = document.getElementById("content");
+<script>
+function toggleSequenceContent() {
+    const content = document.getElementById("sequenceContent");
+    const button = document.getElementById("sequenceToggleBtn");
 
-            if (content.style.display === "none") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        }
-    </script>
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        button.textContent = "Show Sequence";
+    } else {
+        content.style.display = "block";
+        button.textContent = "Hide Sequence";
+    }
+}
+</script>
 
-</body>
-</html>
 
 <!-- 4. FUNCTIONAL ENGLISH (COMPLETE GRAMMAR MASTERCLASS) -->
 <section id="functional-english" class="card-box" style="background-color: #1E1B3A; border: 1px solid #3B2A68; border-radius: 10px; padding: 20px; margin-top: 25px; margin-bottom: 25px;">
