@@ -553,62 +553,113 @@ int main() {
   }
 </script>
 
+
 <style>
-.sequence-section {
-    font-family: Arial, sans-serif;
-    margin: 20px auto;
+.sequence-box {
     max-width: 850px;
-    color: #39204f;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #45205e;
+    background: #faf5ff;
+    border: 2px solid #a855f7;
+    border-radius: 15px;
 }
 
-.sequence-section h2 {
-    color: #7b2cbf;
+.sequence-box h2,
+.sequence-box h3 {
+    color: #7e22ce;
+}
+
+.sequence-box h2 {
     text-align: center;
 }
 
-.sequence-section button {
-    background: #7b2cbf;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
+.sequence-box h3 {
+    border-bottom: 1px solid #d8b4fe;
+    padding-bottom: 6px;
 }
 
-.sequence-section button:hover {
-    background: #5a189a;
-}
-
-.sequence-content {
-    display: none;
-    background: #f6edff;
-    border: 2px solid #c77dff;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 15px;
+.sequence-box p,
+.sequence-box li {
     line-height: 1.8;
 }
 
-.sequence-content h3 {
-    color: #7b2cbf;
+.sequence-list {
+    background: #f3e8ff;
+    padding: 15px 15px 15px 35px;
+    border-radius: 10px;
 }
 
-.sequence-content h4 {
-    color: #9d4edd;
+.sequence-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 13px 30px;
+    background: #7e22ce;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sequence-btn:hover {
+    background: #581c87;
+}
+
+.sequence-lesson {
+    display: none;
+    background: white;
+    border: 2px solid #c084fc;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 15px;
+}
+
+.formula {
+    background: #f3e8ff;
+    color: #6b21a8;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.example {
+    background: #faf5ff;
+    border-left: 4px solid #9333ea;
+    padding: 10px;
+    margin: 10px 0;
 }
 </style>
 
-<div class="sequence-section">
+<div class="sequence-box">
 
-    <h2>Sequence</h2>
+    <h2>SEQUENCE</h2>
 
-    <button id="sequenceToggleBtn"
-        onclick="toggleSequenceContent()">
-        Show Sequence
+    <p>
+        Sequence is an important topic in mathematics.
+        It deals with an ordered arrangement of numbers
+        according to a specific rule.
+    </p>
+
+    <h3>Topics Included in Sequence</h3>
+
+    <ul class="sequence-list">
+        <li>Definition of Sequence</li>
+        <li>Arithmetic Sequence</li>
+        <li>Geometric Sequence</li>
+        <li>Arithmetic Progression (A.P.)</li>
+        <li>Arithmetic Mean (A.M.)</li>
+    </ul>
+
+    <button class="sequence-btn"
+        id="sequenceButton"
+        onclick="toggleSequence()">
+        Sequence
     </button>
 
-    <div id="sequenceContent" class="sequence-content">
+    <div class="sequence-lesson" id="sequenceLesson">
 
         <h3>1. Definition of Sequence</h3>
 
@@ -617,108 +668,136 @@ int main() {
             arranged according to a specific rule.
         </p>
 
-        <p><b>Example:</b> 2, 4, 6, 8, 10, ...</p>
+        <div class="example">
+            <b>Example:</b><br>
+            2, 4, 6, 8, 10, ...
+        </div>
 
-        <h3>2. Types of Sequences</h3>
-
-        <h4>A. Arithmetic Sequence</h4>
-
-        <p>
-            An arithmetic sequence is a sequence in which
-            the difference between consecutive terms
-            remains constant.
-        </p>
-
-        <p><b>General Formula:</b></p>
-        <p>aₙ = a + (n - 1)d</p>
+        <h3>2. Arithmetic Sequence</h3>
 
         <p>
-            Where a = first term, d = common difference,
-            n = term number.
+            An arithmetic sequence is a sequence in
+            which the difference between consecutive
+            terms is always constant.
         </p>
 
-        <b>Examples:</b>
-        <ol>
-            <li>2, 4, 6, 8, 10, ...</li>
-            <li>3, 7, 11, 15, 19, ...</li>
-            <li>10, 7, 4, 1, -2, ...</li>
-        </ol>
+        <div class="formula">
+            General Formula:<br>
+            aₙ = a + (n - 1)d
+        </div>
 
-        <h4>B. Geometric Sequence</h4>
+        <p>
+            a = First term<br>
+            d = Common difference<br>
+            n = Term number
+        </p>
+
+        <b>Three Examples:</b>
+
+        <div class="example">
+            1. 2, 4, 6, 8, 10, ...<br>
+            Common difference = 2
+        </div>
+
+        <div class="example">
+            2. 3, 7, 11, 15, 19, ...<br>
+            Common difference = 4
+        </div>
+
+        <div class="example">
+            3. 10, 7, 4, 1, -2, ...<br>
+            Common difference = -3
+        </div>
+
+        <h3>3. Geometric Sequence</h3>
 
         <p>
             A geometric sequence is a sequence in which
             each term is obtained by multiplying the
-            previous term by a constant number.
+            previous term by a fixed non-zero number
+            called the common ratio.
         </p>
 
-        <p><b>General Formula:</b></p>
-        <p>aₙ = a × rⁿ⁻¹</p>
+        <div class="formula">
+            General Formula:<br>
+            aₙ = a × rⁿ⁻¹
+        </div>
 
         <p>
-            Where a = first term, r = common ratio,
-            n = term number.
+            a = First term<br>
+            r = Common ratio<br>
+            n = Term number
         </p>
 
-        <b>Examples:</b>
-        <ol>
-            <li>2, 4, 8, 16, 32, ...</li>
-            <li>3, 9, 27, 81, 243, ...</li>
-            <li>5, 10, 20, 40, 80, ...</li>
-        </ol>
+        <b>Three Examples:</b>
 
-        <h3>3. Arithmetic Progression (A.P.)</h3>
+        <div class="example">
+            1. 2, 4, 8, 16, 32, ...<br>
+            Common ratio = 2
+        </div>
+
+        <div class="example">
+            2. 3, 9, 27, 81, 243, ...<br>
+            Common ratio = 3
+        </div>
+
+        <div class="example">
+            3. 5, 10, 20, 40, 80, ...<br>
+            Common ratio = 2
+        </div>
+
+        <h3>4. Arithmetic Progression (A.P.)</h3>
 
         <p>
             An arithmetic progression is a sequence
-            in which the difference between consecutive
-            terms is constant.
+            in which the difference between any two
+            consecutive terms is constant.
         </p>
 
-        <p><b>Example:</b> 2, 5, 8, 11, 14, ...</p>
+        <div class="example">
+            <b>Example:</b><br>
+            5, 10, 15, 20, 25, ...<br>
+            Common difference = 5
+        </div>
 
-        <p><b>Common Difference:</b> 5 - 2 = 3</p>
-
-        <h3>4. Arithmetic Mean (A.M.)</h3>
+        <h3>5. Arithmetic Mean (A.M.)</h3>
 
         <p>
-            The arithmetic mean is the average of two
-            or more numbers. It is calculated by
-            dividing their sum by the total number
-            of values.
+            Arithmetic mean is the average of two numbers.
+            It is calculated by adding the two numbers
+            and dividing their sum by 2.
         </p>
 
-        <p><b>Formula:</b></p>
-        <p>A.M. = (a + b) / 2</p>
+        <div class="formula">
+            A.M. = (a + b) / 2
+        </div>
 
-        <p><b>Example:</b></p>
-        <p>
-            Find the A.M. between 4 and 10.
-        </p>
-        <p>
-            A.M. = (4 + 10) / 2
-        </p>
-        <p>
-            A.M. = 14 / 2 = 7
-        </p>
+        <div class="example">
+            <b>Example:</b><br>
+            Find the A.M. between 4 and 10.<br><br>
+            A.M. = (4 + 10) / 2<br>
+            A.M. = 14 / 2<br>
+            <b>Answer = 7</b>
+        </div>
 
     </div>
 </div>
 
 <script>
-function toggleSequenceContent() {
-    const content = document.getElementById("sequenceContent");
-    const button = document.getElementById("sequenceToggleBtn");
+function toggleSequence() {
+    const lesson = document.getElementById("sequenceLesson");
+    const button = document.getElementById("sequenceButton");
 
-    if (content.style.display === "block") {
-        content.style.display = "none";
-        button.textContent = "Show Sequence";
+    if (lesson.style.display === "block") {
+        lesson.style.display = "none";
+        button.textContent = "Sequence";
     } else {
-        content.style.display = "block";
+        lesson.style.display = "block";
         button.textContent = "Hide Sequence";
     }
 }
 </script>
+
 
 
 <!-- 4. FUNCTIONAL ENGLISH (COMPLETE GRAMMAR MASTERCLASS) -->
