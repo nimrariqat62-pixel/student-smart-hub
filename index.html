@@ -555,12 +555,11 @@ int main() {
 
 <!-- Sequence Section Toggle -->
 <div class="sequence-container">
-    <button class="toggle-btn" onclick="toggleSequence()">Sequence</button>
+    <button class="toggle-btn" onclick="toggleSequence()">SEQUENCE</button>
     
     <div id="sequence-content" class="content-box" style="display: none;">
         <p class="short-desc">Includes: Arithmetic & Geometric Sequences, Arithmetic Progression, and Arithmetic Mean with definitions & solved examples.</p>
         
-        <!-- 1. Sequence Definition & Types -->
         <div class="topic-block">
             <h3>1. Sequence</h3>
             <p><strong>Definition:</strong> A sequence is an ordered list of numbers whose terms follow a specific pattern or rule.</p>
@@ -568,25 +567,22 @@ int main() {
             <p><strong>Two Main Types:</strong> Arithmetic Sequence and Geometric Sequence.</p>
         </div>
 
-        <!-- 2. Arithmetic Sequence -->
         <div class="topic-block">
             <h3>2. Arithmetic Sequence</h3>
-            <p><strong>Definition:</strong> A sequence in which the difference between any two consecutive terms is constant (known as the common difference, $d$).</p>
+            <p><strong>Definition:</strong> A sequence in which the difference between any two consecutive terms is constant (common difference, $d$).</p>
             <p><strong>Example:</strong> $3, 7, 11, 15 \dots$ (here $d = 4$).</p>
         </div>
 
-        <!-- 3. Geometric Sequence -->
         <div class="topic-block">
             <h3>3. Geometric Sequence</h3>
-            <p><strong>Definition:</strong> A sequence in which each term after the first is found by multiplying the previous term by a fixed, non-zero number called the common ratio ($r$).</p>
+            <p><strong>Definition:</strong> A sequence in which each term after the first is found by multiplying the previous term by a fixed number (common ratio, $r$).</p>
             <p><strong>Example:</strong> $2, 6, 18, 54 \dots$ (here $r = 3$).</p>
         </div>
 
-        <!-- 4. Arithmetic Progression & Mean -->
         <div class="topic-block">
-            <h3>4. Arithmetic Progression (AP) & Arithmetic Mean</h3>
-            <p><strong>Arithmetic Progression:</strong> A progression or sequence in which the difference of any term from its preceding term is a constant.</p>
-            <p><strong>Arithmetic Mean:</strong> If $a$, $A$, and $b$ are in AP, then $A$ is the arithmetic mean between $a$ and $b$, given by $A = \frac{a + b}{2}$.</p>
+            <h3>4. Arithmetic Progression & Mean</h3>
+            <p><strong>Arithmetic Progression:</strong> A progression in which the difference of any term from its preceding term is constant.</p>
+            <p><strong>Arithmetic Mean:</strong> If $a$, $A$, and $b$ are in AP, then $A = \frac{a + b}{2}$.</p>
             <p><strong>Solved Example:</strong> Find the arithmetic mean between $4$ and $12$.<br>
             <em>Solution:</em> $A = \frac{4 + 12}{2} = \frac{16}{2} = 8$.</p>
         </div>
@@ -594,64 +590,37 @@ int main() {
 </div>
 
 <style>
-/* Pure Purple Neon Theme */
-.sequence-container {
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
-}
-
+.sequence-container { margin: 15px 0; font-family: Arial, sans-serif; }
 .toggle-btn {
-    background-color: #8A2BE2; /* Violet/Purple */
-    color: #ffffff;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: 2px solid #D8BFD8;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    box-shadow: 0 0 10px #8A2BE2, 0 0 20px rgba(138, 43, 226, 0.5); /* Purple Neon Glow Effect */
-    transition: all 0.3s ease;
-}
-
-.toggle-btn:hover {
-    background-color: #9400D3;
-    box-shadow: 0 0 15px #9400D3, 0 0 30px rgba(148, 0, 211, 0.8); /* Brighter Neon on Hover */
-}
-
-.content-box {
-    background-color: #1a0033; /* Deep Dark Purple Background for Neon Contrast */
+    background: linear-gradient(135deg, #4b1fa6, #6b35cc);
     color: #f3e6ff;
-    border: 2px solid #8A2BE2;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #8c52ff;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+}
+.toggle-btn:hover { background: linear-gradient(135deg, #5a26c4, #7d42e6); }
+.content-box {
+    background-color: #150026;
+    color: #f3e6ff;
+    border: 1px solid #6b35cc;
     border-radius: 8px;
     padding: 15px;
     margin-top: 10px;
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
 }
-
-.short-desc {
-    font-style: italic;
-    color: #d1b3ff;
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
+.short-desc { font-style: italic; color: #d1b3ff; margin-bottom: 15px; }
 .topic-block {
-    background: #26004d; /* Dark Purple Shade for blocks */
+    background: #200033;
     color: #f3e6ff;
     padding: 10px 15px;
     margin-bottom: 10px;
     border-radius: 6px;
-    border-left: 4px solid #bf80ff;
+    border-left: 4px solid #8c52ff;
 }
-
-.topic-block h3 {
-    color: #dfbfff;
-    margin-top: 0;
-    font-size: 16px;
-    text-shadow: 0 0 5px rgba(223, 191, 255, 0.5);
-}
+.topic-block h3 { color: #dfbfff; margin-top: 0; font-size: 15px; }
 </style>
 
 <script>
@@ -664,6 +633,7 @@ function toggleSequence() {
     }
 }
 </script>
+
 
     
 <!-- 4. FUNCTIONAL ENGLISH (COMPLETE GRAMMAR MASTERCLASS) -->
