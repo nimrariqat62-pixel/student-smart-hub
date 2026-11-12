@@ -678,6 +678,151 @@ function toggleSequence() {
     }
 }
 </script>
+<!-- DISCRETE MATHS FIRST ASSIGNMENT CARD WITH TOGGLE -->
+<div style="background-color: #161129; border: 1px solid #2d244d; border-radius: 12px; padding: 20px; margin-bottom: 18px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    
+    <h3 style="color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 0.5px; margin: 0 0 8px 0; text-transform: uppercase;">
+        3.1 DISCRETE MATHS FIRST ASSIGNMENT: LOGIC & TRUTH TABLES
+    </h3>
+    
+    <p style="color: #b3a8d6; font-size: 12px; line-height: 1.5; margin: 0 0 16px 0; text-transform: uppercase;">
+        PROPOSITIONAL LOGIC, BOOLEAN OPERATIONS, AND TRUTH TABLES FOR AND, OR, & NOT GATES.
+    </p>
+
+    <!-- TOGGLE BUTTON -->
+    <button onclick="toggleMathAssignment()" id="mathAssignBtn" style="background: linear-gradient(90deg, #7b3fe4, #9353ff); color: #ffffff; border: none; font-size: 11px; font-weight: 700; padding: 11px 18px; border-radius: 6px; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer;">
+        📐 DISCRETE MATHS FIRST ASSIGNMENT ▼
+    </button>
+
+    <!-- HIDDEN COLLAPSIBLE CONTENT -->
+    <div id="mathAssignmentBox" style="display: none; margin-top: 20px; padding-top: 18px; border-top: 1px solid #2d244d;">
+        
+        <!-- Introduction -->
+        <div style="background-color: #0d0a1a; border-left: 4px solid #8a4fff; padding: 14px; border-radius: 8px; margin-bottom: 16px;">
+            <h4 style="color: #d4bfff; font-size: 14px; margin: 0 0 6px 0;">Logic Operations & Truth Tables</h4>
+            <p style="color: #e2dcf5; font-size: 13px; line-height: 1.6; margin: 0;">
+                In discrete mathematics, a <strong>Truth Table</strong> is a mathematical table used to determine the functional values of logical expressions. Here are the core logical operations: <strong>AND (Conjunction)</strong>, <strong>OR (Disjunction)</strong>, and <strong>NOT (Negation)</strong>.
+            </p>
+        </div>
+
+        <!-- Truth Tables Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+            
+            <!-- NOT Gate Table -->
+            <div style="background-color: #0d0a1a; border: 1px solid #2d244d; padding: 12px; border-radius: 8px;">
+                <h5 style="color: #b78aff; font-size: 13.5px; margin: 0 0 8px 0; text-align: center;">1. NOT Gate (Negation ¬p)</h5>
+                <table style="width: 100%; border-collapse: collapse; font-size: 12px; text-align: center;">
+                    <thead>
+                        <tr style="background-color: #231942; color: #ffffff;">
+                            <th style="padding: 7px; border: 1px solid #352861;">p</th>
+                            <th style="padding: 7px; border: 1px solid #352861;">¬p (NOT)</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #dcd5f2;">
+                        <tr>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0 (F)</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1 (T)</td>
+                        </tr>
+                        <tr style="background-color: #130e26;">
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1 (T)</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0 (F)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- AND Gate Table -->
+            <div style="background-color: #0d0a1a; border: 1px solid #2d244d; padding: 12px; border-radius: 8px;">
+                <h5 style="color: #b78aff; font-size: 13.5px; margin: 0 0 8px 0; text-align: center;">2. AND Gate (Conjunction p ∧ q)</h5>
+                <table style="width: 100%; border-collapse: collapse; font-size: 12px; text-align: center;">
+                    <thead>
+                        <tr style="background-color: #231942; color: #ffffff;">
+                            <th style="padding: 7px; border: 1px solid #352861;">p</th>
+                            <th style="padding: 7px; border: 1px solid #352861;">q</th>
+                            <th style="padding: 7px; border: 1px solid #352861;">p ∧ q</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #dcd5f2;">
+                        <tr>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                        </tr>
+                        <tr style="background-color: #130e26;">
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                        </tr>
+                        <tr style="background-color: #130e26;">
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- OR Gate Table -->
+            <div style="background-color: #0d0a1a; border: 1px solid #2d244d; padding: 12px; border-radius: 8px;">
+                <h5 style="color: #b78aff; font-size: 13.5px; margin: 0 0 8px 0; text-align: center;">3. OR Gate (Disjunction p ∨ q)</h5>
+                <table style="width: 100%; border-collapse: collapse; font-size: 12px; text-align: center;">
+                    <thead>
+                        <tr style="background-color: #231942; color: #ffffff;">
+                            <th style="padding: 7px; border: 1px solid #352861;">p</th>
+                            <th style="padding: 7px; border: 1px solid #352861;">q</th>
+                            <th style="padding: 7px; border: 1px solid #352861;">p ∨ q</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #dcd5f2;">
+                        <tr>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                        </tr>
+                        <tr style="background-color: #130e26;">
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">0</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                        </tr>
+                        <tr style="background-color: #130e26;">
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                            <td style="padding: 6px; border: 1px solid #2d244d;">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- JAVASCRIPT FOR MATH TOGGLE -->
+<script>
+function toggleMathAssignment() {
+    var box = document.getElementById("mathAssignmentBox");
+    var btn = document.getElementById("mathAssignBtn");
+    if (box.style.display === "none") {
+        box.style.display = "block";
+        btn.innerHTML = "📐 DISCRETE MATHS FIRST ASSIGNMENT ▲";
+    } else {
+        box.style.display = "none";
+        btn.innerHTML = "📐 DISCRETE MATHS FIRST ASSIGNMENT ▼";
+    }
+}
+</script>
+
 
         
       
