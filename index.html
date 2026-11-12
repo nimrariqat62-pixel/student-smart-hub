@@ -701,7 +701,7 @@ function toggleSequence() {
         <div style="background-color: #0d0a1a; border-left: 4px solid #8a4fff; padding: 14px; border-radius: 8px; margin-bottom: 16px;">
             <h4 style="color: #d4bfff; font-size: 14px; margin: 0 0 6px 0;">1. Propositional Logic & Symbols</h4>
             <p style="color: #e2dcf5; font-size: 13px; line-height: 1.6; margin: 0;">
-                In discrete mathematics, propositions are statements that can be either true (T/1) or false (F/0). We use logical connectives and symbols like <strong>Negation ($\neg$)</strong>, <strong>Conjunction ($\land$)</strong>, <strong>Disjunction ($\lor$)</strong>, and <strong>Implication ($\rightarrow$)</strong> to build logical expressions.
+                In discrete mathematics, propositions are statements that can be either true (T/1) or false (F/0). We use logical connectives and symbols like <strong>Negation (&not;)</strong>, <strong>Conjunction (&and;)</strong>, <strong>Disjunction (&or;)</strong>, and <strong>Implication (&rarr;)</strong> to build logical expressions.
             </p>
         </div>
 
@@ -712,38 +712,38 @@ function toggleSequence() {
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px;">
                 
                 <div style="background-color: #1f173b; padding: 11px; border-radius: 8px; border: 1px solid #352861;">
-                    <p style="color: #9d6bff; font-size: 13px; font-weight: bold; margin: 0 0 5px 0;">Negation ($\neg$)</p>
+                    <p style="color: #9d6bff; font-size: 13px; font-weight: bold; margin: 0 0 5px 0;">Negation (&not;)</p>
                     <p style="color: #cfc7eb; font-size: 12px; margin: 0; line-height: 1.5;">
                         <strong>Meaning:</strong> NOT<br>
-                        <strong>Symbol:</strong> $\neg p$<br>
-                        <em>Example:</em> If $p$ = "It is raining", then $\neg p$ = "It is not raining".
+                        <strong>Symbol:</strong> &not;p<br>
+                        <em>Example:</em> If p = "It is raining", then &not;p = "It is not raining".
                     </p>
                 </div>
 
                 <div style="background-color: #1f173b; padding: 11px; border-radius: 8px; border: 1px solid #352861;">
-                    <p style="color: #9d6bff; font-size: 13px; font-weight: bold; margin: 0 0 5px 0;">Conjunction ($\land$)</p>
+                    <p style="color: #9d6bff; font-size: 13px; font-weight: bold; margin: 0 0 5px 0;">Conjunction (&and;)</p>
                     <p style="color: #cfc7eb; font-size: 12px; margin: 0; line-height: 1.5;">
                         <strong>Meaning:</strong> AND<br>
-                        <strong>Symbol:</strong> $p \land q$<br>
-                        <em>Example:</em> $p$ = "It is cold", $q$ = "It is windy". $p \land q$ = "It is cold and windy".
+                        <strong>Symbol:</strong> p &and; q<br>
+                        <em>Example:</em> p = "It is cold", q = "It is windy". p &and; q = "It is cold and windy".
                     </p>
                 </div>
 
                 <div style="background-color: #1f173b; padding: 11px; border-radius: 8px; border: 1px solid #352861;">
-                    <p style="color: #9d6bff; font-size: 13px; font-weight: bold; margin: 0 0 5px 0;">Disjunction ($\lor$)</p>
+                    <p style="color: #9d6bff; font-size: 13px; font-weight: bold; margin: 0 0 5px 0;">Disjunction (&or;)</p>
                     <p style="color: #cfc7eb; font-size: 12px; margin: 0; line-height: 1.5;">
                         <strong>Meaning:</strong> OR<br>
-                        <strong>Symbol:</strong> $p \lor q$<br>
-                        <em>Example:</em> $p$ = "I will study", $q$ = "I will sleep". $p \lor q$ = "I will study or sleep".
+                        <strong>Symbol:</strong> p &or; q<br>
+                        <em>Example:</em> p = "I will study", q = "I will sleep". p &or; q = "I will study or sleep".
                     </p>
                 </div>
 
                 <div style="background-color: #1f173b; padding: 11px; border-radius: 8px; border: 1px solid #352861;">
-                    <p style="color: #9d6bff; font-size: 13px; font-weight: bold; margin: 0 0 5px 0;">Implication ($\rightarrow$)</p>
+                    <p style="color: #9d6bff; font-size: 13px; font-weight: bold; margin: 0 0 5px 0;">Implication (&rarr;)</p>
                     <p style="color: #cfc7eb; font-size: 12px; margin: 0; line-height: 1.5;">
                         <strong>Meaning:</strong> If... Then<br>
-                        <strong>Symbol:</strong> $p \rightarrow q$<br>
-                        <em>Example:</em> $p$ = "You study hard", $q$ = "You will pass". $p \rightarrow q$ = "If you study hard, then you will pass".
+                        <strong>Symbol:</strong> p &rarr; q<br>
+                        <em>Example:</em> p = "You study hard", q = "You will pass". p &rarr; q = "If you study hard, then you will pass".
                     </p>
                 </div>
 
@@ -758,12 +758,12 @@ function toggleSequence() {
                 
                 <!-- NOT Table -->
                 <div style="background-color: #161129; border: 1px solid #2d244d; padding: 10px; border-radius: 6px;">
-                    <p style="color: #b78aff; font-size: 12px; text-align: center; margin: 0 0 6px 0; font-weight: bold;">NOT ($\neg p$)</p>
+                    <p style="color: #b78aff; font-size: 12px; text-align: center; margin: 0 0 6px 0; font-weight: bold;">NOT (&not;p)</p>
                     <table style="width: 100%; border-collapse: collapse; font-size: 11.5px; text-align: center;">
                         <thead>
                             <tr style="background-color: #231942; color: #ffffff;">
                                 <th style="padding: 5px; border: 1px solid #352861;">p</th>
-                                <th style="padding: 5px; border: 1px solid #352861;">$\neg p$</th>
+                                <th style="padding: 5px; border: 1px solid #352861;">&not;p</th>
                             </tr>
                         </thead>
                         <tbody style="color: #dcd5f2;">
@@ -775,13 +775,13 @@ function toggleSequence() {
 
                 <!-- AND Table -->
                 <div style="background-color: #161129; border: 1px solid #2d244d; padding: 10px; border-radius: 6px;">
-                    <p style="color: #b78aff; font-size: 12px; text-align: center; margin: 0 0 6px 0; font-weight: bold;">AND ($p \land q$)</p>
+                    <p style="color: #b78aff; font-size: 12px; text-align: center; margin: 0 0 6px 0; font-weight: bold;">AND (p &and; q)</p>
                     <table style="width: 100%; border-collapse: collapse; font-size: 11.5px; text-align: center;">
                         <thead>
                             <tr style="background-color: #231942; color: #ffffff;">
                                 <th style="padding: 5px; border: 1px solid #352861;">p</th>
                                 <th style="padding: 5px; border: 1px solid #352861;">q</th>
-                                <th style="padding: 5px; border: 1px solid #352861;">$p \land q$</th>
+                                <th style="padding: 5px; border: 1px solid #352861;">p &and; q</th>
                             </tr>
                         </thead>
                         <tbody style="color: #dcd5f2;">
@@ -795,13 +795,13 @@ function toggleSequence() {
 
                 <!-- OR Table -->
                 <div style="background-color: #161129; border: 1px solid #2d244d; padding: 10px; border-radius: 6px;">
-                    <p style="color: #b78aff; font-size: 12px; text-align: center; margin: 0 0 6px 0; font-weight: bold;">OR ($p \lor q$)</p>
+                    <p style="color: #b78aff; font-size: 12px; text-align: center; margin: 0 0 6px 0; font-weight: bold;">OR (p &or; q)</p>
                     <table style="width: 100%; border-collapse: collapse; font-size: 11.5px; text-align: center;">
                         <thead>
                             <tr style="background-color: #231942; color: #ffffff;">
                                 <th style="padding: 5px; border: 1px solid #352861;">p</th>
                                 <th style="padding: 5px; border: 1px solid #352861;">q</th>
-                                <th style="padding: 5px; border: 1px solid #352861;">$p \lor q$</th>
+                                <th style="padding: 5px; border: 1px solid #352861;">p &or; q</th>
                             </tr>
                         </thead>
                         <tbody style="color: #dcd5f2;">
@@ -821,8 +821,8 @@ function toggleSequence() {
             <h4 style="color: #d4bfff; font-size: 14px; margin: 0 0 6px 0;">4. De Morgan's Laws & Proof via Truth Table</h4>
             <p style="color: #e2dcf5; font-size: 12.5px; line-height: 1.5; margin: 0 0 10px 0;">
                 De Morgan's Laws describe how mathematical statements and formal logic relate negations to conjunctions and disjunctions:<br>
-                1. $\neg(p \land q) \equiv \neg p \lor \neg q$<br>
-                2. $\neg(p \lor q) \equiv \neg p \land \neg q$
+                1. &not;(p &and; q) &equiv; &not;p &or; &not;q<br>
+                2. &not;(p &or; q) &equiv; &not;p &and; &not;q
             </p>
 
             <div style="overflow-x: auto;">
@@ -831,11 +831,11 @@ function toggleSequence() {
                         <tr style="background-color: #231942; color: #ffffff;">
                             <th style="padding: 6px; border: 1px solid #352861;">p</th>
                             <th style="padding: 6px; border: 1px solid #352861;">q</th>
-                            <th style="padding: 6px; border: 1px solid #352861;">$p \land q$</th>
-                            <th style="padding: 6px; border: 1px solid #352861; color: #b78aff;">$\neg(p \land q)$</th>
-                            <th style="padding: 6px; border: 1px solid #352861;">$\neg p$</th>
-                            <th style="padding: 6px; border: 1px solid #352861;">$\neg q$</th>
-                            <th style="padding: 6px; border: 1px solid #352861; color: #b78aff;">$\neg p \lor \neg q$</th>
+                            <th style="padding: 6px; border: 1px solid #352861;">p &and; q</th>
+                            <th style="padding: 6px; border: 1px solid #352861; color: #b78aff;">&not;(p &and; q)</th>
+                            <th style="padding: 6px; border: 1px solid #352861;">&not;p</th>
+                            <th style="padding: 6px; border: 1px solid #352861;">&not;q</th>
+                            <th style="padding: 6px; border: 1px solid #352861; color: #b78aff;">&not;p &or; &not;q</th>
                         </tr>
                     </thead>
                     <tbody style="color: #dcd5f2;">
@@ -879,7 +879,7 @@ function toggleSequence() {
                 </table>
             </div>
             <p style="color: #b3a8d6; font-size: 11.5px; margin: 8px 0 0 0;">
-                <em>Proof Conclusion:</em> Since the columns for <strong>$\neg(p \land q)$</strong> and <strong>$\neg p \lor \neg q$</strong> match identically row by row, De Morgan's Law is proved successfully!
+                <em>Proof Conclusion:</em> Since the columns for <strong>&not;(p &and; q)</strong> and <strong>&not;p &or; &not;q</strong> match identically row by row, De Morgan's Law is proved successfully!
             </p>
         </div>
 
@@ -900,6 +900,57 @@ function toggleMathAssignment() {
     }
 }
 </script>
+
+  
+        
+       
+             
+        
+                
+          
+                
+   
+                  
+                
+
+  
+         
+            
+         
+       
+ 
+             
+          
+         
+     
+                
+    
+               
+             
+           
+                    
+                 
+                    
+                 
+          
+                 
+                
+    
+              
+
+  
+                 
+                  
+              
+           
+                    
+    
+                       
+                            
+                        
+                          
+                     
+               
 
           
   
