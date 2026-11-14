@@ -297,9 +297,96 @@
             letter-spacing: 1px;
             margin-top: 50px;
         }
+/* Moon & Stars Background */
+.moon {
+    position: fixed;
+    top: 50px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fffdf5, #e9d5ff);
+    box-shadow: 0 0 40px #c084fc, 0 0 80px rgba(192, 132, 252, 0.45);
+    animation: floatMoon 5s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+@keyframes floatMoon {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+.star {
+    position: fixed;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #e9d5ff;
+    animation: twinkle 3s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Corner 2 Arrows */
+.corner-arrows {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 1000;
+}
+.corner-arrows button {
+    background: rgba(126, 34, 206, 0.8);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    border: 1px solid #d8b4fe;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+}
+.corner-arrows button:hover {
+    background: #9333ea;
+    transform: scale(1.08);
+}
+
+/* Purana Sara Work Shuru Mein Chhupa Rahega */
+#allWorkWrapper {
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+#allWorkWrapper.open {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
     </style>
 </head>
 <body>
+<!-- Animated Moon & Stars -->
+<div class="moon"></div>
+<div id="starsContainer"></div>
+
+<!-- Corner 2 Arrows -->
+<div class="corner-arrows">
+    <button onclick="toggleDashboardWork(true)" title="Open Menu">▶</button>
+    <button onclick="toggleDashboardWork(false)" title="Close Menu">◀</button>
+</div>
+
+<!-- Yahan se purana sara work start hoga jo shuru mein chhupa rahega -->
+<div id="allWorkWrapper">
+
 
        <!-- TOP NAVBAR -->
     <nav class="navbar">
@@ -1746,3 +1833,31 @@ function checkOption(btn, isCorrect) {
     </script>
 </body>
 </html>
+</div> <!-- End of allWorkWrapper -->
+
+<script>
+    // Stars Generator
+    const starsBox = document.getElementById('starsContainer');
+    for (let i = 0; i < 50; i++) {
+        const s = document.createElement('div');
+        s.className = 'star';
+        const size = (Math.random() * 3 + 1) + 'px';
+        s.style.width = size;
+        s.style.height = size;
+        s.style.top = Math.random() * 100 + 'vh';
+        s.style.left = Math.random() * 100 + 'vw';
+        s.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        starsBox.appendChild(s);
+    }
+
+    // 2 Arrows Click Toggle Logic
+    function toggleDashboardWork(show) {
+        const wrapper = document.getElementById('allWorkWrapper');
+        if (show) {
+            wrapper.classList.add('open');
+        } else {
+            wrapper.classList.remove('open');
+        }
+    }
+</script>
+
