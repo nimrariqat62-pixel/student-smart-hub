@@ -429,23 +429,8 @@ body {
             <p style="color: #cbd5e1; font-weight: 800; margin-top: 5px;">ANIMATED MOON & STARS ENVIRONMENT</p>
         </div>
     </header>
-<!-- Hardware Teardown Lab Section -->
-<section id="hardware-lab" style="margin-top: 40px; padding: 25px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-    <h2 style="color: #ffd700; margin-bottom: 10px;">🛠️ Practical Hardware Teardown Lab</h2>
-    <p style="color: #ccc; font-size: 0.95rem; margin-bottom: 20px;">Real-world reverse engineering & circuit analysis of electronic devices.</p>
-    
-    <div class="card" style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 8px; border-left: 4px solid #6c63ff;">
-        <h3 style="color: #fff; margin-bottom: 10px;">TV Remote Control Teardown & Circuit Analysis</h3>
-        <p style="color: #e0e0e0; line-height: 1.5;"><strong>Overview:</strong> Conducted a physical teardown of a standard TV remote to analyze internal PCB architecture, signal transmission, and conductive pathways.</p>
-        
-        <ul style="margin: 15px 0; padding-left: 20px; color: #e0e0e0; line-height: 1.6;">
-            <li><strong>Green PCB Board:</strong> Protected by a solder mask with etched copper traces routing signals.</li>
-            <li><strong>Microcontroller IC:</strong> The central processing chip acting as the "brain" of the remote.</li>
-            <li><strong>IR LED & Solder Joints:</strong> Infrared light-emitting diode responsible for transmitting signals; secured via soldered joints.</li>
-            <li><strong>Carbon Contact Pads:</strong> Rubber keypad layers featuring carbon conductive grids to complete circuit paths.</li>
-        </ul>
-    </div>
-</section>
+
+       
 
 
     <!-- MAIN LONG CONTINUOUS CONTAINER -->
@@ -1459,7 +1444,52 @@ function toggleEnglishAssignment() {
 
 
     
- 
+ <!-- Remote Teardown Lab Interactive Purple Card -->
+<div style="margin: 35px 0; background: linear-gradient(135deg, rgba(30, 15, 50, 0.95), rgba(45, 20, 75, 0.95)); padding: 35px; border-radius: 18px; border: 3px solid #8a2be2; box-shadow: 0 8px 30px rgba(138, 43, 226, 0.4);">
+    
+    <!-- Main Interactive Toggle Button with Large Text -->
+    <button onclick="var labBox = document.getElementById('remote-lab-quote-content'); var btn = this; if(labBox.style.display === 'none') { labBox.style.display = 'block'; btn.innerHTML = '📂 Hide Remote Teardown Lab 🔼'; } else { labBox.style.display = 'none'; btn.innerHTML = '📁 Show Remote Teardown Lab 🔽'; }" style="background: #8a2be2; color: #ffffff; border: none; padding: 18px 26px; font-size: 1.35rem; font-weight: bold; border-radius: 12px; cursor: pointer; width: 100%; text-align: left; transition: 0.3s; box-shadow: 0 5px 15px rgba(138, 43, 226, 0.5);">
+        📁 Show Remote Teardown Lab 🔽
+    </button>
+
+    <!-- Collapsible Content Box (Hidden by default) -->
+    <div id="remote-lab-quote-content" style="display: none; margin-top: 25px; padding-top: 25px; border-top: 2px solid rgba(138, 43, 226, 0.5);">
+        
+        <h2 style="color: #da70d6; font-size: 2.1rem; margin-bottom: 12px; font-weight: bold; text-transform: uppercase;">🛠️ Remote Teardown Lab</h2>
+        <p style="color: #f3e8ff; font-size: 1.3rem; margin-bottom: 25px; line-height: 1.6;">Real-world reverse engineering & circuit analysis of electronic devices.</p>
+        
+        <div style="background: rgba(18, 8, 32, 0.98); padding: 30px; border-radius: 14px; border-left: 8px solid #8a2be2;">
+            <h3 style="color: #dda0dd; font-size: 1.7rem; margin-bottom: 15px; font-weight: bold;">TV Remote Control Teardown & Circuit Analysis (Nikki)</h3>
+            <p style="color: #ffffff; font-size: 1.25rem; line-height: 1.9; margin-bottom: 25px;"><strong>Overview:</strong> Physical teardown of a standard TV remote to examine internal circuit boards, microchips, and signal transmitters.</p>
+            
+            <!-- Images Gallery Layout with Large Captions -->
+            <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin: 30px 0;">
+                <div style="text-align: center;">
+                    <img src="tv_remote_front.jpg" alt="TV Remote Front View" style="width: 100%; max-width: 290px; border-radius: 10px; border: 3px solid #8a2be2; box-shadow: 0 5px 20px rgba(138, 43, 226, 0.5);">
+                    <p style="color: #dda0dd; margin-top: 10px; font-size: 1.15rem; font-weight: bold;">External View</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="tv_remote_pcb.jpg" alt="TV Remote PCB Teardown" style="width: 100%; max-width: 290px; border-radius: 10px; border: 3px solid #8a2be2; box-shadow: 0 5px 20px rgba(138, 43, 226, 0.5);">
+                    <p style="color: #dda0dd; margin-top: 10px; font-size: 1.15rem; font-weight: bold;">Internal PCB View</p>
+                </div>
+            </div>
+
+            <!-- Detailed Points with Large, Clear Wording -->
+            <ul style="margin: 20px 0; padding-left: 25px; color: #f5f5f5; font-size: 1.25rem; line-height: 2.2;">
+                <li><strong style="color: #dda0dd; font-size: 1.3rem;">Green PCB Board:</strong> The main circuit board with etched copper pathways that route electrical signals.</li>
+                <li><strong style="color: #dda0dd; font-size: 1.3rem;">Microcontroller IC:</strong> The central microchip (brain) that processes which button was pressed.</li>
+                <li><strong style="color: #dda0dd; font-size: 1.3rem;">IR LED & Solder Joints:</strong> The infrared diode at the top that beams wireless signals directly to the television.</li>
+                <li><strong style="color: #dda0dd; font-size: 1.3rem;">Carbon Contact Pads:</strong> Rubber keypad layers with conductive carbon grids that complete the circuit loops.</li>
+            </ul>
+
+            <!-- Full Page Link -->
+            <div style="margin-top: 25px; text-align: right;">
+                <a href="tv_remote_lab.html" target="_blank" style="color: #da70d6; text-decoration: none; font-weight: bold; font-size: 1.15rem;">Open in Full Page ↗</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
  
 
