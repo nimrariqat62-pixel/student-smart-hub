@@ -1741,36 +1741,8 @@ function checkOption(btn, isCorrect) {
             <br>
             PERCENTAGE: ${percentage}%
         `;
-    }
+   }
 }
-
-
-        // 5. CHECK OPTION FEEDBACK
-        function checkOption(btn, isCorrect) {
-            const parentGrid = btn.parentElement;
-            const buttons = parentGrid.querySelectorAll('.opt-btn');
-            
-            buttons.forEach(b => b.style.pointerEvents = 'none');
-answered++;
-
-            if (isCorrect) {
-                btn.classList.add('correct');
-                btn.innerHTML += ' ✅';
-                score++;
-            } else {
-                btn.classList.add('incorrect');
-                btn.innerHTML += ' ❌';
-            }
-let percentage = (score / mcqData.length) * 100;
-
-scoreDisplay.innerHTML = `
-    YOUR SCORE: ${score} / ${mcqData.length}
-    <br>
-    PERCENTAGE: ${percentage}%
-`;
-    scoreDisplay.innerHTML = `YOUR SCORE: ${score} / ${mcqData.length}`;
-}
-        }
     </script>
 </body>
 </html>
