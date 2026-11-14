@@ -1686,28 +1686,64 @@ function toggleEnglishAssignment() {
             { q: "'가다' VERB KA KYA MATLAB HAI?", opts: ["TO COME", "TO GO", "TO READ", "TO WRITE"], ans: 1 }
         ];
 
-        const quizBox = document.getElementById('quizContainer');
+        
+let score = 0;
+let answered = 0;
+
+const quizBox = document.getElementById('quizContainer');
+
 const scoreDisplay = document.createElement('div');
 scoreDisplay.id = 'scoreDisplay';
 scoreDisplay.className = 'item-row';
-        mcqData.forEach((item, qIdx) => {
-            const qDiv = document.createElement('div');
-            qDiv.className = 'item-row';
-            
-            let optsHtml = '';
-            item.opts.forEach((opt, oIdx) => {
-                optsHtml += `<button class="opt-btn" onclick="checkOption(this, ${oIdx === item.ans})">${opt}</button>`;
-            });
 
-            qDiv.innerHTML = `
-                <div class="item-title">Q${qIdx + 1}: ${item.q}</div>
-                <div class="options-grid">${optsHtml}</div>
-            `;
-            quizBox.appendChild(qDiv);
-        });
+mcqData.forEach((item, qIdx) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'item-row';
+
+    let optsHtml = '';
+
+    item.opts.forEach((opt, oIdx) => {
+        optsHtml += `<button class="opt-btn" onclick="checkOption(this, ${oIdx === item.ans})">${opt}</button>`;
+    });
+
+    qDiv.innerHTML = `
+        <div class="item-title">Q${qIdx + 1}: ${item.q}</div>
+        <div class="options-grid">${optsHtml}</div>
+    `;
+
+    quizBox.appendChild(qDiv);
+});
+
 quizBox.appendChild(scoreDisplay);
-            let score = 0;
-let answered = 0;
+
+function checkOption(btn, isCorrect) {
+    const parentGrid = btn.parentElement;
+    const buttons = parentGrid.querySelectorAll('.opt-btn');
+
+    buttons.forEach(b => b.style.pointerEvents = 'none');
+
+    answered++;
+
+    if (isCorrect) {
+        btn.classList.add('correct');
+        btn.innerHTML += ' ✅';
+        score++;
+    } else {
+        btn.classList.add('incorrect');
+        btn.innerHTML += ' ❌';
+    }
+
+    if (answered === mcqData.length) {
+        let percentage = (score / mcqData.length) * 100;
+
+        scoreDisplay.innerHTML = `
+            YOUR SCORE: ${score} / ${mcqData.length}
+            <br>
+            PERCENTAGE: ${percentage}%
+        `;
+    }
+}
+
 
         // 5. CHECK OPTION FEEDBACK
         function checkOption(btn, isCorrect) {
