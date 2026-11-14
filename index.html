@@ -1444,16 +1444,17 @@ function toggleEnglishAssignment() {
 <!-- Hardware Lab Section Connected with Top Menu -->
 <div id="hardware-lab" style="margin: 35px 0; background: rgba(30, 20, 50, 0.85); padding: 35px; border-radius: 14px; border: 2px solid #8a2be2; box-shadow: 0 6px 25px rgba(138, 43, 226, 0.3);">
     
+    <!-- Section Title & Description matching other website modules -->
+    <h2 style="color: #da70d6; font-size: 1.8rem; margin-bottom: 8px; font-weight: bold; text-transform: uppercase;">Practical Hardware Teardown Lab</h2>
+    <p style="color: #e6e6fa; font-size: 1.1rem; margin-bottom: 20px; line-height: 1.5;">Real-world reverse engineering & circuit analysis of electronic devices.</p>
+
     <!-- Toggle Button matching website's other buttons -->
-    <button onclick="var labBox = document.getElementById('hardware-lab-content'); var btn = this; if(labBox.style.display === 'none') { labBox.style.display = 'block'; btn.innerHTML = '🛠️ HIDE HARDWARE LAB 🔼'; } else { labBox.style.display = 'none'; btn.innerHTML = '🛠️ SHOW HARDWARE LAB 🔽'; }" style="background: linear-gradient(135deg, #8a2be2, #9370db); color: #ffffff; border: none; padding: 16px 24px; font-size: 1.2rem; font-weight: bold; border-radius: 10px; cursor: pointer; width: 100%; text-align: left; transition: 0.3s; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);">
+    <button onclick="var labBox = document.getElementById('hardware-lab-content'); var btn = this; if(labBox.style.display === 'none') { labBox.style.display = 'block'; btn.innerHTML = '🛠️ HIDE HARDWARE LAB 🔼'; } else { labBox.style.display = 'none'; btn.innerHTML = '🛠️ SHOW HARDWARE LAB 🔽'; }" style="background: linear-gradient(135deg, #8a2be2, #9370db); color: #ffffff; border: none; padding: 14px 22px; font-size: 1.1rem; font-weight: bold; border-radius: 10px; cursor: pointer; width: 100%; text-align: left; transition: 0.3s; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);">
         🛠️ SHOW HARDWARE LAB 🔽
     </button>
 
     <!-- Collapsible Content Box -->
     <div id="hardware-lab-content" style="display: none; margin-top: 25px; padding-top: 25px; border-top: 1px solid rgba(138, 43, 226, 0.4);">
-        
-        <h2 style="color: #da70d6; font-size: 1.9rem; margin-bottom: 12px; font-weight: bold; text-transform: uppercase;">Practical Hardware Teardown Lab</h2>
-        <p style="color: #e6e6fa; font-size: 1.2rem; margin-bottom: 25px; line-height: 1.6;">Real-world reverse engineering & circuit analysis of electronic devices.</p>
         
         <div style="background: rgba(20, 10, 35, 0.95); padding: 25px; border-radius: 12px; border-left: 6px solid #8a2be2;">
             <h3 style="color: #dda0dd; font-size: 1.5rem; margin-bottom: 15px; font-weight: bold;">TV Remote Control Teardown & Circuit Analysis (Nikki)</h3>
