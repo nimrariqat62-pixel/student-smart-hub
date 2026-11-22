@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LED Bulb Teardown (MEEZAN 12W) | Student Smart Hub</title>
+  <style>
+    :root {
+      --bg: #f5f0ff;
+      --card: #ffffff;
+      --text: #241938;
+      --muted: #554870;
+      --purple: #6d28d9;
+      --purple-dark: #4c1d95;
+      --purple-soft: #ede9fe;
+      --warn-bg: #f3e8ff;
+      --warn-border: #7c3aed;
+      --border: #ddd6fe;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 16px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+
+    .teardown-card {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card);
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(109, 40, 217, 0.08);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--purple);
+      background: var(--purple-soft);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 1.6rem;
+      color: var(--purple-dark);
+      line-height: 1.3;
+    }
+
+    h2 {
+      margin: 24px 0 10px;
+      font-size: 1.2rem;
+      color: var(--purple-dark);
+    }
+
+    .safety-note {
+      background: var(--warn-bg);
+      border-left: 4px solid var(--warn-border);
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .teardown-media {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .media-box {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #faf7ff;
+    }
+
+    .media-box video,
+    .media-box img {
+      display: block;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #1e1b4b;
+    }
+
+    .caption {
+      margin: 10px 0 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .parts-list {
+      background: #faf7ff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 12px;
+    }
+
+    .parts-list ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .parts-list li {
+      margin-bottom: 6px;
+    }
+
+    .footer-nav {
+      margin-top: 24px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .footer-nav a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="teardown-card">
+    <span class="badge">Student Smart Hub • Practical Hardware Teardown</span>
+    <h1>LED Bulb Teardown — MEEZAN 12W</h1>
+
+    <div class="safety-note">
+      <strong>Safety Note:</strong> Bulb ko hamesha main power se alag aur bilkul thanda rakh kar hi open karein[span_2](start_span)[span_2](end_span).
+    </div>
+
+    <div class="teardown-media">
+      <!-- Click-to-play Video -->
+      <div class="media-box">
+        <video controls preload="metadata">
+          <source src="21343.mp4" type="video/mp4" />
+          Aapka browser video play nahi kar sakta[span_3](start_span)[span_3](end_span).
+        </video>
+        <p class="caption">
+          <strong>Teardown Clip:</strong> Diffuser removal aur andar ke LED / capacitor parts ka view[span_4](start_span)[span_4](end_span).
+        </p>
+      </div>
+
+      <!-- Picture 1: Exterior & Marked Spot -->
+      <div class="media-box">
+        <img src="21325.jpg" alt="MEEZAN 12W bulb exterior and marked damage near base" />
+        <p class="caption">
+          <strong>Exterior View:</strong> MEEZAN 12W (EXP-07-2025) aur base ke paas marked spot[span_5](start_span)[span_5](end_span).
+        </p>
+      </div>
+
+      <!-- Picture 2: Bulb Inside -->
+      <div class="media-box">
+        <img src="bulb_inside.jpg" alt="Inside view of LED bulb" />
+        <p class="caption">
+          <strong>Bulb Inside:</strong> Diffuser hatane ke baad andar ka view[span_6](start_span)[span_6](end_span).
+        </p>
+      </div>
+
+      <!-- Picture 3: LED PCB -->
+      <div class="media-box">
+        <img src="Led_pcb.jpg" alt="LED PCB board and components" />
+        <p class="caption">
+          <strong>LED PCB:</strong> LED chips aur internal circuit board ki photo[span_7](start_span)[span_7](end_span).
+        </p>
+      </div>
+
+      <!-- Picture 4: Bulb Teardown -->
+      <div class="media-box">
+        <img src="bulb_teardown.jpg" alt="LED bulb teardown parts view" />
+        <p class="caption">
+          <strong>Bulb Teardown:</strong> Bulb ke open/teardown parts ki photo[span_8](start_span)[span_8](end_span).
+        </p>
+      </div>
+
+      <!-- Picture 5: Bulb Holder -->
+      <div class="media-box">
+        <img src="bulb_holder.jpg" alt="Bulb base and holder connection" />
+        <p class="caption">
+          <strong>Bulb Holder:</strong> Bulb base / holder se jude hisse ki photo[span_9](start_span)[span_9](end_span).
+        </p>
+      </div>
+    </div>
+
+    <section class="parts-list">
+      <h2>Practical Teardown Overview</h2>
+      <ul>
+        <li><strong>Diffuser Dome:</strong> White plastic cover jo LED ki roshni ko barabar phailata hai.</li>
+        <li><strong>SMD LED PCB:</strong> Gol circuit plate jis par series mein choti LED chips lagi hoti hain.</li>
+        <li><strong>Driver Components:</strong> Capacitors aur resistors jo AC voltage ko LED ke liye regulate karte hain.</li>
+        <li><strong>Base &amp; Housing:</strong> Screw base (holder connection) aur body jahan external damage spot check kiya gaya.</li>
+      </ul>
+    </section>
+
+    <div class="footer-nav">
+      <span>Student Smart Hub • Practical Work</span>
+      <a href="index.html">← Back to Main Page</a>
+    </div>
+  </main>
+</body>
+</html>
