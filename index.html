@@ -1489,6 +1489,289 @@ function toggleEnglishAssignment() {
     </div>
 </div>
 
+<section class="bulb-toggle-section">
+  <div class="bulb-toggle-wrapper">
+    <!-- Toggle Button -->
+    <button
+      type="button"
+      id="bulbTeardownToggleBtn"
+      class="bulb-toggle-btn"
+      aria-expanded="false"
+      aria-controls="bulbTeardownPanel"
+    >
+      <div class="bulb-btn-left">
+        <div class="bulb-emoji" aria-hidden="true">💡</div>
+        <div>Bulb Teardown</div>
+      </div>
+      <div id="bulbToggleStateLabel" class="bulb-state-pill">Show</div>
+    </button>
+
+    <!-- Button Ke Neeche Items Ki Summary -->
+    <p class="bulb-summary-line">
+      <strong>Is mein kya kya cheezein hain:</strong> Diffuser dome, SMD LED PCB board, driver/capacitor parts, bulb base/holder aur exterior marked spot ki practical detail + real photos.
+    </p>
+
+    <!-- Expandable Detailed Content (Hidden by Default) -->
+    <div id="bulbTeardownPanel" class="bulb-detail-panel" hidden>
+      <div class="bulb-detail-block">
+        <h3>Purpose (Maqsad)</h3>
+        <p>
+          MEEZAN 12W LED bulb ko safe tareeqay se open karke uske andar ke parts ka practical observation karna—ke roshni aur circuit kaise kaam karta hai aur bahar/base ke paas kya mark ya condition nazar aati hai.
+        </p>
+      </div>
+
+      <div class="bulb-detail-block">
+        <h3>Teardown Flow &amp; Components Detail</h3>
+        <ol class="bulb-step-list">
+          <li>
+            <strong>Exterior &amp; Marked Spot Check:</strong> Bulb ko main power se alag aur thanda rakh kar bahari body aur base ke qareeb mark/spot dekha gaya.
+          </li>
+          <li>
+            <strong>Inside &amp; Diffuser View:</strong> Upar ka white diffuser hatane ke baad andar ki arrangement aur internal structure samjha gaya.
+          </li>
+          <li>
+            <strong>LED PCB &amp; Circuit Parts:</strong> Gol SMD LED board par lagi LED chips aur driver components (capacitors/resistors) ka jaiza liya gaya.
+          </li>
+          <li>
+            <strong>Bulb Holder &amp; Base Connection:</strong> Neeche wale screw base / holder side ke connection aur overall teardown assembly ko dekha gaya.
+          </li>
+        </ol>
+      </div>
+
+      <!-- Real Pictures Grid -->
+      <div class="bulb-real-photos">
+        <h3>Real Teardown Pictures</h3>
+        <div class="bulb-photo-grid">
+          <figure class="bulb-photo-card">
+            <img src="21325.jpg" alt="MEEZAN 12W bulb exterior and marked spot" />
+            <figcaption>
+              <strong>Exterior &amp; Spot:</strong> MEEZAN 12W body aur marked spot.
+            </figcaption>
+          </figure>
+
+          <figure class="bulb-photo-card">
+            <img src="bulb_inside.jpg" alt="Inside view of LED bulb" />
+            <figcaption>
+              <strong>Bulb Inside:</strong> Diffuser hatane ke baad andar ka view.
+            </figcaption>
+          </figure>
+
+          <figure class="bulb-photo-card">
+            <img src="Led_pcb.jpg" alt="LED PCB board and components" />
+            <figcaption>
+              <strong>LED PCB:</strong> LED chips aur circuit board.
+            </figcaption>
+          </figure>
+
+          <figure class="bulb-photo-card">
+            <img src="bulb_teardown.jpg" alt="Bulb teardown parts view" />
+            <figcaption>
+              <strong>Bulb Teardown:</strong> Open parts ka practical view.
+            </figcaption>
+          </figure>
+
+          <figure class="bulb-photo-card">
+            <img src="bulb_holder.jpg" alt="Bulb holder and base connection" />
+            <figcaption>
+              <strong>Bulb Holder:</strong> Base / holder wala hissa.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="bulb-panel-footer">
+        <a href="bulb_teardown.html" class="bulb-full-link">Full Page &amp; Video Dekhein →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bulb-toggle-section {
+    max-width: 920px;
+    margin: 24px auto;
+    padding: 0 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .bulb-toggle-wrapper {
+    background: #ffffff;
+    border: 1px solid #ddd6fe;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 20px rgba(109, 40, 217, 0.08);
+    color: #241938;
+  }
+
+  .bulb-toggle-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: linear-gradient(135deg, #6d28d9, #4c1d95);
+    color: #ffffff;
+    border: none;
+    border-radius: 11px;
+    padding: 14px 18px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(109, 40, 217, 0.25);
+    transition: transform 0.15s ease, background 0.2s ease;
+  }
+
+  .bulb-toggle-btn:hover {
+    background: linear-gradient(135deg, #5b21b6, #3b0764);
+  }
+
+  .bulb-toggle-btn:active {
+    transform: scale(0.99);
+  }
+
+  .bulb-btn-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bulb-emoji {
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+
+  .bulb-state-pill {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .bulb-summary-line {
+    margin: 12px 2px 0;
+    padding: 10px 14px;
+    background: #f5f0ff;
+    border-left: 4px solid #7c3aed;
+    border-radius: 8px;
+    color: #3b2d54;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+
+  .bulb-detail-panel {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #ddd6fe;
+  }
+
+  .bulb-detail-block {
+    background: #faf7ff;
+    border: 1px solid #ede9fe;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+
+  .bulb-detail-block h3,
+  .bulb-real-photos h3 {
+    margin: 0 0 8px;
+    color: #4c1d95;
+    font-size: 1.08rem;
+  }
+
+  .bulb-detail-block p {
+    margin: 0;
+    color: #3b2d54;
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+
+  .bulb-step-list {
+    margin: 0;
+    padding-left: 20px;
+    color: #3b2d54;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .bulb-step-list li {
+    margin-bottom: 7px;
+  }
+
+  .bulb-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: 14px;
+    margin-top: 10px;
+  }
+
+  .bulb-photo-card {
+    margin: 0;
+    background: #faf7ff;
+    border: 1px solid #ddd6fe;
+    border-radius: 10px;
+    padding: 9px;
+  }
+
+  .bulb-photo-card img {
+    display: block;
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #ede9fe;
+  }
+
+  .bulb-photo-card figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #4b3d66;
+    line-height: 1.45;
+  }
+
+  .bulb-panel-footer {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .bulb-full-link {
+    display: inline-block;
+    background: #6d28d9;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 9px 15px;
+    border-radius: 9px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .bulb-full-link:hover {
+    background: #5b21b6;
+  }
+</style>
+
+<script>
+  (function () {
+    const btn = document.getElementById("bulbTeardownToggleBtn");
+    const panel = document.getElementById("bulbTeardownPanel");
+    const label = document.getElementById("bulbToggleStateLabel");
+
+    if (!btn || !panel || !label) return;
+
+    btn.addEventListener("click", function () {
+      const isExpanded = btn.getAttribute("aria-expanded") === "true";
+      const nextState = !isExpanded;
+
+      btn.setAttribute("aria-expanded", String(nextState));
+      panel.hidden = !nextState;
+      label.textContent = nextState ? "Hide" : "Show";
+    });
+  })();
+</script>
+
 
 
 
