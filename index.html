@@ -1489,288 +1489,264 @@ function toggleEnglishAssignment() {
     </div>
 </div>
 
-<section class="bulb-toggle-section">
-  <div class="bulb-toggle-wrapper">
-    <!-- Toggle Button -->
-    <button
-      type="button"
-      id="bulbTeardownToggleBtn"
-      class="bulb-toggle-btn"
-      aria-expanded="false"
-      aria-controls="bulbTeardownPanel"
-    >
-      <div class="bulb-btn-left">
-        <div class="bulb-emoji" aria-hidden="true">💡</div>
-        <div>Bulb Teardown</div>
-      </div>
-      <div id="bulbToggleStateLabel" class="bulb-state-pill">Show</div>
-    </button>
-
-    <!-- Button Ke Neeche Items Ki Summary -->
-    <p class="bulb-summary-line">
-      <strong>Is mein kya kya cheezein hain:</strong> Diffuser dome, SMD LED PCB board, driver/capacitor parts, bulb base/holder aur exterior marked spot ki practical detail + real photos.
+</section>
+<!-- PRACTICAL HARDWARE TEARDOWN LAB (PURE PURPLE THEME) -->
+<section class="purple-lab-section">
+  <div class="purple-lab-container">
+    <h2 class="purple-lab-heading">PRACTICAL HARDWARE TEARDOWN LAB</h2>
+    <p class="purple-lab-sub">
+      REAL-WORLD REVERSE ENGINEERING &amp; CIRCUIT ANALYSIS OF ELECTRONIC DEVICES.
     </p>
 
-    <!-- Expandable Detailed Content (Hidden by Default) -->
-    <div id="bulbTeardownPanel" class="bulb-detail-panel" hidden>
-      <div class="bulb-detail-block">
-        <h3>Purpose (Maqsad)</h3>
-        <p>
-          MEEZAN 12W LED bulb ko safe tareeqay se open karke uske andar ke parts ka practical observation karna—ke roshni aur circuit kaise kaam karta hai aur bahar/base ke paas kya mark ya condition nazar aati hai.
+    <!-- Purple Show / Hide Toggle Button -->
+    <button
+      type="button"
+      id="bulbLabToggleBtn"
+      class="purple-toggle-btn"
+      aria-expanded="true"
+      aria-controls="bulbLabContent"
+    >
+      <div id="bulbLabBtnText" class="purple-toggle-label">🔽 HIDE BULB LAB</div>
+    </button>
+
+    <!-- Toggleable Bulb Teardown Content -->
+    <div id="bulbLabContent" class="purple-lab-body">
+      <div class="purple-hw-card">
+        <h3 class="purple-card-title">LED BULB TEARDOWN &amp; CIRCUIT ANALYSIS (MEEZAN 12W)</h3>
+
+        <p class="purple-card-overview">
+          <strong>OVERVIEW:</strong> PHYSICAL TEARDOWN OF A 12W LED BULB TO EXAMINE ITS OUTER BODY, SMD LED CIRCUIT BOARD, INTERNAL TEARDOWN PARTS, AND HOLDER BASE CONNECTION.
         </p>
-      </div>
 
-      <div class="bulb-detail-block">
-        <h3>Teardown Flow &amp; Components Detail</h3>
-        <ol class="bulb-step-list">
-          <li>
-            <strong>Exterior &amp; Marked Spot Check:</strong> Bulb ko main power se alag aur thanda rakh kar bahari body aur base ke qareeb mark/spot dekha gaya.
-          </li>
-          <li>
-            <strong>Inside &amp; Diffuser View:</strong> Upar ka white diffuser hatane ke baad andar ki arrangement aur internal structure samjha gaya.
-          </li>
-          <li>
-            <strong>LED PCB &amp; Circuit Parts:</strong> Gol SMD LED board par lagi LED chips aur driver components (capacitors/resistors) ka jaiza liya gaya.
-          </li>
-          <li>
-            <strong>Bulb Holder &amp; Base Connection:</strong> Neeche wale screw base / holder side ke connection aur overall teardown assembly ko dekha gaya.
-          </li>
-        </ol>
-      </div>
-
-      <!-- Real Pictures Grid -->
-      <div class="bulb-real-photos">
-        <h3>Real Teardown Pictures</h3>
-        <div class="bulb-photo-grid">
-          <figure class="bulb-photo-card">
+        <!-- Real Bulb Pictures (4 Photos) -->
+        <div class="purple-photos-grid">
+          <div class="purple-photo-box">
             <img src="21325.jpg" alt="MEEZAN 12W bulb exterior and marked spot" />
-            <figcaption>
-              <strong>Exterior &amp; Spot:</strong> MEEZAN 12W body aur marked spot.
-            </figcaption>
-          </figure>
+            <p class="purple-photo-caption">EXTERIOR VIEW (REAL BULB &amp; SPOT)</p>
+          </div>
 
-          <figure class="bulb-photo-card">
-            <img src="bulb_inside.jpg" alt="Inside view of LED bulb" />
-            <figcaption>
-              <strong>Bulb Inside:</strong> Diffuser hatane ke baad andar ka view.
-            </figcaption>
-          </figure>
+          <div class="purple-photo-box">
+            <img src="Led_pcb.jpg" alt="SMD LED PCB circuit board" />
+            <p class="purple-photo-caption">SMD LED PCB VIEW (REAL CIRCUIT)</p>
+          </div>
 
-          <figure class="bulb-photo-card">
-            <img src="Led_pcb.jpg" alt="LED PCB board and components" />
-            <figcaption>
-              <strong>LED PCB:</strong> LED chips aur circuit board.
-            </figcaption>
-          </figure>
-
-          <figure class="bulb-photo-card">
+          <div class="purple-photo-box">
             <img src="bulb_teardown.jpg" alt="Bulb teardown parts view" />
-            <figcaption>
-              <strong>Bulb Teardown:</strong> Open parts ka practical view.
-            </figcaption>
-          </figure>
+            <p class="purple-photo-caption">TEARDOWN VIEW (INTERNAL PARTS)</p>
+          </div>
 
-          <figure class="bulb-photo-card">
+          <div class="purple-photo-box">
             <img src="bulb_holder.jpg" alt="Bulb holder and base connection" />
-            <figcaption>
-              <strong>Bulb Holder:</strong> Base / holder wala hissa.
-            </figcaption>
-          </figure>
+            <p class="purple-photo-caption">BULB HOLDER (BASE CONNECTION)</p>
+          </div>
         </div>
-      </div>
 
-      <div class="bulb-panel-footer">
-        <a href="bulb_teardown.html" class="bulb-full-link">Full Page &amp; Video Dekhein →</a>
+        <h4 class="purple-section-title">⚙️ TEARDOWN &amp; HOW IT WORKS:</h4>
+
+        <ul class="purple-points-list">
+          <li>
+            <strong>EXTERIOR &amp; DIFFUSER DOME:</strong> THE WHITE DOME SPREADS HARSH LIGHT EVENLY ACROSS THE ROOM WHILE PROTECTING THE INTERNAL LED BOARD FROM DUST AND DIRECT TOUCH.
+          </li>
+          <li>
+            <strong>SMD LED PCB BOARD:</strong> THE CIRCULAR CIRCUIT PLATE HOLDS SERIES-CONNECTED LED CHIPS AND HELPS TRANSFER HEAT AWAY SO THE LEDS DO NOT OVERHEAT QUICKLY.
+          </li>
+          <li>
+            <strong>DRIVER &amp; POWER REGULATION:</strong> INTERNAL CIRCUIT COMPONENTS STEP DOWN AND REGULATE HOUSEHOLD AC POWER SO THE LED CHIPS RECEIVE STEADY CURRENT AND GLOW BRIGHTLY.
+          </li>
+          <li>
+            <strong>BULB HOLDER &amp; BASE:</strong> THE BOTTOM SCREW/PIN BASE FITS INTO THE HOLDER TO RECEIVE ELECTRICAL INPUT AND HOLD THE BULB FIRMLY IN PLACE.
+          </li>
+        </ul>
+
+        <div class="purple-card-footer">
+          <a href="bulb_teardown.html" class="purple-full-link">OPEN IN FULL PAGE ↗</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  .bulb-toggle-section {
+  .purple-lab-section {
     max-width: 920px;
     margin: 24px auto;
     padding: 0 14px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
-  .bulb-toggle-wrapper {
-    background: #ffffff;
-    border: 1px solid #ddd6fe;
+  .purple-lab-container {
+    background: #1b1130;
+    border: 1.5px solid #5b21b6;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(88, 28, 135, 0.35);
+    color: #e9d8fd;
+  }
+
+  .purple-lab-heading {
+    margin: 0 0 6px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #d8b4fe;
+    letter-spacing: 0.5px;
+  }
+
+  .purple-lab-sub {
+    margin: 0 0 16px;
+    font-size: 0.8rem;
+    color: #c084fc;
+    letter-spacing: 0.4px;
+  }
+
+  .purple-toggle-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #6d28d9, #7c3aed);
+    color: #f3e8ff;
+    border: 1px solid #8b5cf6;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(109, 40, 217, 0.35);
+  }
+
+  .purple-toggle-btn:hover {
+    background: linear-gradient(90deg, #5b21b6, #6d28d9);
+  }
+
+  .purple-toggle-label {
+    font-weight: 700;
+    color: #f3e8ff;
+  }
+
+  .purple-lab-body {
+    margin-top: 16px;
+  }
+
+  .purple-hw-card {
+    background: #140c24;
+    border: 1px solid #4c1d95;
     border-radius: 14px;
     padding: 18px;
-    box-shadow: 0 6px 20px rgba(109, 40, 217, 0.08);
-    color: #241938;
   }
 
-  .bulb-toggle-btn {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    background: linear-gradient(135deg, #6d28d9, #4c1d95);
-    color: #ffffff;
-    border: none;
-    border-radius: 11px;
-    padding: 14px 18px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(109, 40, 217, 0.25);
-    transition: transform 0.15s ease, background 0.2s ease;
-  }
-
-  .bulb-toggle-btn:hover {
-    background: linear-gradient(135deg, #5b21b6, #3b0764);
-  }
-
-  .bulb-toggle-btn:active {
-    transform: scale(0.99);
-  }
-
-  .bulb-btn-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .bulb-emoji {
-    font-size: 1.3rem;
-    line-height: 1;
-  }
-
-  .bulb-state-pill {
-    background: rgba(255, 255, 255, 0.18);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 600;
-  }
-
-  .bulb-summary-line {
-    margin: 12px 2px 0;
-    padding: 10px 14px;
-    background: #f5f0ff;
-    border-left: 4px solid #7c3aed;
-    border-radius: 8px;
-    color: #3b2d54;
-    font-size: 0.93rem;
-    line-height: 1.55;
-  }
-
-  .bulb-detail-panel {
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid #ddd6fe;
-  }
-
-  .bulb-detail-block {
-    background: #faf7ff;
-    border: 1px solid #ede9fe;
-    border-radius: 10px;
-    padding: 14px 16px;
-    margin-bottom: 14px;
-  }
-
-  .bulb-detail-block h3,
-  .bulb-real-photos h3 {
-    margin: 0 0 8px;
-    color: #4c1d95;
+  .purple-card-title {
+    margin: 0 0 10px;
     font-size: 1.08rem;
+    font-weight: 700;
+    color: #e9d5ff;
+    letter-spacing: 0.4px;
   }
 
-  .bulb-detail-block p {
-    margin: 0;
-    color: #3b2d54;
-    font-size: 0.94rem;
+  .purple-card-overview {
+    margin: 0 0 18px;
+    font-size: 0.86rem;
     line-height: 1.6;
+    color: #ddd6fe;
   }
 
-  .bulb-step-list {
-    margin: 0;
-    padding-left: 20px;
-    color: #3b2d54;
-    font-size: 0.92rem;
-    line-height: 1.6;
+  .purple-card-overview strong {
+    color: #f3e8ff;
   }
 
-  .bulb-step-list li {
-    margin-bottom: 7px;
-  }
-
-  .bulb-photo-grid {
+  .purple-photos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 14px;
-    margin-top: 10px;
+    margin-bottom: 18px;
   }
 
-  .bulb-photo-card {
-    margin: 0;
-    background: #faf7ff;
-    border: 1px solid #ddd6fe;
-    border-radius: 10px;
-    padding: 9px;
+  .purple-photo-box {
+    text-align: center;
   }
 
-  .bulb-photo-card img {
+  .purple-photo-box img {
     display: block;
     width: 100%;
-    height: 155px;
+    height: 185px;
     object-fit: cover;
-    border-radius: 8px;
-    background: #ede9fe;
+    border-radius: 10px;
+    border: 1.5px solid #6d28d9;
+    background: #241442;
   }
 
-  .bulb-photo-card figcaption {
-    margin-top: 8px;
-    font-size: 0.85rem;
-    color: #4b3d66;
-    line-height: 1.45;
+  .purple-photo-caption {
+    margin: 8px 0 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #c084fc;
+    letter-spacing: 0.3px;
   }
 
-  .bulb-panel-footer {
-    margin-top: 16px;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .bulb-full-link {
-    display: inline-block;
-    background: #6d28d9;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 9px 15px;
-    border-radius: 9px;
+  .purple-section-title {
+    margin: 0 0 10px;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 700;
+    color: #d8b4fe;
+    letter-spacing: 0.4px;
   }
 
-  .bulb-full-link:hover {
-    background: #5b21b6;
+  .purple-points-list {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: #e9d8fd;
+  }
+
+  .purple-points-list li {
+    margin-bottom: 8px;
+  }
+
+  .purple-points-list strong {
+    color: #c084fc;
+  }
+
+  .purple-card-footer {
+    margin-top: 16px;
+    text-align: right;
+  }
+
+  .purple-full-link {
+    color: #c084fc;
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+  }
+
+  .purple-full-link:hover {
+    color: #e9d5ff;
+    text-decoration: underline;
   }
 </style>
 
 <script>
   (function () {
-    const btn = document.getElementById("bulbTeardownToggleBtn");
-    const panel = document.getElementById("bulbTeardownPanel");
-    const label = document.getElementById("bulbToggleStateLabel");
+    const toggleBtn = document.getElementById("bulbLabToggleBtn");
+    const labContent = document.getElementById("bulbLabContent");
+    const btnText = document.getElementById("bulbLabBtnText");
 
-    if (!btn || !panel || !label) return;
+    if (!toggleBtn || !labContent || !btnText) return;
 
-    btn.addEventListener("click", function () {
-      const isExpanded = btn.getAttribute("aria-expanded") === "true";
-      const nextState = !isExpanded;
+    toggleBtn.addEventListener("click", function () {
+      const isOpen = toggleBtn.getAttribute("aria-expanded") === "true";
+      const nextOpen = !isOpen;
 
-      btn.setAttribute("aria-expanded", String(nextState));
-      panel.hidden = !nextState;
-      label.textContent = nextState ? "Hide" : "Show";
+      toggleBtn.setAttribute("aria-expanded", String(nextOpen));
+      labContent.hidden = !nextOpen;
+      btnText.textContent = nextOpen ? "🔽 HIDE BULB LAB" : "🔼 SHOW BULB LAB";
     });
   })();
 </script>
+
+  
+
 
 
 
